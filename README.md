@@ -9,8 +9,8 @@
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=black"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=black"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"> <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=black"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=black">   
 
 # 💑 Member
-|제목|
-|:박형준:|
-||
-|중앙정렬|
-|중앙정렬|
+|제목|내용|설명|인원4|인원5|
+|---|---|---|---|---|
+|테스트1|테스트2|테스트3|테스트4|테스트5|
+|테스트1|테스트2|테스트3|테스트4|테스트5|
+|테스트1|테스트2|테스트3|테스트4|테스트5|

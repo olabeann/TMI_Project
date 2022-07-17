@@ -23,7 +23,7 @@
 
 # 🗓️ Schedule
 
-<br/>
+
 # 🌎 GitHub Stats
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=TMI&show_icons=true&theme=gotham)
 

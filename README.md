@@ -17,3 +17,7 @@
 
 # 🔎 Result
 
+# GitHub Stats
+![TMI_Project's GitHub stats](https://github-readme-stats.vercel.app/api?username=TMI&show_icons=true&theme=aura)
+
+

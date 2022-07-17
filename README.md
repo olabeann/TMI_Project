@@ -1,1 +1,1 @@
-# TMI_Project
+# TMI Project

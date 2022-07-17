@@ -20,6 +20,6 @@
 <br/>
 
 # 🌎 GitHub Stats
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=TMI&show_icons=true&theme=shades-of-purple)
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=TMI&show_icons=true&theme=gotham)
 
 

@@ -13,5 +13,6 @@
 | :------------: | :------------: | :------------: | :------------: | :------------: |
 | [박형준](https://github.com/HyeongJun030) | [임다빈](https://github.com/olabeann) | [김나현](https://github.com/evelynKr) | [허승현](https://github.com/seunghyeonheo) | [우형규](https://github.com/WooHyounggyu) |
 | 전체 데이터 페이지 | 다빈님 역할 분담 | 나현님 역할 분담 | 승현님 역할 분담 | 형규님 역할 분담 | 
+
 <br/><br/>
 

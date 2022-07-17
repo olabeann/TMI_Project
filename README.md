@@ -30,7 +30,7 @@
 |~ 07월 30일|3차 멘토링|중앙정렬|
 |~ 08월 18일|프로젝트 완료 및 종료 보고서 작성|중앙정렬|
 |~ 08월 19일|프로젝트 발표 및 |중앙정렬|
-
+<br/>
 
 # 🌎 GitHub Stats
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=TMI&show_icons=true&theme=gotham)

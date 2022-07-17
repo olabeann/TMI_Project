@@ -3,7 +3,7 @@
 * 프로젝트 명
 : ???  
 * 프로젝트 목적
-: 소비자들의 현명한 소비를 돕기 위한 농수산물 물가 정보 제공 사이트   
+: 소비자들의 현명한 소비를 돕기 위한 농수산물 물가 정보 제공 사이트   <br>
 
 # 🤹 Used Skill & Platform
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=black"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=black"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"> <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=black"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=black">   

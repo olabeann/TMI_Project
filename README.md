@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=TMI%20render&fontSize=90)
+![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=Team%20TMI&fontSize=90)
 # 🎨 TMI_Project
 * 프로젝트 명
 : ???  

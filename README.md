@@ -9,13 +9,9 @@
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=black"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=black"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"> <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=black"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=black">   
 
 # 💑 Member
-|이름||역할|
-|------|---|---|
-|박형준|테스트2|테스트3|
-|임다빈|테스트2|테스트3|
-|김나현|테스트2|테스트3|
-|허승현|테스트2|테스트3|
-|우형규|테스트2|테스트3|
-
-
+|사진1|사진2|사진3|사진4|사진5|
+|---|---|---|---|
+|내용 1|내용 2|내용 3|내용 4|내용 5|
+|내용 5|내용 6|내용 7|내용 8|내용 9|
+|내용 9|내용 10|내용 11|내용 12|내용 10|
 

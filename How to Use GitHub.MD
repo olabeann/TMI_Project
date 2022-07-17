@@ -1,27 +1,15 @@
 # 자신의 Repository 에 올리기
 1.GitHub 에서 Create a new repository 클릭
-
-: 새로운 저장소를 만들기 위해 new repository 를 선택
-
- 
+: 새로운 저장소를 만들기 위해 new repository 를 선택   
 
 2. git 다운 받기
-
 : github 는 소스 코드를 올리는 공간일 뿐 ! 소스 코드를 내 컴퓨터에서 인터넷으로 올려주는 역할을 git 이 한다.
-
 : 구글에 git 검색하여 다운로드 받는다.
-
-: https://git-scm.com/downloads
-
- 
+: https://git-scm.com/downloads   
 
 3. Git Bash 를 열어 이름 및 메일 설정하기
-
 : git config --global user.name “my name” 을 입력하여 이름 설정을 해준다.
-
 : git config --global user.email “my email” 을 입력하여 이메일 설정을 해준다.
-
- 
 
 4. 이름 및 메일 설정 확인하기
 

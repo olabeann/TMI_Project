@@ -24,7 +24,7 @@
 # 🗓️ Schedule
 |일정|활동|
 |:---:|:---:|
-|06월 30일 ~|프로젝트 1차 기획|
+|06월 30일 ~|프로젝트 1차 기획안 작성|
 |~ 07월 02일|1차 멘토링|
 |~ 07월 07일|프로젝트 최종 기획안 작성|
 |~ 07월 16일|2차 멘토링|
@@ -33,7 +33,7 @@
 |~ 08월 19일|프로젝트 발표 및 평가|
 |O주차|주차별 수행일지 작성|
 
-<br/>
+<br/> 
 
 # 🌎 GitHub Stats
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=TMI&show_icons=true&theme=gotham)

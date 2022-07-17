@@ -35,6 +35,14 @@
 
 <br/> 
 
+# ⬆️ Upload
+- 기획안 : 구글 드라이브에 제출
+- 수행일지 : 구글 드라이브에 제출
+- 최종 포트폴리오 : 구글 드라이브에 제줄
+- 소스 코드 : 팀 깃허브에 업로드
+- 기타 산출물 : Notion 및 Discord 사용
+<br/>
+
 # 🌎 GitHub Stats
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=TMI&show_icons=true&theme=gotham)
 

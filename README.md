@@ -21,6 +21,8 @@
 : 최종 결과물 나오면 여기에 추가하기 !  
 <br/>
 
+# 🗓️ Schedule
+
 # 🌎 GitHub Stats
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=TMI&show_icons=true&theme=gotham)
 

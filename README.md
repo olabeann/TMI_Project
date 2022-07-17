@@ -1,5 +1,5 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=Team%20TMI&fontSize=90)
-# 🎨 TMI(Two Much Information)'s Project
+# 🎨 Project Introduction
 * 프로젝트 명
 : ???  
 * 프로젝트 목적

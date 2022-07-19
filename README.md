@@ -14,7 +14,7 @@
 | <img src="https://user-images.githubusercontent.com/109474391/179417223-9590dcf6-d616-418c-a818-25bcaa312046.png"  width="150" height="150"/> | <img src="https://user-images.githubusercontent.com/109474391/179417223-9590dcf6-d616-418c-a818-25bcaa312046.png"  width="150" height="150"/> | <img src="https://user-images.githubusercontent.com/109474391/179417223-9590dcf6-d616-418c-a818-25bcaa312046.png"  width="150" height="150"/> | <img src="https://user-images.githubusercontent.com/109474391/179417223-9590dcf6-d616-418c-a818-25bcaa312046.png"  width="150" height="150"/> | <img src="https://user-images.githubusercontent.com/109474391/179417223-9590dcf6-d616-418c-a818-25bcaa312046.png"  width="150" height="150"/> |
 | :------------: | :------------: | :------------: | :------------: | :------------: |
 | [박형준](https://github.com/HyeongJun030) | [임다빈](https://github.com/olabeann) | [김나현](https://github.com/evelynKr) | [허승현](https://github.com/seunghyeonheo) | [우형규](https://github.com/WooHyounggyu) |
-| 전체 데이터 페이지 | 다빈님 역할 분담 | 나현님 역할 분담 | 승현님 역할 분담 | 형규님 역할 분담 | 
+| 메인 화면 | 일/월/년별 가격 변동 페이지 구현 | Open API 호출 기능 구현 | 품목 검색 기능, 즐겨찾기 기능 구현 | 품목별 분류 페이지 구현 | 
   <br/>
 
 # 🔎 Result

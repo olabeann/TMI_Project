@@ -6,37 +6,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>장비서</title>
+    <meta name="description" content="A project that provides price data services." />
+    <meta name="author" content="TMI" />
     <link rel="stylesheet" href="./src/styles/reset.css">
     <link rel="stylesheet" href="./src/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="./main.js" defer></script>
+    <link rel="icon" type="image/png" href="./src/assets/icons/favicon.png" />
 </head>
 
 <body>
     <!-- Navbar -->
     <nav id="navbar">
         <div class="navbar__logo">
-            <div>
+            <a href="#">
                 <img src="./src/assets/icons/jang_logo_green.png" alt="장비서 로고" class="logo">
-            </div>
+            </a>
         </div>
-        <ul class=" navbar__menu">
-            <li class="navbar__menu__item active" data-link="#home">쇼핑리스트</li>
-            <li class="navbar__menu__item" data-link="#about">가계부 정리</li>
-            <li class="navbar__menu__item" data-link="#skills">오늘의 물가</li>
-            <li class="navbar__menu__item" data-link="#work">마트 할인정보</li>
-            <a href="#">회원가입</a>
-            <button>로그인</button>
+        <ul class="navbar__menu">
+            <li><a href="#" class="navbar__menu__item active">쇼핑 리스트</a></li>
+            <li><a href="#" class="navbar__menu__item">가계부 정리</a></li>
+            <li><a href="#" class="navbar__menu__item">오늘의 물가</a></li>
+            <li><button type="button" onclick="location.href='#'" class="navbar__menu__btn">로그인</button></li>
         </ul>
     </nav>
-
+    <!-- Title bar -->
+    <section id="titlebar" class="section">
+        <span class="tit__sub__txt">장보기 전, &nbsp</span>
+        <h2>쇼핑리스트 노트 📝</h2>
+    </section>
     <!-- Main Page -->
+    <section id="main" class="section">
+    </section>
+
     <!-- Intro Page -->
-    <!-- ShoppingList Page -->
+    <section id="intro" class="section">
+        <div class="section__container"></div>
+    </section>
+
+    <!-- Shopping List Page -->
+    <section id="shopping-list" class="section">
+    </section>
+
     <!-- PriceData Page -->
+    <section id="price-data" class="section">
+    </section>
+
+    <!-- Account Book Page -->
+    <section id="account-book" class="section">
+    </section>
+
+    <!-- Mart Discount Info Page -->
+    <section id="mart-discount-info" class="section">
+    </section>
 </body>
 
 </html>

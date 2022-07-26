@@ -16,10 +16,10 @@
   --color-black: #231816;
 
   /* Font size */
-  --font-large: 58px;
-  --font-medium: 40px;
-  --font-regular: 25px;
-  --font-small: 18px;
+  --font-large: 40px;
+  --font-medium: 22px;
+  --font-regular: 18px;
+  --font-small: 15px;
   --font-micro: 13px;
 
   /* Font weight */
@@ -27,9 +27,10 @@
   --weight-bold: 700;
   --weight-medium: 500;
   --weight-regular: 400;
+  --weight-light: 300;
 
   /* Size */
-  --btn-border-radius: 12px;
+  --btn-border-radius: 6px;
   --input-border-radius: 10px;
   --shopping-list-border-radius: 10px;
   --map-border-radius: 10px;
@@ -78,8 +79,8 @@ h1 {
 
 h2 {
   font-size: var(--font-medium);
-  font-weight: var(--weight-semi-bold);
-  color: var(--color-black);
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
   margin: 8px 0;
 }
 
@@ -90,80 +91,84 @@ p {
   margin: 4px 0;
 }
 
+/* (1920x1080) Full HD Display */
 /* Navbar */
 #navbar {
   position: fixed;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: transparent;
   align-items: center;
-  padding: 16px;
-  transition: all var(--animation-duration) ease-in-out;
-  z-index: 1;
+  background-color: transparent;
+  padding: 28px 100px;
 }
 
-#navbar.navbar--dark {
-  background-color: var(--color-pink);
+/* #navbar.navbar--dark {
+  background-color: var(--color-light-green);
   padding: 8px;
+} */
+
+.logo {
+  width: auto;
+  height: 44px;
 }
 
 .navbar__menu {
   display: flex;
-}
-
-.logo {
-  width: 234px;
-  height: 68px;
-}
-.navbar__logo {
-  font-size: var(--font-medium);
-  font-weight: var(--weight-semi-bold);
-  color: var(--color-mint);
+  height: 28px;
+  align-items: center;
 }
 
 .navbar__menu__item {
-  padding: 8px 12px;
-  margin: 0 4px;
+  margin: 0 10px;
+  font-size: var(--font-small);
+  font-weight: var(--weight-medium);
   color: var(--color-black);
   cursor: pointer;
-  border-radius: var(--size-border-radius);
 }
 
 .navbar__menu__item.active {
-  color: var(--color-mint);
+  color: var(--color-green);
+  font-weight: var(--weight-extra-bold);
 }
 
-.navbar__menu__item:hover {
-  /* border-color: var(--color-blue); */
-  /* background-color: var(--color-yellow); */
+/* .navbar__menu__item:hover {
+  border-bottom-color: ;
+} */
+
+.navbar__menu__btn {
+  width: 98px;
+  height: 38px;
+  margin: 0 10px;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border-radius: var(--btn-border-radius);
+  padding: 5px;
 }
 
-.navbar__toggle-btn {
-  position: absolute;
-  right: 32px;
-  top: 24px;
-  font-size: 24px;
-  color: var(--color-black);
-  display: none;
-}
-
-/* 물가 API */
-#api {
-  /* display: flex; */
-  position: absolute;
-  top: 100px;
-  left: 20px;
-}
-
-.api__tit,
-.api__list {
+/* Title bar */
+#titlebar {
+  position: fixed;
+  top: 103px;
+  width: 100%;
+  height: 64px;
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--color-green);
+  padding: 10px 110px;
 }
 
-.api__tit__item,
-.api__list__item {
-  padding: 8px 12px;
-  margin: 0 4px;
-  color: var(--color-black);
+.tit__sub__txt {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-light);
+  color: var(--color-white);
+  margin: 8px 0;
 }
+
+/* Main Page */
+/* Intro Page */
+/* Shopping List Page */
+/* PriceData Page */
+/* Account Book Page */
+/* Mart Discount Info Page */

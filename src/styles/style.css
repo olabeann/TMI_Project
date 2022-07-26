@@ -1,3 +1,4 @@
+@charset "utf-8";
 /* Global */
 :root {
   /* Color */
@@ -92,14 +93,20 @@ p {
 }
 
 /* (1920x1080) Full HD Display */
+
+/* Header */
+.header {
+  width: 100vw;
+  height: 167px;
+}
+
 /* Navbar */
-#navbar {
+#navbar__vers-green {
   position: fixed;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
   padding: 28px 100px;
 }
 
@@ -108,7 +115,7 @@ p {
   padding: 8px;
 } */
 
-.logo {
+.logo__green {
   width: auto;
   height: 44px;
 }
@@ -146,7 +153,6 @@ p {
   padding: 5px;
 }
 
-
 /* Title bar */
 #titlebar {
   position: fixed;
@@ -166,6 +172,17 @@ p {
   color: var(--color-white);
   margin: 8px 0;
 }
+
+/* Section common */
+.section {
+  padding: 30px 110px;
+  margin: auto;
+}
+
+/* .section__container {
+  max-width: 1200px;
+  margin: auto;
+} */
 
 /* Main Page */
 /* Intro Page */

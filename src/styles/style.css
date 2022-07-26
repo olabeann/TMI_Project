@@ -136,7 +136,7 @@ p {
   border-bottom-color: ;
 } */
 
-.navbar__menu__btn {
+.navbar__menu__login-btn {
   width: 98px;
   height: 38px;
   margin: 0 10px;
@@ -145,6 +145,7 @@ p {
   border-radius: var(--btn-border-radius);
   padding: 5px;
 }
+
 
 /* Title bar */
 #titlebar {

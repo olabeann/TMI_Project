@@ -89,3 +89,50 @@ p {
   color: var(--color-black);
   margin: 4px 0;
 }
+
+/* (1920x1080) Full HD Display */
+/* Navbar */
+#navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 30px 100px;
+}
+
+/* #navbar.navbar--dark {
+  background-color: var(--color-light-green);
+  padding: 8px;
+} */
+
+.navbar__menu {
+  display: flex;
+  height: 28px;
+  align-items: center;
+}
+
+.navbar__menu__item {
+  margin: 0 10px;
+  color: var(--color-black);
+  cursor: pointer;
+}
+
+.navbar__menu__item.active {
+  color: var(--color-green);
+}
+
+/* .navbar__menu__item:hover {
+  border-bottom-color: ;
+} */
+
+.navbar__menu__btn {
+  width: 100px;
+  height: 38px;
+  margin: 0 10px;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border-radius: var(--btn-border-radius);
+  padding: 5px;
+}

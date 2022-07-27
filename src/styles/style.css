@@ -213,13 +213,9 @@ p {
 
 /* Section common */
 .section {
-  padding: 30px 110px;
+  padding: 54px 200px 0 200px;
   margin: auto;
-}
-
-.section {
   max-width: 1920px;
-  margin: auto;
 }
 
 /* Main Page */

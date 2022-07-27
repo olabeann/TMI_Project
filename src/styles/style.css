@@ -96,40 +96,42 @@ p {
 
 /* Header */
 .header {
+  display: flex;
+  flex-direction: column;
   width: 100vw;
-  height: 167px;
+  height: 170px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Navbar */
 #navbar__vers-green {
-  position: fixed;
+  position: sticky;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 100px;
+  padding: 28px 200px;
 }
-
-/* #navbar.navbar--dark {
-  background-color: var(--color-light-green);
-  padding: 8px;
-} */
 
 .logo__green {
   width: auto;
-  height: 44px;
+  height: 78px;
 }
 
 .navbar__menu {
   display: flex;
-  height: 28px;
   align-items: center;
+  width: 760px;
+  height: 68px;
 }
 
 .navbar__menu__item {
-  margin: 0 10px;
-  font-size: var(--font-small);
-  font-weight: var(--weight-medium);
+  margin-right: 35px;
+  font-size: 23px;
+  height: 28px;
+  font-weight: var(--weight-bold);
   color: var(--color-black);
   cursor: pointer;
 }
@@ -139,35 +141,30 @@ p {
   font-weight: var(--weight-extra-bold);
 }
 
-/* .navbar__menu__item:hover {
-  border-bottom-color: ;
-} */
-
 .navbar__menu__login-btn {
-  width: 98px;
-  height: 38px;
-  margin: 0 10px;
+  width: 160px;
+  height: 63px;
+  font-size: 23px;
   background-color: var(--color-green);
   color: var(--color-white);
   border-radius: var(--btn-border-radius);
-  padding: 5px;
 }
 
 /* Title bar */
 #titlebar {
-  position: fixed;
-  top: 103px;
-  width: 100%;
-  height: 64px;
   display: flex;
+  position: sticky;
+  top: 170px;
+  width: 100%;
+  height: 106px;
   justify-content: flex-start;
   align-items: center;
   background-color: var(--color-green);
-  padding: 10px 110px;
+  padding: 0 203px;
 }
 
 .tit__sub__txt {
-  font-size: var(--font-medium);
+  font-size: var(--font-large);
   font-weight: var(--weight-light);
   color: var(--color-white);
   margin: 8px 0;
@@ -179,10 +176,10 @@ p {
   margin: auto;
 }
 
-/* .section__container {
-  max-width: 1200px;
+.section {
+  max-width: 1920px;
   margin: auto;
-} */
+}
 
 /* Main Page */
 /* Intro Page */

@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /* Global */
 :root {
   /* Color */
@@ -11,8 +12,9 @@
   --color-dark-blue: #0034ec;
   --color-light-red: #fbc3c3;
   --color-red: #eb7767;
+  --color-regular-red: #e74c3c;
   --color-dark-red: #e10000;
-  --color-grey: #eeeeee;
+  --color-grey: #d9d9d9;
   --color-font-grey: #585858;
   --color-black: #231816;
 
@@ -31,7 +33,7 @@
   --weight-light: 300;
 
   /* Size */
-  --btn-border-radius: 6px;
+  --btn-border-radius: 10px;
   --input-border-radius: 10px;
   --shopping-list-border-radius: 10px;
   --map-border-radius: 10px;
@@ -39,6 +41,45 @@
 
   /* Animation */
   /* --animation-duration: 300ms; */
+}
+
+/* Icon - Google Material icons */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(path/to/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'), local('MaterialIcons-Regular'),
+    url(path/to/MaterialIcons-Regular.woff2) format('woff2'),
+    url(path/to/MaterialIcons-Regular.woff) format('woff'),
+    url(path/to/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+/* Utility */
+/* 스크린 리더 전용 */
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* 한줄 말줄임 */
+.sl-ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 둘줄 말줄임 */
+.multi-ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 /* Universal tags*/
@@ -74,7 +115,7 @@ button {
 h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
-  color: var(--color-black);
+  color: var(--color-white);
   margin: 16px 0px;
 }
 
@@ -183,7 +224,6 @@ p {
 
 /* Main Page */
 /* Intro Page */
-/* Shopping List Page */
 /* PriceData Page */
 /* Account Book Page */
 /* Mart Discount Info Page */

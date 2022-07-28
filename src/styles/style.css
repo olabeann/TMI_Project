@@ -134,7 +134,6 @@ p {
 }
 
 /* (1920x1080) Full HD Display */
-
 /* Header */
 .header {
   display: flex;
@@ -148,7 +147,6 @@ p {
 
 /* Navbar */
 #navbar__vers-green {
-  position: sticky;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -194,7 +192,6 @@ p {
 /* Title bar */
 #titlebar {
   display: flex;
-  position: sticky;
   top: 170px;
   width: 100%;
   height: 106px;
@@ -213,9 +210,9 @@ p {
 
 /* Section common */
 .section {
-  padding: 54px 200px 0 200px;
+  padding: 50px 0 0 0;
+  max-width: 1520px;
   margin: auto;
-  max-width: 1920px;
 }
 
 /* Main Page */

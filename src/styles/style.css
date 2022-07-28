@@ -208,6 +208,63 @@ p {
   margin: 8px 0;
 }
 
+/* Search Form */
+/* input[type='text'] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 487px;
+  height: 61px;
+  border: 1.5px solid var(--color-grey);
+  border-radius: var(--input-border-radius);
+  font-size: 20px;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.3s;
+  font-size: 11px;
+  color: var(--color-black);
+}
+
+input[type='text']:focus {
+  border-color: var(--color-green);
+  box-shadow: 0 0 8px 0 var(--color-green);
+}
+
+.inputWithIcon input[type='text'] {
+  padding-left: 60px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-grey);
+}
+
+.inputWithIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: var(--color-grey);
+}
+
+.inputWithIcon i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 40px;
+  width: 35px;
+  height: 33px;
+  margin: 14px;
+  color: var(--color-grey);
+  transition: 0.3s;
+}
+
+.inputWithIcon input[type='text']:focus + i {
+  color: var(--color-green);
+} */
+
 /* Section common */
 .section {
   padding: 50px 0 0 0;

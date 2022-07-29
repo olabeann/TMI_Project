@@ -213,17 +213,15 @@ p {
 
 /* Section common */
 .section {
-  padding: 54px 200px 0 200px;
+  padding: 50px 0 0 0;
+  max-width: 1520px;
   margin: auto;
-  max-width: 1920px;
-  max-height: 1080px;
 }
 
 /* Main Page */
 /* Intro Page */
 /* Shopping List Page */
 #shopping-list{
-  position: fixed;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -233,7 +231,6 @@ p {
 }
 /*스크롤바*/
 .container{
-  width: 1300px;
   height: 50vh;
   overflow-y:scroll; 
   -ms-overflow-style: none; /* IE and Edge */

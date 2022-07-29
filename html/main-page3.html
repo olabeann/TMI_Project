@@ -9,7 +9,7 @@
     <meta name="description" content="A project that provides price data services." />
     <meta name="author" content="TMI" />
     <link rel="stylesheet" href="/src/styles/reset.css">
-    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/main-page3.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
@@ -38,40 +38,51 @@
             </li>
         </ul>
     </nav>
-    <!-- Modal -->
-    <!-- <div class="navbar__modal-wrapper" style="display: none;" class="col-12">
-        <div class="navbar__modal">
-            <form>
-                <label>What's your name?</label>
-                <input type="text" class="navbar__modal-title" placeholder="이름을 적어주세요">
-            </form>
-            <div class="navbar__close-wrapper">
-                <button id="close">로그인</button>
-            </div>
-        </div>
-    </div>
-    <div>
-        <h4 class="js-greetings greetings"></h4>
-    </div> -->
-
     <!-- Home -->
     <section id="slide-home" class="slide-home">
-        <div class="slide-home__container">
-            <h3 class="home__title">전월 대비 가장 저렴한 품목은</h3>
-            <h4 class="home__description">감자</h4>
+        <!-- Nav_shoppingList -->
+        <div id="slideWorks" class="slideWorks">
+            <div class="slideWorks_info">
+                <div class="slideWorks_header">
+                    <div class="slideWorks_num">#03</div>
+                    <div class="slideWorks_category">가계부 작성하기</div>
+                </div>
+                <div class="slideWorks_title">장보기 후, <strong>영수증을 찍어 가계부 관리</strong></div>
+                <div class="slideWorks_description">
+                    <span>이 페이지는 장본 후 영수증을 찍어 손쉽게 가계부를 관리해주는 서비스입니다.</span>
+                    <span>이곳에 영수증ocr 가계부 페이지에 대한 설명을 작성합니다.</span>
+                </div>
+                <div class="slideWorks_share">
+                    <div>
+                        <span class="slideWorks_label">Share:</span>
+                        <a class="slideWorks_share_sns hover" href="#" target="_blank">
+                            <i class="material-icons">share</i>
+                        </a>
+                    </div>
+                    <div>
+                        <span class="slideWorks_label">Survey:</span>
+                        <a class="slideWorks_survey_form hover" href="#" target="_blank">
+                            <i class="material-icons">troubleshoot</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slideWorks_link">
+                <a href="#" class="slideWorks_link hover"><span>GO</span></a>
+            </div>
         </div>
         <!-- Slide Nav -->
         <div id="slide-navi" class="slide-navi">
-            <a id="slideNavi_prev" class="slideNavi_prev hover" href="/html/main-page3.html">
-                <div class="slideNavi_num"><span>#03</span></div>
-                <div class="slideNavi_title"><span>가계부 작성하기</span></div>
+            <a id="slideNavi_prev" class="slideNavi_prev hover" href="/html/main-page2.html">
+                <div class="slideNavi_num"><span>#02</span></div>
+                <div class="slideNavi_title"><span>오늘의 물가</span></div>
                 <div>
                     <img src="/src/assets/images/btn-prev.png" alt="이전버튼 이미지" class="slideNavi_arrow">
                 </div>
             </a>
-            <a id="slideNavi_next" class="slideNavi_next hover" href="/html/main-page1.html">
-                <div class="slideNavi_num"><span>#01</span></div>
-                <div class="slideNavi_title"><span>쇼핑리스트 작성하기</span></div>
+            <a id="slideNavi_next" class="slideNavi_next hover" href="/html/index.html">
+                <div class="slideNavi_num"><span>#00</span></div>
+                <div class="slideNavi_title"><span>메인</span></div>
                 <div>
                     <img src="/src/assets/images/btn-next.png" alt="다음버튼 이미지" class="slideNavi_arrow">
                 </div>

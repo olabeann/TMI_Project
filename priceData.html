@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장비서</title>
+    <meta name="description" content="A project that provides price data services." />
+    <meta name="author" content="TMI" />
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/pricedata.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/png" href="./src/assets/icons/favicon.png" />
+</head>
+
+<body>
+    <header class="header" display="none">
+        <!-- Navbar -->
+        <nav id="navbar__vers-green">
+            <div class="navbar__logo">
+                <a href="#">
+                    <img src="./src/assets/icons/jang_logo_green.png" alt="장비서 로고" class="logo__green">
+                </a>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="./ShoppingList.html" class="navbar__menu__item">쇼핑 리스트</a></li>
+                <li><a href="#" class="navbar__menu__item">가계부 정리</a></li>
+                <li><a href="./priceData.html" class="navbar__menu__item active">오늘의 물가</a></li>
+                <li><a href="#" class="navbar__menu__item">회원가입</a></li>
+                <li><button type="button" id="open" class="navbar__menu__login-btn">로그인</button></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Title bar -->
+
+    <section id="titlebar">
+        <span class="tit__sub__txt">매일매일, &nbsp</span>
+        <h1>오늘의 물가 확인하기 🔍</h1>
+        <!-- Search Input -->
+        <div class="inputWithIcon">
+            <input type="text" placeholder="어느 품목의 물가를 검색할까요?">
+            <i class="material-icons">search</i>
+        </div>
+
+    </section>
+
+
+    <!--Price-data page-->
+    <section id="price-data" class="section">
+
+        <div class="container">
+
+
+
+            <div class="second-container">
+
+                <div class="notice notice-left">
+                    <span class="notice notice-down">가격이 내렸어요!😍</span>
+                    <span class="notice">오늘 구입할까요..?</span>
+                </div>
+
+                <div class="list list-left">
+                    <span class="list-menu-down">품목</span>
+                    <span class="list-menu-down-middle">평균 가격</span>
+                    <span class="list-menu-down-last">감소한 가격</span>
+                </div>
+
+                <button onclick="location.href='#'" class="box box-left">
+                    <span class="box box-left-first">
+                        포도
+                    </span>
+                    <span class="box box-left-middle">
+                        500
+                    </span>
+                    <span class="box box-blue-1">
+                        1500 ▼
+                    </span>
+                </button>
+                <button class="box box-left">
+                    <span class="box box-left-first">
+                        아보카도
+                    </span>
+                    <span class="box box-left-middle">
+                        1500
+                    </span>
+                    <span class="box box-blue-1">
+                        700 ▼
+                    </span>
+                </button>
+                <button class="box box-left">
+                    <span class="box box-left-first">
+                        쌀
+                    </span>
+                    <span class="box box-left-middle">
+                        500
+                    </span>
+                    <span class="box box-blue-1">
+                        1000 ▼
+                    </span>
+                </button>
+                <button class="box box-left">
+                    <span class="box box-left-first">
+                        포도
+                    </span>
+                    <span class="box box-left-middle">
+                        500
+                    </span>
+                    <span class="box box-blue-1">
+                        2000 ▼
+                    </span>
+                </button>
+                <button class="box box-left">
+                    <span class="box box-left-first">
+                        포도
+                    </span>
+                    <span class="box box-left-middle">
+                        500
+                    </span>
+                    <span class="box box-blue-1">
+                        2000 ▼
+                    </span>
+                </button>
+                <button class="box box-left">
+                    <span class="box box-left-first">
+                        포도
+                    </span>
+                    <span class="box box-left-middle">
+                        500
+                    </span>
+                    <span class="box box-blue-1">
+                        2000 ▼
+                    </span>
+                </button>
+                <button class="box box-left">
+                    <span class="box box-left-first">
+                        포도
+                    </span>
+                    <span class="box box-left-middle">
+                        500
+                    </span>
+                    <span class="box box-blue-1">
+                        2000 ▼
+                    </span>
+                </button>
+                <button class="box box-left">
+                    <span class="box box-left-first">
+                        포도
+                    </span>
+                    <span class="box box-left-middle">
+                        500
+                    </span>
+                    <span class="box box-blue-1">
+                        2000 ▼
+                    </span>
+                </button>
+                <button class="box box-left">
+                    <span class="box box-left-first">
+                        포도
+                    </span>
+                    <span class="box box-left-middle">
+                        500
+                    </span>
+                    <span class="box box-blue-1">
+                        2000 ▼
+                    </span>
+                </button>
+                <button class="box box-left">
+                    <span class="box box-left-first">
+                        포도
+                    </span>
+                    <span class="box box-left-middle">
+                        500
+                    </span>
+                    <span class="box box-blue-1">
+                        2000 ▼
+                    </span>
+                </button>
+
+
+            </div>
+
+
+
+
+
+            <div class="third-container">
+
+                <div class="notice notice-right">
+                    <span class="notice notice-up">가격이 올랐어요!😨</span>
+                    <span class="notice">나중에 구입할까요..?</span>
+                </div>
+
+
+                <div class="list list-right">
+                    <span class="list-menu-up">품목</span>
+                    <span class="list-menu-up-middle">평균 가격</span>
+                    <span class="list-menu-up-last">상승한 가격</span>
+                </div>
+
+
+                <button class="box box-right">
+                    <span class="box box-right-first">
+                        감자
+                    </span>
+                    <span class="box box-right-middle">
+                        500
+                    </span>
+                    <span class="box box-red-1">
+                        400 ▲
+                    </span>
+                </button>
+
+                <button class="box box-right">
+                    <span class="box box-right-first">
+                        옥수수
+                    </span>
+                    <span class="box box-right-middle">
+                        500
+                    </span>
+                    <span class="box box-red-1">
+                        350 ▲
+                    </span>
+                </button>
+
+                <button class="box box-right">
+                    <span class="box box-right-first">
+                        당근
+                    </span>
+                    <span class="box box-right-middle">
+                        500
+                    </span>
+                    <span class="box box-red-1">
+                        1600 ▲
+                    </span>
+                </button>
+
+                <button class="box box-right">
+                    <span class="box box-right-first">
+                        무
+                    </span>
+                    <span class="box box-right-middle">
+                        500
+                    </span>
+                    <span class="box box-red-1">
+                        1700 ▲
+                    </span>
+                </button>
+
+                <button class="box box-right">
+                    <span class="box box-right-first">
+                        포도
+                    </span>
+                    <span class="box box-right-middle">
+                        500
+                    </span>
+                    <span class="box box-red-1">
+                        2000 ▲
+                    </span>
+                </button>
+
+                <button class="box box-right">
+                    <span class="box box-right-first">
+                        치커리
+                    </span>
+                    <span class="box box-right-middle">
+                        500
+                    </span>
+                    <span class="box box-red-1">
+                        200 ▲
+                    </span>
+                </button>
+
+                <button class="box box-right">
+                    <span class="box box-right-first">
+                        상추
+                    </span>
+                    <span class="box box-right-middle">
+                        500
+                    </span>
+                    <span class="box box-red-1">
+                        550 ▲
+                    </span>
+                </button>
+
+                <button class="box box-right">
+                    <span class="box box-right-first">
+                        땅콩
+                    </span>
+                    <span class="box box-right-middle">
+                        500
+                    </span>
+                    <span class="box box-red-1">
+                        200 ▲
+                    </span>
+                </button>
+
+                <button class="box box-right">
+                    <span class="box box-right-first">
+                        고추
+                    </span>
+                    <span class="box box-right-middle">
+                        500
+                    </span>
+                    <span class="box box-red-1">
+                        2600 ▲
+                    </span>
+                </button>
+
+                <button class="box box-right">
+                    <span class="box box-right-first">
+                        배
+                    </span>
+                    <span class="box box-right-middle">
+                        500
+                    </span>
+                    <span class="box box-red-1">
+                        20 ▲
+                    </span>
+                </button>
+
+            </div>
+
+            </div>
+    </section>
+
+
+
+</body>
+</html>

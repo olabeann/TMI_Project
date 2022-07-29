@@ -9,7 +9,7 @@
     <meta name="description" content="A project that provides price data services." />
     <meta name="author" content="TMI" />
     <link rel="stylesheet" href="./src/styles/reset.css">
-    <link rel="stylesheet" href="./src/styles/style.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
@@ -19,58 +19,53 @@
 </head>
 
 <body>
-    <header class="header" display="none">
-        <!-- Navbar -->
-        <nav id="navbar__vers-green">
-            <div class="navbar__logo">
-                <a href="#">
-                    <img src="./src/assets/icons/jang_logo_green.png" alt="장비서 로고" class="logo__green">
+    <!-- Navbar -->
+    <nav id="navbar__vers-white">
+        <div class="navbar__logo">
+            <a href="#">
+                <img src="./src/assets/icons/jang_logo_white.png" alt="장비서 로고" class="logo__white" data-link="#home">
+
+            </a>
+        </div>
+        <ul class="navbar__menu">
+            <li class="navbar__main__item">
+                <button type="button" id="open" class="navbar__menu__login-btn underline">로그인</button>
+            </li>
+            <li class="navbar__main__item">
+                <a href="#" class="navbar__main__menu-btn">
+                    <span class="material-icons">menu</span>
                 </a>
-            </div>
-            <ul class="navbar__menu">
-                <li><a href="./ShoppingList.html" class="navbar__menu__item active">쇼핑 리스트</a></li>
-                <li><a href="#" class="navbar__menu__item">가계부 정리</a></li>
-                <li><a href="#" class="navbar__menu__item">오늘의 물가</a></li>
-                <li><a href="#" class="navbar__menu__item">회원가입</a></li>
-                <li><button type="button" id="open" class="navbar__menu__login-btn">로그인</button></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Title bar -->
-    <section id="titlebar">
-        <span class="tit__sub__txt">장보기 전, &nbsp</span>
-        <h1>마트 거리와 예상 금액 확인하기 🛒</h1>
-    </section>
+            </li>
+        </ul>
+    </nav>
 
-    <!-- Search Input -->
-    <!-- <div class="inputWithIcon">
-        <input type="text" placeholder="어느 마트를 들리실 예정인가요?">
-        <i class="material-icons">search</i>
-    </div> -->
-
-    <!-- Main Page -->
-    <section id="main" class="section">
-    </section>
-
-    <!-- Intro Page -->
-    <section id="intro" class="section">
-        <div class="section__container"></div>
-    </section>
-
-    <!-- Shopping List Page -->
-    <section id="shopping-list" class="section">
-    </section>
-
-    <!-- PriceData Page -->
-    <section id="price-data" class="section">
-    </section>
-
-    <!-- Account Book Page -->
-    <section id="account-book" class="section">
-    </section>
-
-    <!-- Mart Discount Info Page -->
-    <section id="mart-discount-info" class="section">
+    <!-- Home -->
+    <section id="slide-home" class="slide-home">
+        <div class="slide-home__container">
+            <h3 class="home__title">전월 대비 가장 저렴한 품목은</h3>
+            <h4 class="home__description">감자</h4>
+        </div>
+        <!-- Slide Nav -->
+        <div id="slide-navi" class="slide-navi">
+            <a id="slideNavi_prev" class="slideNavi_prev hover" href="#">
+                <div class="slideNavi_num"><span>#03</span></div>
+                <div class="slideNavi_title"><span>가계부 작성하기</span></div>
+                <div>
+                    <img src="./src/assets/images/btn-prev.png" alt="이전버튼 이미지" class="slideNavi_arrow">
+                </div>
+            </a>
+            <a id="slideNavi_next" class="slideNavi_next hover" href="#">
+                <div class="slideNavi_num"><span>#01</span></div>
+                <div class="slideNavi_title"><span>쇼핑리스트 작성하기</span></div>
+                <div>
+                    <img src="./src/assets/images/btn-next.png" alt="다음버튼 이미지" class="slideNavi_arrow">
+                </div>
+            </a>
+        </div>
+        <!-- About -->
+        <div>
+            <img src="./src/assets/images/btn-bottom.png" alt="하단버튼 이미지" class="slide_bottom" data-link="#about">
+        </div>
     </section>
 </body>
 

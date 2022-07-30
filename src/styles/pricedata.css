@@ -283,26 +283,31 @@ input[type='text']:focus {
 
 .notice-left{
   text-align: center;
-  margin-left: 30%;
+  margin-left: 18%;
   margin-bottom: 6%;
   }
 
 .notice-right{
   text-align: center;
-  margin-left: 30%;
+  margin-left: 18%;
   margin-bottom: 6%;
 }
 
+.notice{
+  font-size: x-large;
+  color:var(--color-font-grey);
+  font-weight: bold;
+}
 
 .notice-down{
   color: #0034ec;
-  font-size: x-large;
+  font-size: xx-large;
   font-weight: bold;
   }
 
 .notice-up{
   color: red;
-  font-size:x-large;
+  font-size:xx-large;
   font-weight: bold;
   }
 
@@ -314,6 +319,8 @@ input[type='text']:focus {
   box-sizing: border-box;
   margin: 20px 20px 10px 10px;
   text-align:center;
+  font-weight: bold;
+  color: var(--color-font-grey);
   }
 
 .list-right{
@@ -322,6 +329,8 @@ input[type='text']:focus {
   box-sizing: border-box;
   margin: 20px 20px 10px 10px;
   text-align:center;
+  font-weight: bold;
+  color: var(--color-font-grey);
 }
 
 .list-menu-down, .list-menu-up{
@@ -394,7 +403,8 @@ input[type='text']:focus {
   margin: 5px auto;
   display: flex;
   text-align: center;
-  color: var(--color-black);
+  color: var(--color-font-grey);
+  font-weight: bold;
   font-size: var(--font-regular);
   }
   .box-left:hover {
@@ -449,7 +459,8 @@ input[type='text']:focus {
     margin: 5px auto;
     display: flex;
     text-align: center;
-    color: var(--color-black);
+    color: var(--color-font-grey);
+    font-weight: bold;
     font-size: var(--font-regular);
     }
   .box-right:hover {

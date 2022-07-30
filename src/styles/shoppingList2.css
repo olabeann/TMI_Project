@@ -464,19 +464,15 @@ input[type='text']:focus {
   font-size: 13px;
   font-weight: var(--weight-regular);
   margin-bottom: 10px;
-  background-color: #fffcb6;
 }
 
 .pin-content__time .material-icons {
   margin-left: 14px;
-
-  background-color: #4cd492;
 }
 
 .time-tit {
   font-weight: 700;
   margin-right: 4px;
-  background-color: #0034ec;
 }
 
 .pin-content__price-tit {

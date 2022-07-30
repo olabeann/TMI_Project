@@ -73,7 +73,7 @@ button {
 /* Typography */
 
 h1 {
-  font-size: var(--font-large);
+  font-size: 70px;
   font-weight: var(--weight-bold);
   color: var(--color-black);
   margin: 16px 0px;
@@ -92,6 +92,9 @@ p {
   color: var(--color-black);
   margin: 4px 0;
 }
+span{
+  font-size: 30px;
+}
 * {
     font-family: 'Noto Sans KR', sans-serif;
     list-style: none;
@@ -109,6 +112,7 @@ div {
     align-items: center;
     justify-content: center;
 }
+
 
 .main-title {
     background-image:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(../assets/images/bg04.png);

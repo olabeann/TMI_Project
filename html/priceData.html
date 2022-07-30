@@ -8,7 +8,6 @@
     <title>장비서</title>
     <meta name="description" content="A project that provides price data services." />
     <meta name="author" content="TMI" />
-    <link rel="stylesheet" href="../src/styles/main.css">
     <link rel="stylesheet" href="../src/styles/reset.css">
     <link rel="stylesheet" href="../src/styles/pricedata.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +16,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="icon" type="image/png" href="../src/assets/icons/favicon.png" />
+    <script src="./src/js/pricedata.js"></script>
 </head>
 
 <body>
@@ -40,17 +40,19 @@
     <!-- Title bar -->
 
     <section id="titlebar">
-        <span class="tit__sub__txt">매일매일, &nbsp</span>
-        <h1>오늘의 물가 확인하기 🔍</h1>
+        <div id="titleText">
+            <span class="tit__sub__txt">매일매일,</span>
+            <h1>오늘의 물가 확인하기 🔍</h1>
+        </div>
+   
         <!-- Search Input -->
         <div class="inputWithIcon">
-            <input type="text" placeholder="어느 품목의 물가를 검색할까요?">
+            <input type="text" class="search-box" placeholder="어느 품목의 물가를 검색할까요?">
             <i class="material-icons">search</i>
         </div>
-
     </section>
-
-
+    
+    
     <!--Price-data page-->
     <section id="price-data" class="section">
 

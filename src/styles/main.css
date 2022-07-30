@@ -241,18 +241,23 @@ p {
   display: flex;
   justify-content: flex-start;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  padding: 40px;
   padding-top: 352px;
-  margin: auto;
-  /* 영상으로 할지, 이미지로 할지 정하기 */
-  /* 일단 이미지로 -> 나중에 배경만 오퍼레이 0.8 넣기 */
   background: url('../assets/images/bg0.jpg') center/cover no-repeat;
   text-align: center;
 }
 
+/* video {
+  max-width: 80%;
+  display: block;
+  margin: 20px auto;
+} */
+
 .slide-home__container {
   width: 1840px;
   margin: auto;
+  background-color: #0034ec;
 }
 
 .home__title {
@@ -271,10 +276,9 @@ p {
 
 /* Slide Nav */
 #slide-navi {
-  /* 위치 고정시키기 */
   display: flex;
   justify-content: center;
-  margin-top: 208px;
+  margin-top: 113px;
   text-align: center;
 }
 

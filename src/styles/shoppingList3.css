@@ -28,6 +28,7 @@
   /* Font weight */
   --weight-extra-bold: 800;
   --weight-bold: 700;
+  --weight-semibold:600;
   --weight-medium: 500;
   --weight-regular: 400;
   --weight-light: 300;
@@ -422,6 +423,7 @@ input[type='text']:focus {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  width: 363px;
   height: 108px;
   border: 2px solid var(--color-black);
   background-color: var(--color-white);
@@ -464,19 +466,15 @@ input[type='text']:focus {
   font-size: 13px;
   font-weight: var(--weight-regular);
   margin-bottom: 10px;
-  background-color: #fffcb6;
 }
 
 .pin-content__time .material-icons {
   margin-left: 14px;
-
-  background-color: #4cd492;
 }
 
 .time-tit {
   font-weight: 700;
   margin-right: 4px;
-  background-color: #0034ec;
 }
 
 .pin-content__price-tit {
@@ -492,3 +490,205 @@ input[type='text']:focus {
 .pin-content__price-cont {
   font-size: 15px;
 }
+/* Shoppinglist Page3 */
+/*Mart-result(price)*/
+
+/*shoppinglist main 시작*/
+.shoppinglist3_tit_box{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content:center;
+  margin:auto;
+  font-size : 40px;
+}
+
+.shoppinglist3_tit {
+  display: flex;
+}
+
+.shoppinglist3_priceList_title{
+  height:100%;
+}
+.shoppinglist3_priceList_title i{
+font-size:40px;
+}
+
+.shoppinglist3_tit_price {
+  color : var(--color-green);
+  font-weight: var(--weight-bold); 
+}
+
+
+/*shoppinglist table 시작*/
+.shoppinglist3_priceList_table .shoppinglist3_priceList_title{
+  width: 1500px;
+  height: 50px;
+  display: flex;  
+  font-size: 32px;
+  border-radius : 10px;
+  margin-bottom:25px;
+  margin-top:30px;
+}
+
+.shoppinglist3_priceList_title {
+  font-size : 28px;
+  font-weight: var(--weight-bold);
+  color : var(--color-font-grey)
+}
+
+.shoppinglist3_priceList_title >div {
+  margin-top: 5px;
+  height:57px;
+}
+
+.shoppinglist3_pricelist_box{
+  width: 1500px;
+  height: 50px;
+  margin: 10px auto;
+  display: flex;
+  background-color :#E1FFF0;  
+  font-size: 28px;
+  justify-content: center;
+  border-radius : 10px;
+  color: var(--color-font-grey);
+}
+
+.pricelist_first{
+  border: 1px;
+  width: 800px;
+  box-sizing: border-box;
+  margin-left:4%;
+  margin-top:0.7%;
+  text-align: left;
+}
+
+.pricelist_second{
+    border: 1px;
+    margin-left: 1%;
+    width:200px;
+    box-sizing: border-box;
+    margin-top:0.7%;
+    text-align:center;
+}
+.pricelist_third{
+  border: 1px;
+  margin-left: 1%;
+  width:250px;
+  box-sizing: border-box;
+  margin-top:0.7%;
+  text-align:center;
+}
+
+.pricelist_fourth{
+  border: 1px ;
+	margin-left: 1%;
+  margin-right: 2%;
+  width:250px;
+  box-sizing: border-box;
+  margin-top:0.7%;
+  text-align:center;
+}
+
+.shoppinglist3_subject {
+  font-weight: var(--weight-bold);
+  text-align:center;
+}
+
+.shoppinglist3_class {
+  font-weight: var(--weight-light);
+  font-size:24px;
+  text-align:center;
+}
+
+.shoppinglist3_kind {
+  font-weight: var(--weight-light);
+  font-size:24px;
+  text-align:center;
+}
+
+.shoppinglist3_quantity {
+  font-weight: var(--weight-regular);
+  text-align:center;
+}
+
+.shoppinglist3_sub_text {
+  margin-top: 80px; 
+  font-size:33px;
+  display: flex;
+  justify-content: center;
+}
+
+.shoppinglist3_sub_text > .shoppinglist3_sub_text_avg {
+  display: flex;
+  background-color: var(--color-yellow);
+  color: #FF5858;
+  font-weight: var(--weight-extra-bold);
+  font-size: 40px;
+  line-height: 30px;
+}
+
+.shoppinglist3_sub_text2 {
+  margin-top: 20px;
+  font-size: 33px;
+  display: flex;
+  justify-content: center;
+  color: var(--color-font-grey);
+}
+
+.shoppinglist3_sub_text_mart {
+  background-color: var(--color-yellow);
+  font-weight: var(--weight-bold);
+}
+
+.shoppinglist3_sub_text2_group {
+  display: flex;
+  background-color: var(--color-yellow);
+  color: #FF5858;
+  font-weight: var(--weight-extra-bold);
+  font-size: 40px;
+  line-height: 30px;
+}
+
+.shoppinglist3_martprice {
+  font-weight: var(--weight-semibold);
+}
+
+.shoppinglist3_avg_price {
+  font-weight: var(--weight-semibold);
+}
+
+/* .shoppinglist3_textbox{
+  display: flex;
+} */
+
+.jang_textbox{
+  margin-left: -100px;
+  width: 1200px;
+}
+
+.shoppinglist3_jang_textbox{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.shoppinglist3_jang_text {
+  margin-top: 190px;
+  margin-bottom: 300px;
+  margin-left: -760px;
+  font-size : 35px;
+  font-weight: var(--weight-regular);
+  color: var(--color-font-grey);
+}
+
+.shoppinglist3_sub_differ_price {
+  color : #FF5858;
+  font-weight: var(--weight-bold);
+}
+
+.shoppinglist3_recomm_product {
+  font-weight: var(--weight-bold);
+}
+
+

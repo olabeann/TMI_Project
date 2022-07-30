@@ -1,0 +1,52 @@
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+    color: #000;
+}
+
+div {
+    height: 1080px;
+    width: 1980px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-title {
+    background-image:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(../assets/images/bg04.png);
+    background-size: cover;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    
+}
+.main-title > h1,span {
+    color: #ffffff;
+}
+
+.main-page2 > div{
+    margin-top: 50px;
+    width: 1300px;
+    display: flex;
+    flex-direction: column;
+}
+.sub-title{
+    font-size: 25px;
+    width: 800px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.info > img {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 10px;
+}
+.sub-title> h3> img{
+    max-width: 100px;
+    max-height: 70px;
+}

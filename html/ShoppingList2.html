@@ -8,15 +8,14 @@
     <title>장비서</title>
     <meta name="description" content="A project that provides price data services." />
     <meta name="author" content="TMI" />
-    <link rel="stylesheet" href="./src/styles/reset.css">
-    <link rel="stylesheet" href="./src/styles/shoppingList2.css">
+    <link rel="stylesheet" href="../src/styles/reset.css">
+    <link rel="stylesheet" href="../src/styles/shoppingList2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="icon" type="image/png" href="./src/assets/icons/favicon.png" />
-    <script src="./src/js/components/shoppingList2.js" defer></script>
+    <link rel="icon" type="image/png" href="../src/assets/icons/favicon.png" />
 </head>
 
 <body>
@@ -25,13 +24,13 @@
         <nav id="navbar__vers-green">
             <div class="navbar__logo">
                 <a href="#">
-                    <img src="./src/assets/icons/jang_logo_green.png" alt="장비서 로고" class="logo__green">
+                    <img src="../src/assets/icons/jang_logo_green.png" alt="장비서 로고" class="logo__green">
                 </a>
             </div>
             <ul class="navbar__menu">
-                <li><a href="#" class="navbar__menu__item active">쇼핑 리스트</a></li>
+                <li><a href="/html/ShoppingList.html" class="navbar__menu__item active">쇼핑 리스트</a></li>
+                <li><a href="/html/priceData.html" class="navbar__menu__item">오늘의 물가</a></li>
                 <li><a href="#" class="navbar__menu__item">가계부 정리</a></li>
-                <li><a href="#" class="navbar__menu__item">오늘의 물가</a></li>
                 <li><a href="#" class="navbar__menu__item">회원가입</a></li>
                 <li><button type="button" id="open" class="navbar__menu__login-btn">로그인</button></li>
             </ul>
@@ -46,7 +45,7 @@
 
     <!-- Shopping List Page 2-->
     <section id="shopping-list" class="section">
-        <h2 class="sr-only">쇼핑리스트 마트찾기 지도페이지</h2>
+        <h2 class="sr-only">쇼핑리스트2 페이지</h2>
         <!-- Search Form -->
         <div class="shopping-list__list-container">
             <div class="inputWithIcon">
@@ -93,7 +92,7 @@
                             <a href="#쇼핑리스트3">구체적인 <strong style="color: #fffcb6; font-weight: 600;">예산
                                     체크</strong>하기</a>
                         </div>
-                        <img src="./src/assets/images/click!.png" alt="클릭 문구 이미지" class="item-star">
+                        <img src="../src/assets/images/click!.png" alt="클릭 문구 이미지" class="item-star">
                     </article>
                 </li>
                 <li class="shopping-list__mart-info">
@@ -115,7 +114,7 @@
                             <a href="#쇼핑리스트3">구체적인 <strong style="color: #fffcb6; font-weight: 600;">예산
                                     체크</strong>하기</a>
                         </div>
-                        <img src="./src/assets/images/click!.png" alt="클릭 문구 이미지" class="item-star">
+                        <img src="../src/assets/images/click!.png" alt="클릭 문구 이미지" class="item-star">
                     </article>
                 </li>
                 <li class="shopping-list__mart-info">
@@ -137,7 +136,7 @@
                             <a href="#쇼핑리스트3">구체적인 <strong style="color: #fffcb6; font-weight: 600;">예산
                                     체크</strong>하기</a>
                         </div>
-                        <img src="./src/assets/images/click!.png" alt="클릭 문구 이미지" class="item-star">
+                        <img src="../src/assets/images/click!.png" alt="클릭 문구 이미지" class="item-star">
                     </article>
                 </li>
             </ul>
@@ -147,7 +146,7 @@
         <div class="shopping-list__map-container">
             <div class="shopping-list__pin-card">
                 <div id="clickPin" class="shopping-list__pin-img">
-                    <img src="./src/assets/icons/pinpoint.png" alt="지도 핀포인트 아이콘" class="pin-img" />
+                    <img src="../src/assets/icons/pinpoint.png" alt="지도 핀포인트 아이콘" class="pin-img" />
                 </div>
                 <div id="pinContent" class="pin-content">
                     <div class="pin-content__container">
@@ -176,7 +175,7 @@
             </div>
             <div class="shopping-list__pin-card">
                 <div class="shopping-list__pin-img">
-                    <img src="./src/assets/icons/pinpoint.png" alt="지도 핀포인트 아이콘" class="pin-img" />
+                    <img src="../src/assets/icons/pinpoint.png" alt="지도 핀포인트 아이콘" class="pin-img" />
                 </div>
                 <div class="pin-content">
                     <div class="pin-content__container">
@@ -205,7 +204,7 @@
             </div>
             <div class="shopping-list__pin-card">
                 <div class="shopping-list__pin-img">
-                    <img src="./src/assets/icons/pinpoint.png" alt="지도 핀포인트 아이콘" class="pin-img" />
+                    <img src="../src/assets/icons/pinpoint.png" alt="지도 핀포인트 아이콘" class="pin-img" />
                 </div>
                 <div class="pin-content">
                     <div class="pin-content__container">

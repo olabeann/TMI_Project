@@ -36,7 +36,7 @@ app.engine('html', require('ejs').renderFile); // html 파일을 쓸 건데, 'ej
 
 // 뷰페이지 호출하기
 app.get('/', function (req, res) {  // 라우터 코드
-    res.render('main.html')        // main.html 파일을 불러오기 위해 render 명령어를 사용한다.
+    res.render('index.html')        // main.html 파일을 불러오기 위해 render 명령어를 사용한다.
 });
 
 app.get('/mainnav', function (req, res) {  // 라우터 코드

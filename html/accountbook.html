@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장비서</title>
+    <meta name="description" content="A project that provides price data services." />
+    <meta name="author" content="TMI" />
+    <link rel="stylesheet" href="../src/styles/main.css">
+    <link rel="stylesheet" href="../src/styles/reset.css">
+    <link rel="stylesheet" href="../src/styles/accountbook.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/png" href="../src/assets/icons/favicon.png" />
+</head>
+
+<body>
+    <header class="header" display="none">
+        <!-- Navbar -->
+        <nav id="navbar__vers-green">
+            <div class="navbar__logo">
+                <a href="/">
+                    <img src="../src/assets/icons/jang_logo_green.png" alt="장비서 로고" class="logo__green">
+                </a>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="#쇼핑리스트" class="navbar__menu__item">쇼핑 리스트</a></li>
+                <li><a href="#오늘의 물가" class="navbar__menu__item">오늘의 물가</a></li>
+                <li><a href="#가계부 정리" class="navbar__menu__item  active">가계부 정리</a></li>
+                <li><a href="#회원가입" class="navbar__menu__item">회원가입</a></li>
+                <li><button type="button" id="open" class="navbar__menu__login-btn">로그인</button></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Title bar -->
+
+    <section id="titlebar">
+        <div id="titleText">
+            <span class="tit__sub__txt">장보기 후,</span>
+            <h1> 가계부 작성하기 🧾</h1>
+        </div>
+   
+        <!-- Search Input -->
+        <div class="inputWithIcon">
+            <input type="text" class="search-box" placeholder="어느 품목의 물가를 검색할까요?">
+            <i class="material-icons">search</i>
+        </div>
+    </section>
+
+
+    <!--accountbook page-->
+    <section id="accountbook" class="section">
+        <div class="accountbook">
+            <div class="accountbook_left">
+                1
+            </div>
+            <div class="accountbook_right">
+                2
+            </div>
+        </div>
+    </section>
+</body>
+</html>

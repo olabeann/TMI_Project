@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /* Global */
 :root {
   /* Color */
@@ -11,11 +12,11 @@
   --color-dark-blue: #0034ec;
   --color-light-red: #fbc3c3;
   --color-red: #eb7767;
+  --color-regular-red: #e74c3c;
   --color-dark-red: #e10000;
-  --color-grey: #eeeeee;
+  --color-grey: #d9d9d9;
   --color-font-grey: #585858;
   --color-black: #231816;
-
 
   /* Font size */
   --font-large: 40px;
@@ -32,14 +33,53 @@
   --weight-light: 300;
 
   /* Size */
-  --btn-border-radius: 6px;
+  --btn-border-radius: 10px;
   --input-border-radius: 10px;
   --shopping-list-border-radius: 10px;
-  --map-border-radius: 10px;
+  --map-border-radius: 20px;
   --price-list-border-radius: 30px;
 
   /* Animation */
   /* --animation-duration: 300ms; */
+}
+
+/* Icon - Google Material icons */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(path/to/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'), local('MaterialIcons-Regular'),
+    url(path/to/MaterialIcons-Regular.woff2) format('woff2'),
+    url(path/to/MaterialIcons-Regular.woff) format('woff'),
+    url(path/to/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+/* Utility */
+/* 스크린 리더 전용 */
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* 한줄 말줄임 */
+.sl-ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 둘줄 말줄임 */
+.multi-ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 /* Universal tags*/
@@ -73,9 +113,9 @@ button {
 /* Typography */
 
 h1 {
-  font-size: 70px;
+  font-size: var(--font-large);
   font-weight: var(--weight-bold);
-  color: var(--color-black);
+  color: var(--color-white);
   margin: 16px 0px;
 }
 
@@ -92,52 +132,151 @@ p {
   color: var(--color-black);
   margin: 4px 0;
 }
-span{
+
+/* (1920x1080) Full HD Display */
+/* Header */
+/* .header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100vw;
+  height: 150px;
+  margin: auto;
+  background-color: transparent;
+} */
+
+/* Navbar */
+#navbar__vers-white {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1820px;
+  height: 100px;
+  background-color: transparent;
+  margin: 50px 50px 0 50px;
+}
+
+.logo__white {
+  width: auto;
+  height: 78px;
+}
+
+.navbar__menu {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar__main__item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 35px;
+  font-size: 23px;
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.navbar__menu__login-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 43px;
+  font-size: 23px;
+  color: var(--color-white);
+}
+
+.navbar__main__menu-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 43px;
+  font-size: var(--font-medium);
+}
+
+.navbar__main__menu-btn .material-icons {
+  font-size: 60px;
+}
+
+/* Greeting */
+.navbar__modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.navbar__modal {
+  background-color: var(--color-white);
+  padding: 24px 16px;
+  border-radius: 4px;
+  width: 320px;
+  height: 100px;
+}
+
+.navbar__modal-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Home */
+.slide-home {
+  display: flex;
+  flex-direction: column;
+}
+
+#slide-home {
+  display: flex;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 100vh;
+  padding: 40px;
+  padding-top: 352px;
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/assets/images/bg04.png') center/cover no-repeat;
+  text-align: center;
+}
+.slide-home > div{
+ margin-top: 100px;
+}
+.slide-home > div> span{
   font-size: 30px;
+  color: var(--color-white);
 }
-* {
-    font-family: 'Noto Sans KR', sans-serif;
-    list-style: none;
-    text-decoration: none;
-    border-collapse: collapse;
-    margin: 0px;
-    padding: 0px;
-    color: #000;
-}
-
-div {
-    width: 1920px;
-    height: 1080px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.main-title {
-    background-image:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(../assets/images/bg04.png);
-    background-size: cover;
-    position: sticky;
-    display: flex;
-    flex-direction: column;
-    
-}
-.main-title > h1,span {
-    color: #ffffff;
-}
-
-.main-page2 > div{
-    margin-top: 50px;
-    width: 1300px;
-    display: flex;
-    flex-direction: column;
+.main-page2{
+  width: 1920px;
+  height: 1080px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .sub-title{
+  margin-top: 50px;
     font-size: 25px;
-    width: 800px;
-    height: 300px;
     display: flex;
     flex-direction: column;
+    text-align: center;
+}
+
+.info{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+.info > p {
+  font-size: 25px;
 }
 .info > img {
     max-width: 150px;

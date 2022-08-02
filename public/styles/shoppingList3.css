@@ -28,7 +28,6 @@
   /* Font weight */
   --weight-extra-bold: 800;
   --weight-bold: 700;
-  --weight-semibold:600;
   --weight-medium: 500;
   --weight-regular: 400;
   --weight-light: 300;
@@ -423,7 +422,6 @@ input[type='text']:focus {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 363px;
   height: 108px;
   border: 2px solid var(--color-black);
   background-color: var(--color-white);
@@ -490,6 +488,7 @@ input[type='text']:focus {
 .pin-content__price-cont {
   font-size: 15px;
 }
+
 /* Shoppinglist Page3 */
 /*Mart-result(price)*/
 

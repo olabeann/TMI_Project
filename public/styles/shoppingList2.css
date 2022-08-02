@@ -390,6 +390,10 @@ input[type='text']:focus {
 }
 
 /* Mart Map */
+/* map #map {
+  width: 1000px;
+  height: 635px;
+} */
 .shopping-list__map-container {
   display: flex;
   flex-direction: column;

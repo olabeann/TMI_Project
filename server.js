@@ -130,19 +130,33 @@ app.get('/pricedatadetail', function (req, res) {
   });
 });
 
+// 쇼핑리스트 페이지
 app.get('/shoppinglist', function (req, res) {
   // 라우터 코드
-  res.render('ShoppingList.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
+  res.render('shoppingList.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
 });
 
-app.get('/shoppinglistmap', function (req, res) {
+app.get('/shoppinglist1-1', function (req, res) {
   // 라우터 코드
-  res.render('ShoppingList2.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList2.html 가 웹 브라우저에 표시된다.
+  res.render('shoppingList1-1.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
 });
 
-app.get('/shoppinglistmart', function (req, res) {
+app.get('/shoppinglist1-2', function (req, res) {
   // 라우터 코드
-  res.render('ShoppingList3.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList3.html 가 웹 브라우저에 표시된다.
+  res.render('shoppingList1-2.html', {}); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
+});
+
+app.get('/shoppinglist2', function (req, res) {
+  // 라우터 코드
+  var martTitle = req.query;
+  var martTitle2 = Object.keys(martTitle);
+  console.log(martTitle2);
+  res.render('shoppingList2', { list: martTitle2 }); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList2.html 가 웹 브라우저에 표시된다.
+});
+
+app.get('/shoppinglist3', function (req, res) {
+  // 라우터 코드
+  res.render('shoppingList3.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
 });
 
 app.get('/accountbook', function (req, res) {

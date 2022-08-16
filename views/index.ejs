@@ -279,6 +279,54 @@
         }
         getClock();
         setInterval(getClock, 1000);
+
+
+        // Greeting
+        const modalOpen = document.querySelector("#open");
+        const loginForm = document.querySelector("#login-form");
+        const loginInput = document.querySelector("#login-form input");
+        const greeting = document.querySelector("#greeting");
+        const modalClose = document.querySelector(".modal-container");
+
+
+        // Modal
+        const close = document.getElementById("close");
+        const modal = document.querySelector(".modal-container");
+
+        modalOpen.onclick = () => {
+            modal.style.display = "flex";
+        };
+
+        close.onclick = () => {
+            modal.style.display = "none";
+        };
+
+        const HIDDEN_CLASSNAME = "hidden";
+        const USERNAME_KEY = "username";
+
+        function onLoginSubmit(event) {
+            event.preventDefault();
+            modalOpen.classList.add(HIDDEN_CLASSNAME);
+            modalClose.style.display = "none";
+            const username = loginInput.value;
+            localStorage.setItem(USERNAME_KEY, username);
+            paintGreetings(username);
+        }
+
+        function paintGreetings(username) {
+            greeting.innerText = `안녕하세요, ${username} 님😊`;
+            greeting.classList.remove(HIDDEN_CLASSNAME);
+        }
+
+        const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+        if (savedUsername === null) {
+            modalOpen.classList.remove(HIDDEN_CLASSNAME);
+            loginForm.addEventListener("submit", onLoginSubmit);
+        } else {
+            modalOpen.style.display = "none";
+            paintGreetings(savedUsername);
+        }
     </script>
 </body>
 

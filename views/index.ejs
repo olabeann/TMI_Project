@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장비서</title>
+    <meta name="description" content="A project that provides price data services." />
+    <meta name="author" content="TMI" />
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
+</head>
+
+<body>
+    <header id="header">
+        <!-- Logo -->
+        <a href="/" class="brand">
+            <img src="/assets/icons/jang_logo_white.png" alt="장비서 로고">
+        </a>
+        <div class="wrap">
+            <!-- Login -->
+            <div class="navbar-login">
+                <button type="button" id="open">Log In</button>
+                <div class="modal-container" style="display: none;">
+                    <div class="modal">
+                        <form id="login-form">
+                            <strong>어서오세요🤗</strong>
+                            <p>장비서 입니다!</p>
+                            <input required maxlength="15" type="text" placeholder="What is your name?" />
+                            <button type="submit" value="Log In">시작하기</button>
+                        </form>
+                        <button id="close"><i class="material-icons">close</i></button>
+                    </div>
+                </div>
+                <p class="hidden" id="greeting"></p>
+            </div>
+            <!-- Navbar -->
+            <button id="btn" class="hamburger">
+                <i class="material-icons">menu</i>
+            </button>
+            <div id="menu" class="menu">
+                <div class="container">
+                    <nav>
+                        <ul>
+                            <li><a href="/shoppinglist">쇼핑리스트</a></li>
+                            <li><a href="/pricedata">오늘의 물가</a></li>
+                            <li><a href="/accountbook">가계부</a></li>
+                            <li><a href="#">Contact TMI</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+    </header>
+
+    <!-- Home -->
+    <section id="slide-home" class="home">
+        <!-- videos -->
+        <video class="video-slide active" src="/assets/videos/2.mp4" muted autoplay loop></video>
+        <video class="video-slide" src="/assets/videos/4.mp4" muted autoplay loop></video>
+        <video class="video-slide" src="/assets/videos/3.mp4" muted autoplay loop></video>
+        <video class="video-slide" src="/assets/videos/5.mp4" muted autoplay loop></video>
+
+        <div class="main-page">
+            <!-- contents -->
+            <div class="page-container">
+                <div class=" home-content active">
+                    <div class="page-price-container">
+                        <!-- Clock -->
+                        <h2 id="clock"></h2>
+                        <div class="item-content">
+                            <div class="item-name">
+                                사과
+                                <!-- <%=rows[54].item_name %> -->
+                                <%=rows[54].unit %>
+                            </div>
+                            <div class="item-desc">의 가격은</div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-price">
+                                <%=rows[54].dpr1 %>
+                            </div>
+                            <div class="item-desc">원 입니다.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-content">
+                    <div class="slidePages">
+                        <div class="page-info">
+                            <div class="page-header">
+                                <div class="page-num">#01</div>
+                                <div class="page-category">쇼핑리스트</div>
+                            </div>
+                            <div class="page-title">장보기 전, <strong>쇼핑 리스트 작성</strong></div>
+                            <div class="page-description">
+                                <span>이 페이지는 장보기 전 필요한 상품을 적고 사려는 상품의 물가를 사전에 보여줍니다.</span>
+                                <span>이곳에 장보기 전 쇼핑 리스트를 작성하는 페이지에 대한 설명을 작성합니다.</span>
+                            </div>
+                        </div>
+                        <a href="/shoppinglist" class="page-link">GO</a>
+                    </div>
+                </div>
+                <div class="home-content">
+                    <div class="slidePages">
+                        <div class="page-info">
+                            <div class="page-header">
+                                <div class="page-num">#02</div>
+                                <div class="page-category">오늘의 물가</div>
+                            </div>
+                            <div class="page-title">매일 매일, <strong>농수산물 실시간 물가 제공</strong></div>
+                            <div class="page-description">
+                                <span>이 페이지는 일별 농수산물의 물가를 제공하는 서비스입니다.</span>
+                                <span>이곳에 농수산물 실시간 물가 제공 페이지에 대한 설명을 작성합니다.</span>
+                            </div>
+                        </div>
+                        <a href="/pricedata" class="page-link">GO</a>
+                    </div>
+                </div>
+                <div class="home-content">
+                    <div class="slidePages">
+                        <div class="page-info">
+                            <div class="page-header">
+                                <div class="page-num">#03</div>
+                                <div class="page-category">가계부</div>
+                            </div>
+                            <div class="page-title">장보기 후, <strong>영수증을 찍어 가계부 관리</strong></div>
+                            <div class="page-description">
+                                <span>이 페이지는 장본 후 영수증을 찍어 손쉽게 가계부를 관리해주는 서비스입니다.</span>
+                                <span>이곳에 영수증ocr 가계부 페이지에 대한 설명을 작성합니다.</span>
+                            </div>
+                        </div>
+                        <a href="/accountbook" class="page-link">GO</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shere links -->
+            <div class="media-icons">
+                <button onclick="copy()"><i class="material-icons">link</i></button>
+                <a href="#"><i class="material-icons">insights</i></a>
+            </div>
+
+            <!-- Slide toggle button -->
+            <div class="slider-navigation">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+
+            <!-- Slide down button -->
+            <button class="bottom-btn">
+                <img src="/assets/images/btn-bottom.png" alt="하단버튼 이미지" class="slide_bottom" data-link="#slide-about">
+            </button>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="slide-about" class="about">
+        <div class="info-bg">
+            <div class="info-txt">
+                <h1>장비서의 미션</h1>
+                <h2>당신의 장보기에 물가를 더해줄 시간.</h2>
+                <h2>"장비서"가 여러분들의 장보는 모든 과정을 함께 할게요 :)</h2>
+            </div>
+        </div>
+        <div class="about-container">
+            <div class="content">
+                <div class="sub-title">
+                    <img class="text-img" src="/assets/icons/jang_logo_word.png" alt="장비서 이름 이미지" />
+                    <h4>와 함께 <p class="underline">쇼핑 체크리스크를 작성</p>하세요 !</h4>
+                </div>
+                <div class="desc">
+                    <img class="logo-img" src="/assets/icons/jang face logo.png" alt="장비서 얼굴 로고" />
+                    <div class="speech-wrap">
+                        <div class="speech-img">
+                            <img src="/assets/icons/textbox-left.png" alt="말주머니 이미지" />
+                        </div>
+                        <div class="speech-txt">
+                            <p>혹시 종이와 펜, 들고 다니면서 장보고 계시나요?<br><br>
+                                메모장 어플에, 나와의 카톡에, 장 보기 목록 적고 계신가요?<br><br>
+                                장보기 전, 사고 싶은 품목 기입하고 예산까지 정리해드릴게요.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="sub-title">
+                    <img class="text-img" src="/assets/icons/jang_logo_word.png" alt="장비서 이름 이미지" />
+                    <h4>와 함께 <p class="underline">오늘의 물가를 확인</p>하세요 !</h4>
+                </div>
+                <div class="desc">
+                    <div class="speech-wrap">
+                        <div class="speech-img">
+                            <img src="/assets/icons/textbox-right.png" alt="말주머니 이미지" />
+                        </div>
+                        <div class="speech-txt-right">
+                            <p>오늘은 사과가 얼마인지 궁금하신가요?<br><br>
+                                물가 정보를 매일 검색하기 힘드셨나요?<br><br>
+                                장보기 전, 편리하게 물가를 확인해보세요.
+                            </p>
+                        </div>
+                    </div>
+                    <img class="logo-img" src="/assets/icons/jang face logo.png" alt="장비서 얼굴 로고" />
+                </div>
+            </div>
+            <div class="content">
+                <div class="sub-title">
+                    <img class="text-img" src="/assets/icons/jang_logo_word.png" alt="장비서 이름 이미지" />
+                    <h4>와 함께 <p class="underline">가계부를 작성</p>하세요 !</h4>
+                </div>
+                <div class="desc">
+                    <img class="logo-img" src="/assets/icons/jang face logo.png" alt="장비서 얼굴 로고" />
+                    <div class="speech-wrap">
+                        <div class="speech-img">
+                            <img src="/assets/icons/textbox-left.png" alt="말주머니 이미지" />
+                        </div>
+                        <div class="speech-txt">
+                            <p>가계부를 직접 작성하기 귀찮지 않으신가요?<br><br>
+                                장보기 후, 영수증을 찍어 편리하게 가계부를 작성해보세요.<br><br>
+                                월별 소비 내역을 관리하는 습관을 만들 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arrow up -->
+    <button class="arrow-up">
+        <i class="material-icons">arrow_upward</i>
+    </button>
+
+    <script>
+        // header
+        const header = document.querySelector('#header');
+        const headerHeight = header.getBoundingClientRect().height;
+        document.addEventListener('scroll', () => {
+            console.log(window.scrollY);
+            console.log(`headerHeight: ${headerHeight}`);
+            if (window.scrollY > headerHeight) {
+                header.classList.add('header-dark');
+            } else {
+                header.classList.remove('header-dark');
+            }
+        });
+
+        // Navbar
+        const btn = document.getElementById("btn");
+        const menu = document.getElementById("menu");
+        const container = document.querySelector(".container");
+
+        btn.addEventListener('click', function () {
+            btn.classList.toggle("close");
+            menu.classList.toggle("collapsed");
+            container.classList.toggle("opacity");
+        });
+
+        // Clock
+        const clock = document.querySelector("h2#clock");
+        function getClock() {
+            const date = new Date();
+            const year = String(date.getFullYear()).padStart(2, "0");
+            const month = String(date.getMonth() + 1);
+            const day = String(date.getDate()).padStart(2, "0");
+            // const hours = String(date.getHours()).padStart(2, "0");
+            // const minutes = String(date.getMinutes()).padStart(2, "0");
+            // const seconds = String(date.getSeconds()).padStart(2, "0");
+            clock.innerText = `${year}년 ${month}월 ${day}일`;
+        }
+        getClock();
+        setInterval(getClock, 1000);
+
+
+        // Greeting
+        const modalOpen = document.querySelector("#open");
+        const loginForm = document.querySelector("#login-form");
+        const loginInput = document.querySelector("#login-form input");
+        const greeting = document.querySelector("#greeting");
+        const modalClose = document.querySelector(".modal-container");
+
+
+        // Modal
+        const close = document.getElementById("close");
+        const modal = document.querySelector(".modal-container");
+
+        modalOpen.onclick = () => {
+            modal.style.display = "flex";
+        };
+
+        close.onclick = () => {
+            modal.style.display = "none";
+        };
+
+        const HIDDEN_CLASSNAME = "hidden";
+        const USERNAME_KEY = "username";
+
+        function onLoginSubmit(event) {
+            event.preventDefault();
+            modalOpen.classList.add(HIDDEN_CLASSNAME);
+            modalClose.style.display = "none";
+            const username = loginInput.value;
+            localStorage.setItem(USERNAME_KEY, username);
+            paintGreetings(username);
+        }
+
+        function paintGreetings(username) {
+            greeting.innerText = `안녕하세요, ${username} 님😊`;
+            greeting.classList.remove(HIDDEN_CLASSNAME);
+        }
+
+        const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+        if (savedUsername === null) {
+            modalOpen.classList.remove(HIDDEN_CLASSNAME);
+            loginForm.addEventListener("submit", onLoginSubmit);
+        } else {
+            modalOpen.style.display = "none";
+            paintGreetings(savedUsername);
+        }
+
+        // movedown button
+        const bottomMenu = document.querySelector('.bottom-btn');
+        bottomMenu.addEventListener('click', (event) => {
+            const target = event.target;
+            const link = target.dataset.link;
+            if (link == null) {
+                return;
+            }
+            scrollIntoView(link);
+        });
+
+        function scrollIntoView(selector) {
+            const scrollTo = document.querySelector(selector);
+            scrollTo.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Show arrow up
+        const arrowUp = document.querySelector('.arrow-up');
+        document.addEventListener('scroll', () => {
+            if (window.scrollY > headerHeight / 2) {
+                arrowUp.classList.add('visible');
+            } else {
+                arrowUp.classList.remove('visible');
+            }
+        });
+
+        // Handle click on the arrow up
+        arrowUp.addEventListener('click', () => {
+            scrollIntoView('#slide-home');
+        });
+
+        // Js for Video slider
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".home-content");
+
+        const sliderNav = function (manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+
+        // url copy
+        function copyToClipboard(val) {
+            const t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = val;
+            t.select();
+            document.execCommand('copy');
+            document.body.removeChild(t);
+        }
+        function copy() {
+            copyToClipboard('localhost:3000');
+            alert('Copied!');
+            console.log('Copied!');
+        }
+    </script>
+</body>
+
+</html>

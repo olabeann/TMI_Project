@@ -1,11 +1,10 @@
 // npm install express --save 명령어를 통해 서버 설치에 필요한 모듈을 설치한다.
 
-
-const express = require("express"); // require 를 통해 설치한 모듈(express)을 가져온다.
-const nodemon = require("nodemon");
+const express = require('express'); // require 를 통해 설치한 모듈(express)을 가져온다.
+const nodemon = require('nodemon');
 const app = express();
 
-app.use(express.static("public")); // css를 적용시키기 위해 정적 폴더)를 지정해준다.
+app.use(express.static('public')); // css를 적용시키기 위해 정적 폴더)를 지정해준다.
 // app.use(express.static(__dirname + "public"));
 
 //server 를 띄울꺼니까 server 라는 변수를 만들고
@@ -65,21 +64,21 @@ app.get('/', function (req, res) {
 
       parsered_data = result.document.price[0].item;
     });
-    res.render('index', { rows: parsered_data });
+    res.render('index.ejs', { rows: parsered_data });
   });
 });
 
 // 물가 페이지
-var request = require("request");
+var request = require('request');
 var options = {
-  method: "GET",
-  url: "https://www.kamis.or.kr/service/price/xml.do?action=dailySalesList&p_cert_key=test&p_cert_id=test&p_returntype=xml",
+  method: 'GET',
+  url: 'https://www.kamis.or.kr/service/price/xml.do?action=dailySalesList&p_cert_key=test&p_cert_id=test&p_returntype=xml',
   headers: {},
 };
 
-var xml2js = require("xml2js");
+var xml2js = require('xml2js');
 
-app.get("/pricedata", function (req, res) {
+app.get('/pricedata', function (req, res) {
   // 라우터 코드
   request(options, function (error, response) {
     if (error) throw new Error(error);
@@ -96,23 +95,23 @@ app.get("/pricedata", function (req, res) {
       parsered_data = result.document.price[0].item;
     });
 
-    res.render("priceData", { rows: parsered_data });
+    res.render('priceData', { rows: parsered_data });
 
     // res.render("priceData"); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  priceData.html 가 웹 브라우저에 표시된다.
   });
 });
 
-var request = require("request");
+var request = require('request');
 var options = {
-  method: "GET",
-  url: "https://www.kamis.or.kr/service/price/xml.do?action=dailySalesList&p_cert_key=test&p_cert_id=test&p_returntype=xml",
+  method: 'GET',
+  url: 'https://www.kamis.or.kr/service/price/xml.do?action=dailySalesList&p_cert_key=test&p_cert_id=test&p_returntype=xml',
   headers: {},
 };
 
-var xml2js = require("xml2js");
-const { response, body } = require("express");
+var xml2js = require('xml2js');
+const { response, body } = require('express');
 
-app.get("/pricedatadetail", function (req, res) {
+app.get('/pricedatadetail', function (req, res) {
   var item_name = req.query.item_name;
   var unit = req.query.unit;
   var today = req.query.today;
@@ -121,7 +120,7 @@ app.get("/pricedatadetail", function (req, res) {
   var year = req.query.year;
 
   console.log(response);
-  res.render("detailprice", {
+  res.render('detailprice', {
     item_name: item_name,
     unit: unit,
     today: today,
@@ -131,32 +130,32 @@ app.get("/pricedatadetail", function (req, res) {
   });
 });
 
-app.get("/shoppinglist", function (req, res) {
+app.get('/shoppinglist', function (req, res) {
   // 라우터 코드
-  res.render("ShoppingList.html"); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
+  res.render('ShoppingList.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
 });
 
-app.get("/shoppinglistmap", function (req, res) {
+app.get('/shoppinglistmap', function (req, res) {
   // 라우터 코드
-  res.render("ShoppingList2.html"); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList2.html 가 웹 브라우저에 표시된다.
+  res.render('ShoppingList2.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList2.html 가 웹 브라우저에 표시된다.
 });
 
-app.get("/shoppinglistmart", function (req, res) {
+app.get('/shoppinglistmart', function (req, res) {
   // 라우터 코드
-  res.render("ShoppingList3.html"); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList3.html 가 웹 브라우저에 표시된다.
+  res.render('ShoppingList3.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList3.html 가 웹 브라우저에 표시된다.
 });
 
-app.get("/accountbook", function (req, res) {
+app.get('/accountbook', function (req, res) {
   // 라우터 코드
-  res.render("accountbook.html"); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  accountbook.html 가 웹 브라우저에 표시된다.
+  res.render('accountbook.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  accountbook.html 가 웹 브라우저에 표시된다.
 });
 
-app.get("/signin", function (req, res) {
+app.get('/signin', function (req, res) {
   // 라우터 코드
-  res.render("signin.html"); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  signin.html 가 웹 브라우저에 표시된다.
+  res.render('signin.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  signin.html 가 웹 브라우저에 표시된다.
 });
 
-app.get("/login", function (req, res) {
+app.get('/login', function (req, res) {
   //
-  res.render("login.html");
+  res.render('login.html');
 });

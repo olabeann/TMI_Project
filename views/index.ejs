@@ -343,6 +343,21 @@
             const scrollTo = document.querySelector(selector);
             scrollTo.scrollIntoView({ behavior: 'smooth' });
         }
+
+        // Show arrow up
+        const arrowUp = document.querySelector('.arrow-up');
+        document.addEventListener('scroll', () => {
+            if (window.scrollY > headerHeight / 2) {
+                arrowUp.classList.add('visible');
+            } else {
+                arrowUp.classList.remove('visible');
+            }
+        });
+
+        // Handle click on the arrow up
+        arrowUp.addEventListener('click', () => {
+            scrollIntoView('#slide-home');
+        });
     </script>
 </body>
 

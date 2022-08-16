@@ -1,120 +1,95 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>장비서</title>
-    <meta
-      name="description"
-      content="A project that provides price data services."
-    />
-    <meta name="author" content="TMI" />
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/pricedata.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
-    <script></script>
-  </head>
 
-  <body>
-    <header class="header" display="none">
-      <!-- Navbar -->
-      <nav id="navbar__vers-green">
-        <div class="navbar__logo">
-          <a href="/">
-            <img
-              src="/assets/icons/jang_logo_green.png"
-              alt="장비서 로고"
-              class="logo__green"
-            />
-          </a>
-        </div>
-        <ul class="navbar__menu">
-          <li>
-            <a href="/shoppinglist" class="navbar__menu__item">쇼핑 리스트</a>
-          </li>
-          <li>
-            <a href="/pricedata" class="navbar__menu__item active"
-              >오늘의 물가</a
-            >
-          </li>
-          <li>
-            <a href="/accountbook" class="navbar__menu__item">가계부 정리</a>
-          </li>
-          <li><a href="/signin" class="navbar__menu__item">회원가입</a></li>
-          <li>
-            <button type="button" id="open" class="navbar__menu__login-btn">
-              로그인
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <!-- Title bar -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>장비서</title>
+  <meta name="description" content="A project that provides price data services." />
+  <meta name="author" content="TMI" />
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/pricedata.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
+  <script></script>
+</head>
 
-    <section id="titlebar">
-      <div id="titleText">
-        <span class="tit__sub__txt">매일매일, &nbsp</span>
-        <h1>오늘의 물가 확인하기 🔍</h1>
+<body>
+  <header class="header" display="none">
+    <!-- Navbar -->
+    <nav id="navbar__vers-green">
+      <div class="navbar__logo">
+        <a href="/">
+          <img src="/assets/icons/jang_logo_green.png" alt="장비서 로고" class="logo__green" />
+        </a>
       </div>
+      <ul class="navbar__menu">
+        <li>
+          <a href="/shoppinglist" class="navbar__menu__item">쇼핑 리스트</a>
+        </li>
+        <li>
+          <a href="/pricedata" class="navbar__menu__item active">오늘의 물가</a>
+        </li>
+        <li>
+          <a href="/accountbook" class="navbar__menu__item">가계부 정리</a>
+        </li>
+        <li><a href="/signin" class="navbar__menu__item">회원가입</a></li>
+        <li>
+          <button type="button" id="open" class="navbar__menu__login-btn">
+            로그인
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Title bar -->
 
-      <!-- Search Input -->
-      <!-- <div class="inputWithIcon">
-        <input
-          type="text"
-          class="search-box"
-          placeholder="어느 품목의 물가를 검색할까요?"
-        />
-        <i class="material-icons">search</i>
-      </div> -->
-    </section>
+  <section id="titlebar">
+    <div id="titleText">
+      <span class="tit__sub__txt">매일매일, &nbsp</span>
+      <h1>오늘의 물가 확인하기 🔍</h1>
+    </div>
 
-    <!--Price-data page-->
-    <section id="price-data" class="section">
-      <div class="container">
-        <div class="second-container">
-          <div class="notice-left">
-            <span class="notice-vegitable">채소&nbsp</span
-            ><span class="notice-check-vegi">가격을 확인해보세요!🥬</span>
-          </div>
+  </section>
 
-          <div class="list list-left">
-            <span class="list-menu-down">품목</span>
-            <span class="list-menu-down-middle">전국 평균가</span>
-            <span class="list-menu-down-last">전일 대비</span>
-          </div>
+  <!--Price-data page-->
+  <section id="price-data" class="section">
+    <div class="container">
+      <div class="second-container">
+        <div class="notice-left">
+          <span class="notice-vegitable">채소&nbsp</span><span class="notice-check-vegi">가격을 확인해보세요!🥬</span>
+        </div>
 
-          <% for(let i = 1; i< 11 ; i++){%>
+        <div class="list list-left">
+          <span class="list-menu-down">품목</span>
+          <span class="list-menu-down-middle">전국 평균가</span>
+          <span class="list-menu-down-last">전일 대비</span>
+        </div>
 
-          <button
-            name="items"
+        <% for(let i=1; i< 11 ; i++){%>
+
+          <button name="items"
             onclick="location.href='pricedatadetail?item_name=<%=rows[i+30].item_name%>&unit=<%=rows[i+30].unit%>&today=<%=rows[i+30].dpr1%>&day=<%=rows[i+30].dpr2%>&month=<%=rows[i+30].dpr3%>&year=<%=rows[i+30].dpr4%>'"
-            class="box box-left"
-            id="left-btn-<%=i%>"
-          >
+            class="box box-left" id="left-btn-<%=i%>">
             <span class="box box-left-first">
-              <!-- <label name="item_name" value="<%=rows[i+29].item_name%>"></label> -->
 
-              <%=rows[i+30].item_name %><%=rows[i+30].unit %>
+              <%=rows[i+30].item_name %>
+                <%=rows[i+30].unit %>
             </span>
-            <span class="box box-left-middle"> <%=rows[i+30].dpr1 %> </span>
+            <span class="box box-left-middle">
+              <%=rows[i+30].dpr1 %>
+            </span>
             <span id="box-left-<%=i %>">
               <script>
-                a = "<%=rows[i+30].dpr1%>";
-                b = "<%=rows[i+30].dpr2%>";
-                console.log(a);
-                nowPrice_num = parseInt(a.replace(",", ""));
-                prevPrice_num = parseInt(b.replace(",", ""));
+                now = "<%=rows[i+30].dpr1%>";
+                previous = "<%=rows[i+30].dpr2%>";
+                nowPrice_num = parseInt(now.replace(",", ""));
+                prevPrice_num = parseInt(previous.replace(",", ""));
                 res = nowPrice_num - prevPrice_num;
                 if (res > 0) {
                   node = document.getElementById("box-left-<%=i %>");
@@ -136,35 +111,36 @@
             </span>
           </button>
           <%}%>
+      </div>
+
+      <div class="third-container">
+        <div class="notice-right">
+          <span class="notice-fruits">과일&nbsp</span><span class="notice-check-fruits">가격을 확인해보세요!🍎</span>
         </div>
 
-        <div class="third-container">
-          <div class="notice-right">
-            <span class="notice-fruits">과일&nbsp</span
-            ><span class="notice-check-fruits">가격을 확인해보세요!🍎</span>
-          </div>
+        <div class="list list-right">
+          <span class="list-menu-up">품목</span>
+          <span class="list-menu-up-middle">전국 평균가</span>
+          <span class="list-menu-up-last">전일 대비</span>
+        </div>
 
-          <div class="list list-right">
-            <span class="list-menu-up">품목</span>
-            <span class="list-menu-up-middle">전국 평균가</span>
-            <span class="list-menu-up-last">전일 대비</span>
-          </div>
-
-          <% for (let i=1; i< 11; i++) { %>
+        <% for (let i=1; i< 11; i++) { %>
           <button
             onclick="location.href='pricedatadetail?item_name=<%=rows[i+52].item_name%>&unit=<%=rows[i+52].unit%>&today=<%=rows[i+52].dpr1%>&day=<%=rows[i+52].dpr2%>&month=<%=rows[i+52].dpr3%>&year=<%=rows[i+52].dpr4%>'"
-            class="box box-right"
-          >
+            class="box box-right">
             <span class="box box-right-first">
-              <%=rows[i+52].item_name %> <%=rows[i+52].unit %></span
-            >
-            <span class="box box-right-middle"> <%=rows[i+52].dpr1 %> </span>
+              <%=rows[i+52].item_name %>
+                <%=rows[i+52].unit %>
+            </span>
+            <span class="box box-right-middle">
+              <%=rows[i+52].dpr1 %>
+            </span>
             <span id="box-right-<%=i%>">
               <script>
-                a = "<%=rows[i+52].dpr1%>";
-                b = "<%=rows[i+52].dpr2%>";
-                nowPrice_num = parseInt(a.replace(",", ""));
-                prevPrice_num = parseInt(b.replace(",", ""));
+                now = "<%=rows[i+52].dpr1%>";
+                previous = "<%=rows[i+52].dpr2%>";
+                nowPrice_num = parseInt(now.replace(",", ""));
+                prevPrice_num = parseInt(previous.replace(",", ""));
                 res = nowPrice_num - prevPrice_num;
                 if (res > 0) {
                   node = document.getElementById("box-right-<%=i%>");
@@ -185,8 +161,9 @@
             </span>
           </button>
           <%}%>
-        </div>
       </div>
-    </section>
-  </body>
+    </div>
+  </section>
+</body>
+
 </html>

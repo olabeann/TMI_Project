@@ -114,10 +114,10 @@
                 <td class="graph_td">등락가</td>
                 <td id="dayBefore">
                   <script>
-                    a = "<%= today %>";
-                    b = "<%= day %>";
-                    nowPrice_num = parseInt(a.replace(",", ""));
-                    prevDayPrice_num = parseInt(b.replace(",", ""));
+                    now = "<%= today %>";
+                    previous = "<%= day %>";
+                    nowPrice_num = parseInt(now.replace(",", ""));
+                    prevDayPrice_num = parseInt(previous.replace(",", ""));
                     res = nowPrice_num - prevDayPrice_num;
                     if (res > 0) {
                       node = document.getElementById("dayBefore");
@@ -135,10 +135,10 @@
                 </td>
                 <td id="MonthBefore">
                   <script>
-                    a = "<%= today %>";
-                    b = "<%= month %>";
-                    nowPrice_num = parseInt(a.replace(",", ""));
-                    prevMonthPrice_num = parseInt(b.replace(",", ""));
+                    now = "<%= today %>";
+                    prevMonth = "<%= month %>";
+                    nowPrice_num = parseInt(now.replace(",", ""));
+                    prevMonthPrice_num = parseInt(prevMonth.replace(",", ""));
                     res = nowPrice_num - prevMonthPrice_num;
                     if (res > 0) {
                       node = document.getElementById("MonthBefore");
@@ -156,10 +156,10 @@
                 </td>
                 <td id="YearBefore">
                   <script>
-                    a = "<%= today %>";
-                    b = "<%= year %>";
-                    nowPrice_num = parseInt(a.replace(",", ""));
-                    prevYearPrice_num = parseInt(b.replace(",", ""));
+                    now = "<%= today %>";
+                    prevYear = "<%= year %>";
+                    nowPrice_num = parseInt(now.replace(",", ""));
+                    prevYearPrice_num = parseInt(prevYear.replace(",", ""));
                     res = nowPrice_num - prevYearPrice_num;
                     if (res > 0) {
                       node = document.getElementById("YearBefore");

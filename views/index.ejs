@@ -239,6 +239,21 @@
     <button class="arrow-up">
         <i class="material-icons">arrow_upward</i>
     </button>
+
+    <script>
+        // header
+        const header = document.querySelector('#header');
+        const headerHeight = header.getBoundingClientRect().height;
+        document.addEventListener('scroll', () => {
+            console.log(window.scrollY);
+            console.log(`headerHeight: ${headerHeight}`);
+            if (window.scrollY > headerHeight) {
+                header.classList.add('header-dark');
+            } else {
+                header.classList.remove('header-dark');
+            }
+        });
+    </script>
 </body>
 
 </html>

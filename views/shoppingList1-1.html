@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>장비서</title>
+  <meta name="description" content="A project that provides price data services." />
+  <meta name="author" content="TMI" />
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/shoppingList1-1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
+</head>
+
+<body>
+  <header class="header" display="none">
+    <!-- Navbar -->
+    <nav id="navbar__vers-green">
+      <div class="navbar__logo">
+        <a href="/">
+          <img src="/assets/icons/jang_logo_green.png" alt="장비서 로고" class="logo__green">
+        </a>
+      </div>
+      <ul class="navbar__menu">
+        <li><a href="/shoppinglist" class="navbar__menu__item active">쇼핑 리스트</a></li>
+        <li><a href="/pricedata" class="navbar__menu__item">오늘의 물가</a></li>
+        <li><a href="/accountbook" class="navbar__menu__item">가계부 정리</a></li>
+        <li><a href="/signin" class="navbar__menu__item">회원가입</a></li>
+        <li><button type="button" id="open" class="navbar__menu__login-btn">로그인</button></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Title bar -->
+  <section id="titlebar">
+    <span class="tit__sub__txt">장보기 전, &nbsp</span>
+    <h1>쇼핑리스트 노트 📝</h1>
+  </section>
+
+  <!-- Shopping List Page -->
+  <section class="frame section" id="shopping-list">
+    <ul class="items">
+      <!-- <li class="item__list">
+            <div class="item">
+                <span class="item__name">밤식빵</span>
+                <button class="item__delete">
+                    <i class="material-icons">delete</i>
+                </button>
+            </div>
+            <div class="item__divider"></div>
+        </li> -->
+    </ul>
+    <footer class="footer">
+      <input type="text" class="footer__input">
+      <button class="footer__button">
+        <i class="material-icons">add</i>
+      </button>
+    </footer>
+  </section>
+
+  <script>
+    const items = document.querySelector(".items");
+    const input = document.querySelector(".footer__input");
+    const addBtn = document.querySelector(".footer__button");
+
+    function onAdd() {
+      //1. 사용자가 입력한 텍스트를 받아옴
+      const inputText = input.value;
+      if (inputText === "") {
+        input.focus();
+        return;
+      }
+      //2. 새로운 아이템을 만듬 (텍스트 + 삭제 버튼)
+      const item = createItem(inputText);
+      //3. items 컨테이너 안에 새로 만든 아이템을 추가함
+      items.appendChild(item);
+      //4. 새로 추가된 아이템으로 스크롤링
+      item.scrollIntoView({ block: 'center' });
+      //5. 인풋을 초기화 함
+      input.value = "";
+      input.focus();
+    }
+
+    function createItem(inputText) {
+      const itemList = document.createElement("li");
+      itemList.setAttribute('class', 'item__list');
+
+      const item = document.createElement("div");
+      item.setAttribute('class', 'item');
+
+      const name = document.createElement("span");
+      name.setAttribute('class', 'item__name');
+      name.innerText = inputText;
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.setAttribute('class', 'item__delete');
+      deleteBtn.innerHTML = `<i class="material-icons">delete</i>`;
+      deleteBtn.addEventListener('click', () => {
+        items.removeChild(itemList);
+      })
+
+      const itemDivider = document.createElement("div");
+      itemDivider.setAttribute('class', 'item__divider');
+
+      item.appendChild(name);
+      item.appendChild(deleteBtn);
+
+      itemList.appendChild(item);
+      itemList.appendChild(itemDivider);
+
+      return itemList;
+    }
+
+    addBtn.addEventListener('click', () => {
+      onAdd();
+    })
+
+    input.addEventListener('keypress', event => {
+      if (event.key === 'Enter') {
+        onAdd();
+      }
+    })
+  </script>
+</body>
+
+</html>

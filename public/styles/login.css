@@ -189,29 +189,7 @@ p {
   border-radius: var(--btn-border-radius);
 }
 
-/* Title bar */
-#titlebar {
-  display: flex;
-  top: 170px;
-  width: 100%;
-  height: 106px;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--color-green);
-  padding: 0 203px;
-}
 
-#titleText{
-  display: flex;
-  flex-direction: row;
-}
-
-.tit__sub__txt {
-  font-size: var(--font-large);
-  font-weight: var(--weight-light);
-  color: var(--color-white);
-  margin: 8px 0;
-}
 
 
 /* Section common */

@@ -27,7 +27,7 @@
           "https://unpkg.com/tesseract.js-core@v2.0.0/tesseract-core.wasm.js",
         logger: (m) => console.log(m),
       });
-      console.log(text);
+      alert(text);
     };
     const elm = document.getElementById("uploader");
     elm.addEventListener("change", recognize);
@@ -136,8 +136,7 @@
         <br />
         <div class="right_list_text">
           <div class="ocr_title">
-            <div class="product_no">No.
-            </div>
+            <div class="product_no">No.</div>
             <div class="product_name">상품명</div>
             <div class="product_unit_price">단가</div>
             <div class="product_count">수량</div>

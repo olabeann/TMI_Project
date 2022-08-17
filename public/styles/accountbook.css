@@ -45,14 +45,14 @@
 
 /* Icon - Google Material icons */
 @font-face {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
   src: url(path/to/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src: local('Material Icons'), local('MaterialIcons-Regular'),
-    url(path/to/MaterialIcons-Regular.woff2) format('woff2'),
-    url(path/to/MaterialIcons-Regular.woff) format('woff'),
-    url(path/to/MaterialIcons-Regular.ttf) format('truetype');
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url(path/to/MaterialIcons-Regular.woff2) format("woff2"),
+    url(path/to/MaterialIcons-Regular.woff) format("woff"),
+    url(path/to/MaterialIcons-Regular.ttf) format("truetype");
 }
 
 /* Utility */
@@ -88,7 +88,7 @@
 }
 
 body {
-  font-family: 'Gothic A1', sans-serif;
+  font-family: "Gothic A1", sans-serif;
   margin: 0;
   cursor: default;
 }
@@ -201,7 +201,7 @@ p {
   padding: 0 203px;
 }
 
-#titleText{
+#titleText {
   display: flex;
   flex-direction: row;
 }
@@ -210,11 +210,11 @@ p {
   font-size: var(--font-large);
   font-weight: var(--weight-light);
   color: var(--color-white);
-  margin: 8px 0;
+  margin: 15px 0;
 }
 
 /* Search Form */
-input[type='text'] {
+input[type="text"] {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -231,12 +231,12 @@ input[type='text'] {
   color: var(--color-black);
 }
 
-input[type='text']:focus {
+input[type="text"]:focus {
   border-color: var(--color-green);
   box-shadow: 0 0 8px 0 var(--color-green);
 }
 
-.inputWithIcon input[type='text'] {
+.inputWithIcon input[type="text"] {
   padding-left: 60px;
   font-size: 20px;
   font-weight: 400;
@@ -266,7 +266,7 @@ input[type='text']:focus {
   transition: 0.3s;
 }
 
-.inputWithIcon input[type='text']:focus + i {
+.inputWithIcon input[type="text"]:focus + i {
   color: var(--color-green);
 }
 
@@ -279,18 +279,337 @@ input[type='text']:focus {
 
 /* PriceData Page */
 .accountbook {
-  width : 1520px;
-  height : 700px;
+  width: 1520px;
+  height: 700px;
 }
 
 .accountbook_left {
-  width : 760px;
-  height : 700px;
-  float : left;
+  width: 760px;
+  height: 700px;
+  float: left;
 }
 
 .accountbook_right {
+  width: 760px;
+  height: 700px;
+  float: right;
+}
+
+/* 달력 CSS */
+
+.my-calendar {
+  width: 700px;
+  margin: 30px;
+  padding: 20px 20px 10px;
+  text-align: center;
+  font-weight: 800;
+  border: 1px solid #4cd492;
+  cursor: default;
+}
+.my-calendar .clicked-date {
+  border-radius: 25px;
+  margin-top: 50px;
+  float: left;
+  width: 40%;
+  height: 270px;
+  padding: 46px 0 26px;
+  background: #4cd492;
+}
+.my-calendar .calendar-box {
+  float: right;
+  width: 60%;
+  padding-left: 30px;
+}
+
+.clicked-date .cal-day {
+  font-size: 24px;
+  color: white;
+}
+
+.clicked-date .cal-date {
+  font-size: 130px;
+}
+
+.cal-date {
+  color: white;
+}
+
+.ctr-box {
+  padding: 0 16px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.ctr-box .btn-cal {
+  position: relative;
+  float: left;
+  width: 25px;
+  height: 25px;
+  margin-top: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.ctr-box .btn-cal:after {
+  content: "<";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 25px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.ctr-box .btn-cal.next {
+  float: right;
+}
+.ctr-box .btn-cal.next:after {
+  content: ">";
+}
+
+.cal-table {
+  width: 100%;
+}
+.cal-table th {
+  width: 14.2857%;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: 900;
+}
+.cal-table td {
+  padding: 3px 0;
+  height: 50px;
+  font-size: 15px;
+  vertical-align: middle;
+}
+.cal-table td.day {
+  position: relative;
+  cursor: pointer;
+}
+.cal-table td.today {
+  background: #ffd255;
+  border-radius: 50%; /* 원으로 보여주려면 radius를 50%로 지정하면 됨 */
+  color: #fff;
+}
+.cal-table td.day-active {
+  /* background-image: url("/assets/images/jang face logo.png"); */
+  background: #4cd492; /*버튼 클릭했을 때 색깔 변하게 하는 부분 */
+  border-radius: 50%;
+  color: #fff;
+}
+.cal-table td.has-event:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: #ffc107;
+}
+
+/* *, *:before, *:after {
+  box-sizing: inherit;
+} */
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  float: none;
+}
+
+.right_price {
+  width: 760px;
+  margin-top: 30px;
+  display: flex;
+}
+
+.right_price_top {
+  border: 1px solid white;
+  flex: 1;
+  width: 250px;
+  height: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.right_price_middle {
+  border: 1px solid white;
+  flex: 1;
+  width: 250px;
+  height: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.right_price_bottom {
+  border: 1px solid white;
+  flex: 1;
+  width: 250px;
+  height: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.right_price_data {
+  width: 760px;
+  border: 1px solid #eeeeee;
+  background-color: #eeeeee;
+  border-radius: 30px;
+  display: flex;
+}
+
+.right_price_data_top {
+  flex: 1;
+  width: 250px;
+  height: 40px;
+  box-sizing: border-box;
+  text-align: center;
+  color: black;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 35px;
+  margin-top: 10px;
+}
+
+.right_price_data_middle {
+  flex: 1;
+  width: 250px;
+  height: 40px;
+  box-sizing: border-box;
+  text-align: center;
+  color: black;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 35px;
+  margin-top: 10px;
+}
+
+.right_price_data_bottom {
+  flex: 1;
+  width: 250px;
+  height: 40px;
+  box-sizing: border-box;
+  text-align: center;
+  color: black;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 35px;
+  margin-top: 10px;
+}
+
+.right_list {
+  width: 760px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.list {
+  width: 380px;
+  height: 30px;
+  float: left;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 38px;
+  color: #000000;
+}
+
+.OCR {
+  width: 380px;
+  height: 30px;
+  float: right;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 31px;
+  color: #ffffff;
+  background: #eb7767;
+  border-radius: 30px;
+  text-align: center;
+  margin: auto;
+}
+
+.right_list_text {
+  width: 760px;
+  height: 250px;
+  overflow: auto;
+}
+
+.right_list_text_table {
+  text-align: center;
+}
+
+.ocr_title {
   width : 760px;
-  height : 700px;
-  float : right;
+  height : 30px;
+}
+
+.product_no {
+  text-align: center;
+  float: left;
+  width: 20%;
+  height : 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.product_name {
+  text-align: center;
+  float: left;
+  width: 20%;
+  height : 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.product_unit_price {
+  text-align: center;
+  float: left;
+  width: 20%;
+  height : 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.product_count {
+  text-align: center;
+  float: left;
+  width: 20%;
+  height : 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.product_price {
+  text-align: center;
+  float: left;
+  width: 20%;
+  height : 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
 }

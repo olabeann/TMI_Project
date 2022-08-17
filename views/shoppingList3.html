@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장비서</title>
+    <meta name="description" content="A project that provides price data services." />
+    <meta name="author" content="TMI" />
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/shoppingList3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
+</head>
+
+<body>
+    <header class="header" display="none">
+        <!-- Navbar -->
+        <nav id="navbar__vers-green">
+            <div class="navbar__logo">
+                <a href="/">
+                    <img src="/assets/icons/jang_logo_green.png" alt="장비서 로고" class="logo__green">
+                </a>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="shoppinglist" class="navbar__menu__item active">쇼핑 리스트</a></li>
+                <li><a href="pricedata" class="navbar__menu__item">오늘의 물가</a></li>
+                <li><a href="accountbook" class="navbar__menu__item">가계부 정리</a></li>
+                <li><a href="signin" class="navbar__menu__item">회원가입</a></li>
+                <li><button type="button" id="open" class="navbar__menu__login-btn">로그인</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Title bar -->
+    <section id="titlebar">
+        <span class="tit__sub__txt">장보기 전, &nbsp</span>
+        <h1>마트 거리와 예상 금액 확인하기 🛒</h1>
+    </section>
+
+    <!-- Shopping List Page 4-->
+    <section id="shopping-list-price" class="section">
+        <!-- <div class="loding-container">
+            <img src="" alt="">
+            <p>분석 중입니다..</p>
+        </div> -->
+
+        <div class="result-container">
+            <div class="tit_box">
+                <div class="title">홈플러스 지점</div>
+                <div class="tit_desc">
+                    에서 쇼핑하실 때 예상 금액은
+                    <div class="tit_price"> 52,200</div>원 입니다.
+                    <i class="material-icons">sentiment_very_satisfied</i>
+                </div>
+            </div>
+
+            <div class="priceList_table">
+                <ul class="priceList_title">
+                    <li class="pricelist_first">
+                        <i class="material-icons">shopping_cart</i>
+                        <span>구입 예정 품목</span>
+                    </li>
+                    <li class="pricelist_first2">
+                        <span>단가</span>
+                    </li>
+                    <li class="pricelist_second">
+                        <i class="material-icons">123</i>
+                        <span>수량</span>
+                    </li>
+                    <li class="pricelist_third">
+                        <i class="material-icons">storefront</i>
+                        <span>단가*수량</span>
+                    </li>
+                </ul>
+                <ul class="priceList_list">
+                    <li class="pricelist_box">
+                        <div class="list_content mar1">
+                            <span class="list_subject">사과</span>
+                            <span class="list_kind">홍로</span>
+                            <span class="list_class">중품(10개 기준)</span>
+                        </div>
+                        <div class="list_content mar2">
+                            <span class="list_martprice">2900</span>원
+                        </div>
+                        <div class="list_content mar3">
+                            <span class="list_quantity">3</span>
+                        </div>
+                        <div class="list_content mar4">
+                            <span class="list_martprice">8700</span>원
+                        </div>
+                    </li>
+                    <li class="pricelist_box">
+                        <div class="list_content mar1">
+                            <span class="list_subject">양파</span>
+                            <span class="list_kind">햇양파</span>
+                            <span class="list_class">상품(100g 기준)</span>
+                        </div>
+                        <div class="list_content mar2">
+                            <span class="list_martprice"></span>원
+                        </div>
+                        <div class="list_content mar3">
+                            <span class="list_quantity">1</span>
+                        </div>
+                        <div class="list_content mar4">
+                            <span class="list_martprice">8700</span>원
+                        </div>
+                    </li>
+                    <li class="pricelist_box">
+                        <div class="list_content mar1">
+                            <span class="list_subject">감자</span>
+                            <span class="list_kind"></span>
+                            <span class="list_class">상품(100g 기준)</span>
+                        </div>
+                        <div class="list_content mar2">
+                            <span class="list_martprice"></span>원
+                        </div>
+                        <div class="list_content mar3">
+                            <span class="list_quantity">6</span>
+                        </div>
+                        <div class="list_content mar4">
+                            <span class="list_martprice">3000</span>원
+                        </div>
+                    </li>
+                    <li class="pricelist_box">
+                        <div class="list_content mar1">
+                            <span class="list_subject">고구마</span>
+                            <span class="list_kind"></span>
+                            <span class="list_class">상품(1k 기준)</span>
+                        </div>
+                        <div class="list_content mar2">
+                            <span class="list_martprice"></span>원
+                        </div>
+                        <div class="list_content mar3">
+                            <span class="list_quantity">3</span>
+                        </div>
+                        <div class="list_content mar4">
+                            <span class="list_martprice">17000</span>원
+                        </div>
+                    </li>
+                    <li class="pricelist_box">
+                        <div class="list_content mar1">
+                            <span class="list_subject">페브리지</span>
+                            <span class="list_kind"></span>
+                            <span class="list_class">상쾌한 향(371ml)</span>
+                        </div>
+                        <div class="list_content mar2">
+                            <span class="list_martprice"></span>원
+                        </div>
+                        <div class="list_content mar3">
+                            <span class="list_quantity">1</span>
+                        </div>
+                        <div class="list_content mar4">
+                            <span class="list_martprice">4900</span>원
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- <div class="shoppinglist3_sub_text">
+                <span>고객님이 구매하실 상품들의&nbsp</span>
+                <span class="shoppinglist3_sub_text_avg">평균 물가 총계는
+                    &nbsp<span class="shoppinglist3_sub_price">76,000</span>
+                    원
+                </span>
+                <span>입니다.</span>
+            </div> -->
+
+            <!-- <div class="shoppinglist3_sub_text2">
+                <span class="shoppinglist3_sub_text_mart">이마트 과천점</span>
+                <span>에서 쇼핑하실 경우&nbsp</span>
+                <div class="shoppinglist3_sub_text2_group">
+                    <span class="shoppinglist3_sub_differ_price">866</span><span>원</span>&nbsp
+                    <span class="shoppinglist3_sub_discount">절약</span>
+                </div>
+                <span>할 수 있습니다.</span>
+            </div>
+
+            <div class="shoppinglist3_jang_textbox">
+                <div class="shoppinglist3_jang_img">
+                    <img src="/assets/icons/jang_textbox.png" alt="장비서 말풍선" class="jang_textbox">
+                </div>
+                <div class="shoppinglist3_jang_text">
+                    <span>절약하신 <span class="shoppinglist3_sub_differ_price">866원</span>으로 <br>
+                        <span class="shoppinglist3_recomm_product">롯데 핫식스(250ml)</span>를 더 구입할 수 있어요!</span>
+                </div>
+            </div> -->
+
+            <!-- <button type="button" onclick="location.href='/shoppinglist2'">쇼핑리스트 작성 다시하기</button> -->
+    </section>
+
+
+</body>
+
+</html>

@@ -613,3 +613,22 @@ input[type="text"]:focus {
   line-height: 25px;
   color: #000000;
 }
+
+.uploader {
+  display: none;
+  
+} 
+
+.input-file-button {
+  font-size: 20px;
+  height : 30px;
+  float : right;
+  margin-right : 10px;
+  margin-top : 5px;
+  /* margin-right : 10px; */
+  padding: 5px 25px 25px;
+  background-color:#eb7767;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+}

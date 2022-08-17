@@ -9,7 +9,7 @@
   <meta name="description" content="A project that provides price data services." />
   <meta name="author" content="TMI" />
   <link rel="stylesheet" href="/styles/reset.css">
-  <link rel="stylesheet" href="/styles/shoppingList1-1.css">
+  <link rel="stylesheet" href="/styles/shoppingList2.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
@@ -41,29 +41,58 @@
     <span class="tit__sub__txt">장보기 전, &nbsp</span>
     <h1>쇼핑리스트 노트 📝</h1>
   </section>
-
   <!-- Shopping List Page -->
-  <section class="frame section" id="shopping-list">
-    <ul class="items">
-      <!-- <li class="item__list">
-            <div class="item">
-                <span class="item__name">밤식빵</span>
-                <button class="item__delete">
-                    <i class="material-icons">delete</i>
-                </button>
+  <section id="shopping-list" class="section">
+    <div class="select-item">
+      <!--  title -->
+      <div class="title">
+        <h1>
+          쇼핑리스트만 사용하고 싶을때 !
+        </h1>
+      </div>
+    </div>
+    <!--list-->
+    <div class="container">
+      <ul class="list-index">
+        <li>상품명</li>
+        <li>수량</li>
+      </ul>
+      <div class="item__divider"></div>
+      <ul class="items">
+        <li class="item__list">
+          <div class="item">
+            <button class="item__check">
+              <input type="checkbox" id="check">
+              <label for="check"></label>
+            </button>
+            <div id="item__name">멜론 소다</div>
+            <div class="item__quantity">
+              <button id="decrease">-</button>
+              <div id="number">1</div>
+              <button id="increase">+</button>
             </div>
-            <div class="item__divider"></div>
-        </li> -->
-    </ul>
-    <footer class="footer">
-      <input type="text" class="footer__input">
-      <button class="footer__button">
-        <i class="material-icons">add</i>
-      </button>
-    </footer>
+            <button class="item__delete">
+              <i class="material-icons">delete</i>
+            </button>
+          </div>
+          <div class="item__divider"></div>
+        </li>
+      </ul>
+      <!-- 수기로 작성 -->
+      <footer class="footer">
+        <input type="text" class="footer__input" placeholder="필요한 장보기 목록을 작성해주세요!">
+        <button class="footer__button">
+          <i class="material-icons">add</i>
+        </button>
+      </footer>
+    </div>
   </section>
 
   <script>
+
+    //검색 기능 
+
+    // 리스트 추가
     const items = document.querySelector(".items");
     const input = document.querySelector(".footer__input");
     const addBtn = document.querySelector(".footer__button");
@@ -71,6 +100,7 @@
     function onAdd() {
       //1. 사용자가 입력한 텍스트를 받아옴
       const inputText = input.value;
+      console.log(inputText);
       if (inputText === "") {
         input.focus();
         return;
@@ -93,22 +123,59 @@
       const item = document.createElement("div");
       item.setAttribute('class', 'item');
 
-      const name = document.createElement("span");
-      name.setAttribute('class', 'item__name');
-      name.innerText = inputText;
+      // 체크박스
+      const itemCheck = document.createElement("button");
+      itemCheck.setAttribute('class', 'item__check');
 
-      const deleteBtn = document.createElement("button");
-      deleteBtn.setAttribute('class', 'item__delete');
-      deleteBtn.innerHTML = `<i class="material-icons">delete</i>`;
-      deleteBtn.addEventListener('click', () => {
+      const checkBox = document.createElement("input");
+      checkBox.setAttribute('type', 'checkbox');
+      checkBox.setAttribute('id', 'check');
+
+      const checkLabel = document.createElement("label");
+      checkLabel.setAttribute('for', 'check');
+
+      itemCheck.appendChild(checkBox);
+      itemCheck.appendChild(checkLabel);
+
+      // 아이템 상품명
+      const itemName = document.createElement("div");
+      itemName.setAttribute('id', 'item__name');
+      itemName.innerText = inputText;
+
+      // 아이템 수량
+      const itemCount = document.createElement("div");
+      itemCount.setAttribute('class', 'item__quantity');
+
+      const countDecrease = document.createElement("button");
+      countDecrease.setAttribute('id', 'decrease');
+
+      const countNumber = document.createElement("div");
+      countNumber.setAttribute('id', 'number');
+
+      const countIncrease = document.createElement("button");
+      countIncrease.setAttribute('id', 'increase');
+
+      itemCount.appendChild(countDecrease);
+      itemCount.appendChild(countNumber);
+      itemCount.appendChild(countIncrease);
+
+      // 아이템 삭제
+      const itemDelete = document.createElement("button");
+      itemDelete.setAttribute('class', 'item__delete');
+      itemDelete.innerHTML = `<i class="material-icons">delete</i>`;
+      itemDelete.addEventListener('click', () => {
+        console.log("클릭");
         items.removeChild(itemList);
       })
 
+      // 아이템 구분선
       const itemDivider = document.createElement("div");
       itemDivider.setAttribute('class', 'item__divider');
 
-      item.appendChild(name);
-      item.appendChild(deleteBtn);
+      item.appendChild(itemCheck);
+      item.appendChild(itemName);
+      item.appendChild(itemCount);
+      item.appendChild(itemDelete);
 
       itemList.appendChild(item);
       itemList.appendChild(itemDivider);
@@ -116,6 +183,8 @@
       return itemList;
     }
 
+
+    // // 에드 추가버튼 기능
     addBtn.addEventListener('click', () => {
       onAdd();
     })
@@ -125,6 +194,38 @@
         onAdd();
       }
     })
+
+    // // 수량
+    // /* id가 있는 경우 */
+    const number = document.getElementById('number');
+    const increase = document.getElementById('increase');
+    const decrease = document.getElementById('decrease');
+
+    increase.onclick = () => {
+      const current = parseInt(number.innerText, 10);
+      number.innerText = current + 1;
+    };
+
+    decrease.onclick = () => {
+      const current = parseInt(number.innerText, 10);
+      number.innerText = current - 1;
+    };
+
+        //id가 없는 경우
+    /* const number = document.getElementById('number');
+    const buttons =document.querySelectorAll("buttons");
+    const [increase, decrease] = buttons;
+    
+    increase.onclick = () => {
+        const current = parseInt(number.innerText, 10);
+        number.innerText = current + 1;
+    };
+    
+    decrease.onclick = () => {
+        const current = parseInt(number.innerText, 10);
+        number.innerText = current - 1;
+    }; */
+
   </script>
 </body>
 

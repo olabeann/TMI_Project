@@ -589,7 +589,7 @@ input[type="text"]:focus {
   font-weight: 500;
   font-size: 20px;
   line-height: 25px;
-  color: #000000;
+  color: #000000; 
 }
 
 .product_count {

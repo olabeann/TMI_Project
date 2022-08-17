@@ -273,11 +273,10 @@ input[type='password'] {
 
 
 .row{
-  margin-left: 19%;
-  margin-right: 19%;
+  margin-left: 188px;
+  margin-bottom: 50px;
   font-size: x-large;
   font-weight: bold;
-  margin-bottom: 50px;
   justify-content: center;
 }
 

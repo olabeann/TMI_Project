@@ -234,12 +234,11 @@ input[type='password'] {
 }
 
 .login-head{
-    display: inline-flexbox;
-    margin-top: 5%;
-    margin-right: 35%;
-    margin-left: 21%;
-    margin-bottom: 5%;
-    font-size: x-large;
+  display: inline-flexbox;
+  margin-top: 5%;
+  margin-left: 200px;
+  margin-bottom: 5%;
+  font-size: x-large;
   font-weight: bold;
 }
 

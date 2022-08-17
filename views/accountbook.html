@@ -1,168 +1,155 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>장비서</title>
-    <meta
-      name="description"
-      content="A project that provides price data services."
-    />
-    <meta name="author" content="TMI" />
-    <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/accountbook.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-    <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
-    <script src="https://unpkg.com/tesseract.js@2.1.4/dist/tesseract.min.js"></script>
-    <script type="module">
-      const recognize = async ({ target: { files } }) => {
-        const {
-          data: { text },
-        } = await Tesseract.recognize(files[0], "kor", {
-          corePath:
-            "https://unpkg.com/tesseract.js-core@v2.0.0/tesseract-core.wasm.js",
-          logger: (m) => console.log(m),
-        });
-        console.log(text);
-      };
-      const elm = document.getElementById("uploader");
-      elm.addEventListener("change", recognize);
-    </script>
-  </head>
 
-  <body>
-    <header class="header" display="none">
-      <!-- Navbar -->
-      <nav id="navbar__vers-green">
-        <div class="navbar__logo">
-          <a href="/">
-            <img
-              src="/assets/icons/jang_logo_green.png"
-              alt="장비서 로고"
-              class="logo__green"
-            />
-          </a>
-        </div>
-        <ul class="navbar__menu">
-          <li>
-            <a href="/shoppinglist" class="navbar__menu__item">쇼핑 리스트</a>
-          </li>
-          <li>
-            <a href="/pricedata" class="navbar__menu__item">오늘의 물가</a>
-          </li>
-          <li>
-            <a href="/accountbook" class="navbar__menu__item active"
-              >가계부 정리</a
-            >
-          </li>
-          <li><a href="/signin" class="navbar__menu__item">회원가입</a></li>
-          <li>
-            <button type="button" id="open" class="navbar__menu__login-btn">
-              로그인
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <!-- Title bar -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>장비서</title>
+  <meta name="description" content="A project that provides price data services." />
+  <meta name="author" content="TMI" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/accountbook.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
+  <script src="https://unpkg.com/tesseract.js@2.1.4/dist/tesseract.min.js"></script>
+  <script type="module">
+    const recognize = async ({ target: { files } }) => {
+      const {
+        data: { text },
+      } = await Tesseract.recognize(files[0], "kor", {
+        corePath:
+          "https://unpkg.com/tesseract.js-core@v2.0.0/tesseract-core.wasm.js",
+        logger: (m) => console.log(m),
+      });
+      console.log(text);
+    };
+    const elm = document.getElementById("uploader");
+    elm.addEventListener("change", recognize);
+  </script>
+</head>
 
-    <section id="titlebar">
-      <div id="titleText">
-        <span class="tit__sub__txt">장보기 후, &nbsp; </span>
-        <h1>가계부 작성하기 🧾</h1>
+<body>
+  <header class="header" display="none">
+    <!-- Navbar -->
+    <nav id="navbar__vers-green">
+      <div class="navbar__logo">
+        <a href="/">
+          <img src="/assets/icons/jang_logo_green.png" alt="장비서 로고" class="logo__green" />
+        </a>
       </div>
+      <ul class="navbar__menu">
+        <li>
+          <a href="/shoppinglist" class="navbar__menu__item">쇼핑 리스트</a>
+        </li>
+        <li>
+          <a href="/pricedata" class="navbar__menu__item">오늘의 물가</a>
+        </li>
+        <li>
+          <a href="/accountbook" class="navbar__menu__item active">가계부 정리</a>
+        </li>
+        <li><a href="/signin" class="navbar__menu__item">회원가입</a></li>
+        <li>
+          <button type="button" id="open" class="navbar__menu__login-btn">
+            로그인
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Title bar -->
 
-      <!-- Search Input
+  <section id="titlebar">
+    <div id="titleText">
+      <span class="tit__sub__txt">장보기 후, &nbsp; </span>
+      <h1>가계부 작성하기 🧾</h1>
+    </div>
+
+    <!-- Search Input
         <div class="inputWithIcon">
             <input type="text" class="search-box" placeholder="어느 품목의 물가를 검색할까요?">
             <i class="material-icons">search</i>
         </div> -->
-    </section>
+  </section>
 
-    <!--accountbook page-->
-    <section id="accountbook" class="section">
-      <div class="accountbook">
-        <div class="accountbook_left">
-          <div class="my-calendar clearfix">
-            <div class="clicked-date">
-              <div class="cal-day"></div>
-              <br />
-              <br />
-              <div class="cal-date"></div>
-            </div>
-            <div class="calendar-box">
-              <div class="ctr-box clearfix">
-                <button
-                  type="button"
-                  title="prev"
-                  class="btn-cal prev"
-                ></button>
-                <span class="cal-month"> </span>
-                <span class="cal-year"> </span>
-                <button
-                  type="button"
-                  title="next"
-                  class="btn-cal next"
-                ></button>
-              </div>
-              <table class="cal-table">
-                <thead>
-                  <tr>
-                    <th style="color: red">일</th>
-                    <th>월</th>
-                    <th>화</th>
-                    <th>수</th>
-                    <th>목</th>
-                    <th>금</th>
-                    <th style="color: blue">토</th>
-                  </tr>
-                </thead>
-                <tbody class="cal-body"></tbody>
-              </table>
-            </div>
-          </div>
-          <script src="/js/components/accountbook.js"></script>
-        </div>
-        <div class="accountbook_right">
-          <div class="right_price">
-            <div class="right_price_top">평균 물가 총계</div>
-            <div class="right_price_middle">총 지출 금액</div>
-            <div class="right_price_bottom">차액</div>
+  <!--accountbook page-->
+  <section id="accountbook" class="section">
+    <div class="accountbook">
+      <div class="accountbook_left">
+        <div class="my-calendar clearfix">
+          <div class="clicked-date">
+            <div class="cal-day"></div>
             <br />
+            <br />
+            <div class="cal-date"></div>
           </div>
-          <div class="right_price_data">
-            <div class="right_price_data_top">53,066원</div>
-            <div class="right_price_data_middle">52,200원</div>
-            <div class="right_price_data_bottom" style="color: blue">
-              + 866원
+          <div class="calendar-box">
+            <div class="ctr-box clearfix">
+              <button type="button" title="prev" class="btn-cal prev"></button>
+              <span class="cal-month"> </span>
+              <span class="cal-year"> </span>
+              <button type="button" title="next" class="btn-cal next"></button>
             </div>
+            <table class="cal-table">
+              <thead>
+                <tr>
+                  <th style="color: red">일</th>
+                  <th>월</th>
+                  <th>화</th>
+                  <th>수</th>
+                  <th>목</th>
+                  <th>금</th>
+                  <th style="color: blue">토</th>
+                </tr>
+              </thead>
+              <tbody class="cal-body"></tbody>
+            </table>
           </div>
+        </div>
+        <script src="/js/components/accountbook.js"></script>
+      </div>
+      <div class="accountbook_right">
+        <div class="right_price">
+          <div class="right_price_top">평균 물가 총계</div>
+          <div class="right_price_middle">총 지출 금액</div>
+          <div class="right_price_bottom">차액</div>
           <br />
-          <div class="right_list">
-            <div class="list">🛒 구매 내역</div>
-            <input type="file" id="uploader" class="uploader" />
-            <!-- <div class="OCR" onclick="OCR()">🧾 영수증으로 기록하기</div>  -->
+        </div>
+        <div class="right_price_data">
+          <div class="right_price_data_top">53,066원</div>
+          <div class="right_price_data_middle">52,200원</div>
+          <div class="right_price_data_bottom" style="color: blue">
+            + 866원
           </div>
-          <br />
-          <div class="right_list_text">
-            <div class="ocr_title">
-              <div class="product_no">No.</div>
-              <div class="product_name">상품명</div>
-              <div class="product_unit_price">단가</div>
-              <div class="product_count">수량</div>
-              <div class="product_price">금액</div>
+        </div>
+        <br />
+        <div class="right_list">
+          <div class="list">🛒 구매 내역</div>
+          <input type="file" id="uploader" class="uploader" />
+          <!-- <div class="OCR" onclick="OCR()">🧾 영수증으로 기록하기</div>  -->
+        </div>
+        <br />
+        <div class="right_list_text">
+          <div class="ocr_title">
+            <div class="product_no">No.
             </div>
-            <div class="ocr_contents">
+            <div class="product_name">상품명</div>
+            <div class="product_unit_price">단가</div>
+            <div class="product_count">수량</div>
+            <div class="product_price">금액</div>
+          </div>
+          <div class="ocr_contents">
 
-            </div>
           </div>
         </div>
       </div>
-    </section>
-  </body>
+    </div>
+  </section>
+</body>
+
 </html>

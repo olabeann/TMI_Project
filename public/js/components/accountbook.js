@@ -152,16 +152,3 @@ $calBody.addEventListener("click", (e) => {
   }
 });
 
-// OCR 함수
-const tesseract = require("tesseract.js");
-
-tesseract
-  .recognize("/receipt/image-copy.png", "kor", {
-    logger: (m) => console.log(m),
-  })
-  .then((result) => {
-    console.log(result.data.text);
-  })
-  .catch((err) => {
-    console.log(err.message);
-  });

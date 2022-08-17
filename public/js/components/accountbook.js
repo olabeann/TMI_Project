@@ -152,3 +152,6 @@ $calBody.addEventListener("click", (e) => {
   }
 });
 
+function message() {
+  alert("영수증을 선택하고 잠시만 기다려주세요. \n스캔하는데 시간이 필요합니다.");
+}

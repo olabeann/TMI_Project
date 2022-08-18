@@ -89,6 +89,133 @@
   </section>
 
   <script>
+    // 리스트 추가
+    const items = document.querySelector(".items");
+    const input = document.querySelector(".footer__input");
+    const addBtn = document.querySelector(".footer__button");
+
+    function onAdd() {
+      const inputText = input.value;
+      console.log(inputText);
+      if (inputText === "") {
+        input.focus();
+        return;
+      }
+      const item = createItem(inputText);
+      items.appendChild(item);
+      item.scrollIntoView({ block: 'center' });
+      input.value = "";
+      input.focus();
+    }
+
+    function createItem(inputText) {
+      const itemList = document.createElement("li");
+      itemList.setAttribute('class', 'item__list');
+
+      const item = document.createElement("div");
+      item.setAttribute('class', 'item');
+
+      // 체크박스
+      const itemCheck = document.createElement("button");
+      itemCheck.setAttribute('class', 'item__check');
+
+      const checkBox = document.createElement("input");
+      checkBox.setAttribute('type', 'checkbox');
+      checkBox.setAttribute('id', 'check');
+
+      const checkLabel = document.createElement("label");
+      checkLabel.setAttribute('for', 'check');
+
+      itemCheck.appendChild(checkBox);
+      itemCheck.appendChild(checkLabel);
+
+      // 아이템 상품명
+      const itemName = document.createElement("div");
+      itemName.setAttribute('id', 'item__name');
+      itemName.innerText = inputText;
+
+      // 아이템 수량
+      const itemCount = document.createElement("div");
+      itemCount.setAttribute('class', 'item__quantity');
+
+      const countDecrease = document.createElement("button");
+      countDecrease.setAttribute('id', 'decrease');
+
+      const countNumber = document.createElement("div");
+      countNumber.setAttribute('id', 'number');
+
+      const countIncrease = document.createElement("button");
+      countIncrease.setAttribute('id', 'increase');
+
+      itemCount.appendChild(countDecrease);
+      itemCount.appendChild(countNumber);
+      itemCount.appendChild(countIncrease);
+
+      // 아이템 삭제
+      const itemDelete = document.createElement("button");
+      itemDelete.setAttribute('class', 'item__delete');
+      itemDelete.innerHTML = `<i class="material-icons">delete</i>`;
+      itemDelete.addEventListener('click', () => {
+        console.log("클릭");
+        items.removeChild(itemList);
+      })
+
+      // 아이템 구분선
+      const itemDivider = document.createElement("div");
+      itemDivider.setAttribute('class', 'item__divider');
+
+      item.appendChild(itemCheck);
+      item.appendChild(itemName);
+      item.appendChild(itemCount);
+      item.appendChild(itemDelete);
+
+      itemList.appendChild(item);
+      itemList.appendChild(itemDivider);
+
+      return itemList;
+    }
+
+    // // 에드 추가버튼 기능
+    addBtn.addEventListener('click', () => {
+      onAdd();
+    })
+
+    input.addEventListener('keypress', event => {
+      if (event.key === 'Enter') {
+        onAdd();
+      }
+    })
+
+    // // 수량
+    // /* id가 있는 경우 */
+    const number = document.getElementById('number');
+    const increase = document.getElementById('increase');
+    const decrease = document.getElementById('decrease');
+
+    increase.onclick = () => {
+      const current = parseInt(number.innerText, 10);
+      number.innerText = current + 1;
+    };
+
+    decrease.onclick = () => {
+      const current = parseInt(number.innerText, 10);
+      number.innerText = current - 1;
+    };
+
+        //id가 없는 경우
+    /* const number = document.getElementById('number');
+    const buttons =document.querySelectorAll("buttons");
+    const [increase, decrease] = buttons;
+    
+    increase.onclick = () => {
+        const current = parseInt(number.innerText, 10);
+        number.innerText = current + 1;
+    };
+    
+    decrease.onclick = () => {
+        const current = parseInt(number.innerText, 10);
+        number.innerText = current - 1;
+    }; */
 
   </script>
 </body>

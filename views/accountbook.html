@@ -1,67 +1,273 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>장비서</title>
-    <meta name="description" content="A project that provides price data services." />
-    <meta name="author" content="TMI" />
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/accountbook.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
-</head>
-
-<body>
+    <meta name="description" content="A project that provides price data services."/>
+    <meta name="author" content="TMI"/>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/accountbook.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="icon" type="image/png" href="/assets/icons/favicon.png"/>
+    <script src="https://unpkg.com/tesseract.js@2.1.4/dist/tesseract.min.js"></script>
+  </head>
+  <body>
     <header class="header" display="none">
-        <!-- Navbar -->
-        <nav id="navbar__vers-green">
-            <div class="navbar__logo">
-                <a href="/">
-                    <img src="/assets/icons/jang_logo_green.png" alt="장비서 로고" class="logo__green">
-                </a>
-            </div>
-            <ul class="navbar__menu">
-                <li><a href="/shoppinglist" class="navbar__menu__item">쇼핑 리스트</a></li>
-                <li><a href="/pricedata" class="navbar__menu__item">오늘의 물가</a></li>
-                <li><a href="/accountbook" class="navbar__menu__item active">가계부 정리</a></li>
-                <li><a href="/signin" class="navbar__menu__item">회원가입</a></li>
-                <li><button type="button" id="open" class="navbar__menu__login-btn">로그인</button></li>
-            </ul>
-        </nav>
+      <!-- Navbar -->
+      <nav id="navbar__vers-green">
+        <div class="navbar__logo">
+          <a href="/">
+            <img
+              src="/assets/icons/jang_logo_green.png"
+              alt="장비서 로고"
+              class="logo__green"
+            />
+          </a>
+        </div>
+        <ul class="navbar__menu">
+          <li>
+            <a href="/shoppinglist" class="navbar__menu__item">쇼핑 리스트</a>
+          </li>
+          <li>
+            <a href="/pricedata" class="navbar__menu__item">오늘의 물가</a>
+          </li>
+          <li>
+            <a href="/accountbook" class="navbar__menu__item active">가계부 정리</a>
+          </li>
+          <li><a href="/signin" class="navbar__menu__item">회원가입</a></li>
+          <li>
+            <button type="button" id="open" class="navbar__menu__login-btn">
+              로그인
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
     <!-- Title bar -->
 
     <section id="titlebar">
-        <div id="titleText">
-            <span class="tit__sub__txt">장보기 후,</span>
-            <h1> 가계부 작성하기 🧾</h1>
-        </div>
-   
-        <!-- Search Input -->
+      <div id="titleText">
+        <span class="tit__sub__txt">장보기 후, &nbsp; </span>
+        <h1>가계부 작성하기 📃</h1>
+      </div>
+
+      <!-- Search Input
         <div class="inputWithIcon">
             <input type="text" class="search-box" placeholder="어느 품목의 물가를 검색할까요?">
             <i class="material-icons">search</i>
-        </div>
+        </div> -->
     </section>
-
 
     <!--accountbook page-->
     <section id="accountbook" class="section">
-        <div class="accountbook">
-            <div class="accountbook_left">
-                1
+      <div class="accountbook">
+        <div class="accountbook_left">
+          <div class="comment">
+            <div class="comment_left"> 
+              <div class="left_logo">
+                <img src="/assets/icons/logo11.png" />
+              </div>
+              <div class="left_text">
+                평균 물가보다 비싸게 구매했어요!
+              </div>
             </div>
-            <div class="accountbook_right">
-                2
+            <div class="comment_right">
+              <div class="right_logo">
+                <img src="/assets/icons/logo10.png" />
+              </div>
+              <div class="right_text">
+                평균 물가보다 싸게 구매했어요!
+              </div>
             </div>
+          </div>
+          <div class="calendar">
+            <div class="calendar_header">
+              <div class="year-month">
+                
+              </div>
+              <div class="nav">
+                <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
+                <button class="nav-btn go-today" onclick="goToday()">Today</button>
+                <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
+              </div>
+            </div>
+            <div class="calendar_main">
+              <div class="days">
+                <div class="day">일</div>
+                <div class="day">월</div>
+                <div class="day">화</div>
+                <div class="day">수</div>
+                <div class="day">목</div>
+                <div class="day">금</div>
+                <div class="day">토</div>
+              </div>
+              <div class="dates"></div>
+            </div>
+          </div>
+          <script src="/js/components/accountbook.js"></script>
         </div>
+        <div class="accountbook_right">
+          <div class="choice_date">
+            📅 2022년 08월 19일
+          </div>
+          <div class="right_price">
+            <div class="right_price_top">평균 물가 총계</div>
+            <div class="right_price_middle">총 지출 금액</div>
+            <div class="right_price_bottom">차액</div>
+            <br />
+          </div>
+          <div class="right_price_data">
+            <div class="right_price_data_top">53,066원</div>
+            <div class="right_price_data_middle">52,200원</div>
+            <div class="right_price_data_bottom" style="color: blue">
+              + 866원
+            </div>
+          </div>
+          <br />
+          <div class="right_list">
+            <div class="list">🛒 구매 내역</div>
+            <label class="input-file-button" for="uploader">
+              📃 영수증으로 기록하기
+            </label>
+            <input type="file" id="uploader" class="uploader" onclick="message()"/>
+          </div>
+          <br />
+          <div class="ocr_title">
+            <div class="product_name">상품명</div>
+            <div class="product_unit_price">단가</div>
+            <div class="product_count">수량</div>
+            <div class="product_price">금액</div>
+          </div>
+          <div class="right_list_text">
+            <br>
+            <div class="product_contents">
+              <div class="product_name_1">고추가루/국산 1kg</div>
+              <div class="product_unit_price_2">29,785</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">29,785</div>
+            </div>
+            <div class="product_contents">
+              <div class="product_name_1">복숭아/백도 10개</div>
+              <div class="product_unit_price_2">21,461</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">21,461</div>
+            </div>
+            <div class="product_contents">
+              <div class="product_name_1">파/쪽파 1kg</div>
+              <div class="product_unit_price_2">8,761</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">8,761</div>
+            </div>
+            <div class="product_contents">
+              <div class="product_name_1">생강/국산 1kg</div>
+              <div class="product_unit_price_2">8,722</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">8,722</div>
+            </div><div class="product_contents">
+              <div class="product_name_1">마이워터 300ml*30</div>
+              <div class="product_unit_price_2">4,980</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">4,980</div>
+            </div>
+            <div class="product_contents">
+              <div class="product_name_1">칠성사이다 300ml*1</div>
+              <div class="product_unit_price_2">6,980</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">6,980</div>
+            </div>
+            <div class="product_contents">
+              <div class="product_name_1">처음처럼 360ml*6</div>
+              <div class="product_unit_price_2">6,680</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">6,680</div>
+            </div>
+            <div class="product_contents">
+              <div class="product_name_1">매일멸균우유 200ml*1</div>
+              <div class="product_unit_price_2">9,980</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">9,980</div>
+            </div><div class="product_contents">
+              <div class="product_name_1">마이워터 300ml*30</div>
+              <div class="product_unit_price_2">4,980</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">4,980</div>
+            </div>
+            <div class="product_contents">
+              <div class="product_name_1">파인애플/수입</div>
+              <div class="product_unit_price_2">6,670</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">6,670</div>
+            </div>
+            <div class="product_contents">
+              <div class="product_name_1">체리/수입 100g</div>
+              <div class="product_unit_price_2">2,700</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">2,700</div>
+            </div>
+            <div class="product_contents">
+              <div class="product_name_1">매일멸균우유 200ml*1</div>
+              <div class="product_unit_price_2">9,980</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">9,980</div>
+            </div>
+            <div class="product_contents">
+              <div class="product_name_1">고추가루/국산 1kg</div>
+              <div class="product_unit_price_2">29,785</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">29,785</div>
+            </div>
+            <div class="product_contents">
+              <div class="product_name_1">복숭아/백도 10개</div>
+              <div class="product_unit_price_2">21,461</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">21,461</div>
+            </div>
+            <div class="product_contents">
+              <div class="product_name_1">파/쪽파 1kg</div>
+              <div class="product_unit_price_2">8,761</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">8,761</div>
+            </div>
+            <div class="product_contents">
+              <div class="product_name_1">생강/국산 1kg</div>
+              <div class="product_unit_price_2">8,722</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">8,722</div>
+            </div><div class="product_contents">
+              <div class="product_name_1">마이워터 300ml*30</div>
+              <div class="product_unit_price_2">4,980</div>
+              <div class="product_count_3">1</div>
+              <div class="product_price_4">4,980</div>
+            </div>
+            <div class="ocr_contents" id="ocr_contents">
+              <script>
+                // OCR 기능 구현
+                const recognize = async ({ target: { files } }) => {
+                  const {
+                    data: { text },
+                  } = await Tesseract.recognize(files[0], "kor+eng", {
+                    corePath:
+                      "https://unpkg.com/tesseract.js-core@v2.0.0/tesseract-core.wasm.js",
+                    logger: (m) => console.log(m),
+                  });
+                  alert(text);
+                  node = document.getElementById("ocr_contents");
+                  node.innerHTML = text;
+
+                };
+                const elm = document.getElementById("uploader");
+                elm.addEventListener("change", recognize);
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-</body>
+  </body>
 </html>

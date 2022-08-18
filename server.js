@@ -1,3 +1,4 @@
+// 형준 작성----------------------------------------------------------------------------------------------------------------------------
 // npm install express --save 명령어를 통해 서버 설치에 필요한 모듈을 설치한다.
 
 const express = require('express'); // require 를 통해 설치한 모듈(express)을 가져온다.
@@ -37,9 +38,24 @@ app.set('view engine', 'ejs'); // 보여줄 엔진을 선언해줘야 하는데,
 app.engine('html', require('ejs').renderFile); // html 파일을 쓸 건데, 'ejs' 엔진을 사용하여 파일을 불러오겠다.
 // 'ejs' 모듈도 설치를 해줘야하니까 npm install ejs --save 명령어를 터미널에 입력한다.
 
-// 뷰페이지 호출하기
+// 뷰페이지 호출하기(api 호출이나 수정해야 할 부분은 자기 영역만 뒤로 가져가서 수정해주세요.)
+app.get('/accountbook', function (req, res) {
+  // 라우터 코드
+  res.render('accountbook.html'); // localhost:3000 뒤에 /accountbook 를 붙여주면 정의(res)한  accountbook.html 가 웹 브라우저에 표시된다.
+});
 
-// 메인페이지
+app.get('/signin', function (req, res) {
+  // 라우터 코드
+  res.render('signin.html'); // localhost:3000 뒤에 /signin 를 붙여주면 정의(res)한  signin.html 가 웹 브라우저에 표시된다.
+});
+
+app.get('/login', function (req, res) {
+  //
+  res.render('login.html'); // localhost:3000 뒤에 /login 를 붙여주면 정의(res)한  signin.html 가 웹 브라우저에 표시된다.
+});
+
+// 나현 작성-----------------------------------------------------------------------------------------------------------------------------
+// (메인 페이지)
 var request = require('request');
 var options = {
   method: 'GET',
@@ -68,7 +84,8 @@ app.get('/', function (req, res) {
   });
 });
 
-// 물가 페이지
+// 승현 작성-------------------------------------------------------------------------------------------------------------------------
+// 물가 페이지(승현 페이지)
 var request = require('request');
 var options = {
   method: 'GET',
@@ -101,6 +118,7 @@ app.get('/pricedata', function (req, res) {
   });
 });
 
+// 상세 물가 페이지(형준 페이지)
 var request = require('request');
 var options = {
   method: 'GET',
@@ -130,6 +148,7 @@ app.get('/pricedatadetail', function (req, res) {
   });
 });
 
+// 나현 작성------------------------------------------------------------------------------------------------------
 // 쇼핑리스트 페이지
 app.get('/shoppinglist', function (req, res) {
   // 라우터 코드
@@ -159,17 +178,6 @@ app.get('/shoppinglist3', function (req, res) {
   res.render('shoppingList3.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
 });
 
-app.get('/accountbook', function (req, res) {
-  // 라우터 코드
-  res.render('accountbook.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  accountbook.html 가 웹 브라우저에 표시된다.
-});
+// 다빈 작성-----------------------------------------------------------------------------------------------------
 
-app.get('/signin', function (req, res) {
-  // 라우터 코드
-  res.render('signin.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  signin.html 가 웹 브라우저에 표시된다.
-});
-
-app.get('/login', function (req, res) {
-  //
-  res.render('login.html');
-});
+// 형규 작성-----------------------------------------------------------------------------------------------------

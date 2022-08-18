@@ -189,29 +189,7 @@ p {
   border-radius: var(--btn-border-radius);
 }
 
-/* Title bar */
-#titlebar {
-  display: flex;
-  top: 170px;
-  width: 100%;
-  height: 106px;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--color-green);
-  padding: 0 203px;
-}
 
-#titleText{
-  display: flex;
-  flex-direction: row;
-}
-
-.tit__sub__txt {
-  font-size: var(--font-large);
-  font-weight: var(--weight-light);
-  color: var(--color-white);
-  margin: 15px 0;
-}
 
 
 /* Section common */
@@ -221,7 +199,7 @@ p {
   margin: auto;
 }
 
-/* signin page */
+/* login page */
 
 input[type='text'] {
   display: flex;
@@ -255,14 +233,23 @@ input[type='password'] {
   color: var(--color-black);
 }
 
-.signin-box{
+.login-head{
+  display: inline-flexbox;
+  margin-top: 5%;
+  margin-left: 200px;
+  margin-bottom: 5%;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.login-box{
   display: inline-flexbox;
   margin-top: 5%;
   margin-left: 35%;
   margin-bottom: 5%;
 }
 
-.signin-btn{
+.login-btn{
   width: 240px;
   height: 50px;
   border-radius: var(--input-border-radius);
@@ -270,21 +257,9 @@ input[type='password'] {
   color: var(--color-font-grey);
   font-weight: 500;
 }
-
-
-.row{
-  margin-left: 188px;
-  margin-bottom: 50px;
-  font-size: x-large;
-  font-weight: bold;
-  justify-content: center;
+.login-btn:hover{
+  background-color: #4cd492;
+  color: var(--color-white);
 }
 
-.idForm,.emailForm,.passForm{
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 
-.row3{
-  margin-top: 5%;
-}

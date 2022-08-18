@@ -45,27 +45,29 @@
     <!-- Shopping List Page -->
     <section id="shopping-list" class="section">
         <div class="select-item">
-            <!-- Select Mart title -->
-            <div class="title">
-                <h1>
-                    <%=list%>
-                </h1>
-                <p>에서 장보기 리스트</p>
-            </div>
-            <!-- Search Form -->
-            <div class="inputWithIcon">
-                <div>
-                    <input class="search__input" type="text" placeholder="원하는 물품을 선택하세요!" />
-                    <datalist id="list">
-                        <option>
-                            아이스크림
-                        </option>
-                        <option>
-                            사탕
-                        </option>
-                    </datalist>
+            <div class="title-wrap">
+                <!-- Select Mart title -->
+                <div class="title">
+                    <h1>
+                        <%=list%>
+                    </h1>
+                    <p>에서 장보기 리스트</p>
                 </div>
-                <i class="material-icons">search</i>
+                <!-- Search Form -->
+                <div class="inputWithIcon">
+                    <div>
+                        <input class="search__input" type="text" placeholder="원하는 물품을 선택하세요!" />
+                        <datalist id="list">
+                            <option>
+                                아이스크림
+                            </option>
+                            <option>
+                                사탕
+                            </option>
+                        </datalist>
+                    </div>
+                    <i class="material-icons">search</i>
+                </div>
             </div>
             <!--list-->
             <div class="container">
@@ -74,8 +76,44 @@
                     <li>수량</li>
                 </ul>
                 <div class="item__divider"></div>
-                <div class="container">
+                <div class="list-container">
                     <ul class="items">
+                        <li class="item__list">
+                            <div class="item">
+                                <button class="item__check">
+                                    <input type="checkbox" id="check">
+                                    <label for="check"></label>
+                                </button>
+                                <form action="/shoppinglist3" method="post">
+                                    <input type="text" name="product_name" value="홍시 빙수" id="item__name">
+                                    <div class="item__Quantity">
+                                        <input type="number" name="product_count" value="0" id="number">
+                                    </div>
+                                </form>
+                                <button class="item__delete">
+                                    <i class="material-icons">delete</i>
+                                </button>
+                            </div>
+                            <div class="item__divider"></div>
+                        </li>
+                        <li class="item__list">
+                            <div class="item">
+                                <button class="item__check">
+                                    <input type="checkbox" id="check">
+                                    <label for="check"></label>
+                                </button>
+                                <form action="/shoppinglist3" method="post">
+                                    <input type="text" name="product_name" value="행복한 콩두부" id="item__name">
+                                    <div class="item__Quantity">
+                                        <input type="number" name="product_count" value="0" id="number">
+                                    </div>
+                                </form>
+                                <button class="item__delete">
+                                    <i class="material-icons">delete</i>
+                                </button>
+                            </div>
+                            <div class="item__divider"></div>
+                        </li>
                         <li class="item__list">
                             <div class="item">
                                 <button class="item__check">

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>장비서</title>
+    <meta name="description" content="A project that provides price data services." />
+    <meta name="author" content="TMI" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/signin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
+</head>
+
+<body>
+    <header class="header" display="none">
+        <!-- Navbar -->
+        <nav id="navbar__vers-green">
+            <div class="navbar__logo">
+                <a href="/">
+                    <img src="/assets/icons/jang_logo_green.png" alt="장비서 로고" class="logo__green" />
+                </a>
+            </div>
+            <ul class="navbar__menu">
+                <li>
+                    <a href="/shoppinglist" class="navbar__menu__item">쇼핑 리스트</a>
+                </li>
+                <li>
+                    <a href="/pricedata" class="navbar__menu__item">오늘의 물가</a>
+                </li>
+                <li>
+                    <a href="/accountbook" class="navbar__menu__item">가계부 정리</a>
+                </li>
+                <li>
+                    <a href="/signin" class="navbar__menu__item active">회원가입</a>
+                </li>
+                <li>
+                    <button type="button" onclick="location.href='/login'" id="open" class="navbar__menu__login-btn">
+                        로그인
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <div class="signin-box">
+        <div class="row">
+            <h4>회원가입</h4>
+        </div>
+
+        <div class="idForm">
+            아이디
+            <input id="id" name="id" type="text" class="id" placeholder="아이디를 입력해주세요" /><br />
+        </div>
+
+        <div class="emailForm">
+            이메일 주소
+            <input id="email" name="email" type="text" style="cursor: auto" class="email"
+                placeholder="이메일을 입력해주세요" /><br />
+        </div>
+
+        <div class="passForm">
+            비밀번호
+            <input id="password" name="password" type="password" class="pw" placeholder="비밀번호를 입력해주세요" /><br />
+        </div>
+
+        <div class="passForm">
+            비밀번호 확인
+            <input id="password_a" name="cpassword" type="password" class="pw" placeholder="비밀번호를 한번 더 입력해주세요" />
+        </div>
+
+        <div class="row3">
+            <button type="button" class="signin-btn" onclick="checkPW();">
+                가입하기
+            </button>
+            <button type="button" onclick="location.href='/login'" class="signin-btn" onclick="checkPW();">
+                지금 로그인하기
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,9 +1,12 @@
+// 형준 작성----------------------------------------------------------------------------------------------------------------------------
 // npm install express --save 명령어를 통해 서버 설치에 필요한 모듈을 설치한다.
 
 const express = require('express'); // require 를 통해 설치한 모듈(express)을 가져온다.
+const nodemon = require('nodemon');
 const app = express();
 
 app.use(express.static('public')); // css를 적용시키기 위해 정적 폴더)를 지정해준다.
+// app.use(express.static(__dirname + "public"));
 
 //server 를 띄울꺼니까 server 라는 변수를 만들고
 const server = app.listen(3000, () => {
@@ -35,68 +38,146 @@ app.set('view engine', 'ejs'); // 보여줄 엔진을 선언해줘야 하는데,
 app.engine('html', require('ejs').renderFile); // html 파일을 쓸 건데, 'ejs' 엔진을 사용하여 파일을 불러오겠다.
 // 'ejs' 모듈도 설치를 해줘야하니까 npm install ejs --save 명령어를 터미널에 입력한다.
 
-// 뷰페이지 호출하기
-app.get('/', function (req, res) {
-  // 라우터 코드
-  res.render('index.html'); // main.html 파일을 불러오기 위해 render 명령어를 사용한다.
-});
-
-app.get('/mainnav', function (req, res) {
-  // 라우터 코드
-  res.render('main_lastpage.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  main_lastpage.html 가 웹 브라우저에 표시된다.
-});
-
-app.get('/maininfo', function (req, res) {
-  // 라우터 코드
-  res.render('main-page4.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  main_lastpage.html 가 웹 브라우저에 표시된다.
-});
-
-app.get('/mainshoppinglist', function (req, res) {
-  // 라우터 코드
-  res.render('main-page1.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  main-page1.html 가 웹 브라우저에 표시된다.
-});
-
-app.get('/mainprice', function (req, res) {
-  // 라우터 코드
-  res.render('main-page2.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  main-page2.html 가 웹 브라우저에 표시된다.
-});
-
-app.get('/mainaccount', function (req, res) {
-  // 라우터 코드
-  res.render('main-page3.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  main-page3.html 가 웹 브라우저에 표시된다.
-});
-
-app.get('/pricedata', function (req, res) {
-  // 라우터 코드
-  res.render('priceData.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  priceData.html 가 웹 브라우저에 표시된다.
-});
-
-app.get('/pricedatadetail', function (req, res) {
-  // 라우터 코드
-  res.render('detailprice.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  detailprice.html 가 웹 브라우저에 표시된다.
-});
-
-app.get('/shoppinglist', function (req, res) {
-  // 라우터 코드
-  res.render('ShoppingList.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
-});
-
-app.get('/shoppinglistmap', function (req, res) {
-  // 라우터 코드
-  res.render('ShoppingList2.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList2.html 가 웹 브라우저에 표시된다.
-});
-
-app.get('/shoppinglistmart', function (req, res) {
-  // 라우터 코드
-  res.render('ShoppingList3.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList3.html 가 웹 브라우저에 표시된다.
-});
-
+// 뷰페이지 호출하기(api 호출이나 수정해야 할 부분은 자기 영역만 뒤로 가져가서 수정해주세요.)
 app.get('/accountbook', function (req, res) {
   // 라우터 코드
-  res.render('accountbook.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  accountbook.html 가 웹 브라우저에 표시된다.
+  res.render('accountbook.html'); // localhost:3000 뒤에 /accountbook 를 붙여주면 정의(res)한  accountbook.html 가 웹 브라우저에 표시된다.
 });
 
 app.get('/signin', function (req, res) {
   // 라우터 코드
-  res.render('signin.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  signin.html 가 웹 브라우저에 표시된다.
+  res.render('signin.html'); // localhost:3000 뒤에 /signin 를 붙여주면 정의(res)한  signin.html 가 웹 브라우저에 표시된다.
 });
+
+app.get('/login', function (req, res) {
+  //
+  res.render('login.html'); // localhost:3000 뒤에 /login 를 붙여주면 정의(res)한  signin.html 가 웹 브라우저에 표시된다.
+});
+
+// 나현 작성-----------------------------------------------------------------------------------------------------------------------------
+// (메인 페이지)
+var request = require('request');
+var options = {
+  method: 'GET',
+  url: 'https://www.kamis.or.kr/service/price/xml.do?action=dailySalesList&p_cert_key=test&p_cert_id=test&p_returntype=xml',
+  headers: {},
+};
+var xml2js = require('xml2js');
+
+app.get('/', function (req, res) {
+  // 라우터 코드
+  request(options, function (error, response) {
+    if (error) throw new Error(error);
+    console.log(response.body);
+
+    var parser = new xml2js.Parser();
+
+    parser.parseString;
+
+    var parsered_data;
+    parser.parseString(response.body, function (err, result) {
+      // console.log(result);
+
+      parsered_data = result.document.price[0].item;
+    });
+    res.render('index.ejs', { rows: parsered_data });
+  });
+});
+
+// 승현 작성-------------------------------------------------------------------------------------------------------------------------
+// 물가 페이지(승현 페이지)
+var request = require('request');
+var options = {
+  method: 'GET',
+  url: 'https://www.kamis.or.kr/service/price/xml.do?action=dailySalesList&p_cert_key=test&p_cert_id=test&p_returntype=xml',
+  headers: {},
+};
+
+var xml2js = require('xml2js');
+
+app.get('/pricedata', function (req, res) {
+  // 라우터 코드
+  request(options, function (error, response) {
+    if (error) throw new Error(error);
+    console.log(response.body);
+
+    var parser = new xml2js.Parser();
+
+    parser.parseString;
+
+    var parsered_data;
+    parser.parseString(response.body, function (err, result) {
+      // console.log(result);
+
+      parsered_data = result.document.price[0].item;
+    });
+
+    res.render('priceData', { rows: parsered_data });
+
+    // res.render("priceData"); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  priceData.html 가 웹 브라우저에 표시된다.
+  });
+});
+
+// 상세 물가 페이지(형준 페이지)
+var request = require('request');
+var options = {
+  method: 'GET',
+  url: 'https://www.kamis.or.kr/service/price/xml.do?action=dailySalesList&p_cert_key=test&p_cert_id=test&p_returntype=xml',
+  headers: {},
+};
+
+var xml2js = require('xml2js');
+const { response, body } = require('express');
+
+app.get('/pricedatadetail', function (req, res) {
+  var item_name = req.query.item_name;
+  var unit = req.query.unit;
+  var today = req.query.today;
+  var day = req.query.day;
+  var month = req.query.month;
+  var year = req.query.year;
+
+  console.log(response);
+  res.render('detailprice', {
+    item_name: item_name,
+    unit: unit,
+    today: today,
+    day: day,
+    month: month,
+    year: year,
+  });
+});
+
+// 나현 작성------------------------------------------------------------------------------------------------------
+// 쇼핑리스트 페이지
+app.get('/shoppinglist', function (req, res) {
+  // 라우터 코드
+  res.render('shoppingList.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
+});
+
+app.get('/shoppinglist1-1', function (req, res) {
+  // 라우터 코드
+  res.render('shoppingList1-1.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
+});
+
+app.get('/shoppinglist1-2', function (req, res) {
+  // 라우터 코드
+  res.render('shoppingList1-2.html', {}); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
+});
+
+app.get('/shoppinglist2', function (req, res) {
+  // 라우터 코드
+  var martTitle = req.query;
+  var martTitle2 = Object.keys(martTitle);
+  console.log(martTitle2);
+  res.render('shoppingList2', { list: martTitle2 }); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList2.html 가 웹 브라우저에 표시된다.
+});
+
+app.get('/shoppinglist3', function (req, res) {
+  // 라우터 코드
+  res.render('shoppingList3.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
+});
+
+// 다빈 작성-----------------------------------------------------------------------------------------------------
+
+// 형규 작성-----------------------------------------------------------------------------------------------------

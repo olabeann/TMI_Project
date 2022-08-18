@@ -210,35 +210,75 @@ p {
 
 /* Section common */
 .section {
-  padding: 50px 0 0 0;
   max-width: 1520px;
   margin: auto;
 }
 
 /* Shopping List Page 2 */
 #shopping-list {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-}
-
-.shopping-list__list-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 487px;
-  margin-right: 20px;
+  align-content: center;
+  justify-content: center;
+  padding: 0 100px;
+}
+
+.select-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 18px 0;
+}
+
+.select-item .title-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 50px 0;
+}
+
+/* Title */
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.title h1 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-font-grey);
+  margin: 0;
+}
+
+.title p {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 35px;
+  font-weight: 400;
+  color: var(--color-font-grey);
+  margin: 0;
 }
 
 /* Search Form */
-input[type='text'] {
+.inputWithIcon input[type='text'] {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 487px;
   height: 61px;
-  border: 1.5px solid var(--color-grey);
+  border: 3px solid var(--color-font-grey);
   border-radius: var(--input-border-radius);
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 400;
   margin: 0;
   outline: none;
   /* padding: 4px; */
@@ -248,16 +288,16 @@ input[type='text'] {
   color: var(--color-black);
 }
 
-input[type='text']:focus {
+.select-item input[type='text']:focus {
   border-color: var(--color-green);
   box-shadow: 0 0 8px 0 var(--color-green);
 }
 
 .inputWithIcon input[type='text'] {
   padding-left: 60px;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
-  color: var(--color-grey);
+  color: var(--color-black);
 }
 
 .inputWithIcon {
@@ -287,208 +327,294 @@ input[type='text']:focus {
   color: var(--color-green);
 }
 
-/* Mart List */
-.shopping-list__mart-info__container {
+/* List */
+.container {
   display: flex;
-  align-items: center;
   flex-direction: column;
-}
-
-.shopping-list__mart-info {
-  display: flex;
   justify-content: center;
   align-items: center;
-  width: 487px;
-  height: 158px;
-  border: 1px solid var(--color-grey);
-  margin-top: 16px;
-  margin-bottom: 26px;
-  padding: 0 22px;
 }
 
-.shopping-list__mart-info:active {
-  border-color: var(--color-green);
-  box-shadow: 0 0 8px 0 var(--color-green);
-}
-
-.shopping-list__mart-content {
+.container .list-index {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: center;
-  margin: 0;
+  width: 100%;
+  height: 80px;
 }
 
-.sort {
-  display: inline-block;
-  align-items: center;
-}
-
-.shopping-list__mart-num {
-  display: flex;
-  margin-right: 18px;
-  width: 34px;
-  height: 36px;
-  font-size: var(--font-large);
-  font-weight: var(--weight-extra-bold);
-  color: var(--color-green);
-}
-
-.shopping-list__mart-tit {
-  display: flex;
-  width: 146px;
-  height: 23px;
-  margin-right: 18px;
-  align-items: center;
-  font-size: 20px;
-  font-weight: var(--weight-extra-bold);
-}
-
-.shopping-list__mart-list__item {
-  height: 17px;
-  font-size: 15px;
-  font-weight: var(--weight-medium);
-}
-
-.shopping-list__mart-sub {
-  flex-direction: column;
-  margin: 0 18px 0 51px;
-  width: 137px;
-  font-size: 14px;
-}
-
-.shopping-list__mart-list__desc {
-  height: 17px;
-  align-content: flex-start;
-  font-size: 15px;
-  font-weight: var(--weight-medium);
-  margin-top: 11px;
-}
-
-.item-btn {
+.container .list-index li {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 231px;
-  height: 34px;
-  font-size: 15px;
-  font-weight: var(--weight-medium);
-  background: var(--color-blue);
-  border-radius: var(--btn-border-radius);
+  font-size: 25px;
+  font-weight: 800;
 }
 
-/* Click 일단 이렇게 구현했습니다 저의 한계.. */
-.item-star {
-  margin-left: 396px;
-}
-.item-star::after {
-  display: flex;
-  content: '';
-  width: 14px;
-  height: 13px;
-  vertical-align: top;
+.list-container {
+  width: 100%;
 }
 
-/* Mart Map */
-/* map #map {
-  width: 1000px;
-  height: 635px;
-} */
-.shopping-list__map-container {
+.container .items {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 1000px;
-  height: 635px;
-  background-image: url(../assets/images/mapImg.png);
-}
-
-.shopping-list__pin-card {
-  display: flex;
-  margin: 20px;
-}
-
-.shopping-list__pin-img {
-  position: absolute;
-  left: 266px;
-  overflow: hidden;
-}
-
-.pin-img {
-  width: 106px;
-  height: 106px;
-}
-
-.pin-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  height: 108px;
-  border: 2px solid var(--color-black);
-  background-color: var(--color-white);
-  border-radius: var(--map-border-radius);
-  padding: 10px 50px;
-  box-sizing: border-box;
+  align-content: flex-start;
+  width: 100%;
+  height: 350px;
 }
 
-.pin-content__container {
+.items .item__list {
+  width: 100%;
+}
+
+.item__list .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 88px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.item .item__check {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 343px;
+  margin: 0 10px;
 }
 
-.pin-content__num {
-  display: flex;
-  margin-right: 6px;
-  width: 34px;
-  height: 36px;
-  font-size: var(--font-large);
-  font-weight: var(--weight-extra-bold);
-  color: var(--color-regular-red);
+#check {
+  accent-color: #4cd492;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
 }
 
-.pin-content__title {
+.item__check input[id='check'] + label {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #4cd492;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.item__check input[id='check']:checked + label {
+  background: var(--color-green);
+}
+.item__check input[id='check'] {
+  display: none;
+}
+
+.item form {
   display: flex;
-  height: 23px;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  font-size: 20px;
-  font-weight: var(--weight-extra-bold);
 }
 
-.pin-content__time {
+.item #item__name {
+  border: none;
+  /* text-align: center; */
+  margin: 0 190px 0 120px;
+}
+
+input[id='item__name'] {
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* .item .item__Quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 104px;
+  height: 48px;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 90px;
+} */
+
+input[id='item__Quantity'] {
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.item__Quantity #number {
+  margin: 0 10px;
+}
+
+.item .item__delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 190px;
+}
+
+.item__delete i {
+  font-size: 44px;
+  color: #eb7767;
+}
+
+.items {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 15px;
-  font-size: 13px;
-  font-weight: var(--weight-regular);
-  margin-bottom: 10px;
+  width: 1282px;
+  height: 500px;
+  overflow-y: auto;
 }
 
-.pin-content__time .material-icons {
-  margin-left: 14px;
-}
-
-.time-tit {
-  font-weight: 700;
-  margin-right: 4px;
-}
-
-.pin-content__price-tit {
+.item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  height: 21px;
-  font-size: 18px;
-  font-weight: var(--weight-extra-bold);
-  color: var(--color-regular-red);
-  margin-right: 22px;
+  padding: 16px 70px;
+  font-size: 25px;
+  height: 60px;
 }
 
-.pin-content__price-cont {
-  font-size: 15px;
+.item__delete .material-icons {
+  font-size: 40px;
+  transition: all 300ms ease-in;
+}
+
+.item__delete .material-icons:hover {
+  color: crimson;
+  transform: scale(1.1);
+}
+
+.item__divider {
+  width: 100%;
+  height: 3px;
+  background-color: rgb(100, 100, 100);
+}
+
+/* link move */
+#movebtn-nextpage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 492px;
+  height: 63px;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 12px;
+  background-color: #eb7767;
+  color: var(--color-white);
+  transition: transform 300ms ease-in;
+  margin-left: 800px;
+  margin-top: 40px;
+}
+
+#movebtn-nextpage:hover {
+  transform: scale(1.1);
+}
+
+/* Fix add btn */
+.footer {
+  width: 100%;
+  background: linear-gradient(
+    15deg,
+    var(--color-green),
+    var(--color-light-green)
+  );
+  border-radius: 0 0 20px 20px;
+}
+
+/* .search__input{} */
+
+.footer__input {
+  width: 100%;
+  height: 60px;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  padding: 0 16px;
+}
+
+.footer__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  font-size: 34px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: var(--color-green);
+  transition: transform 300ms ease-in;
+  margin: auto;
+}
+
+.footer__button .material-icons {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.footer__button:hover {
+  transform: scale(1.1);
+}
+
+/* toDo */
+.button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.input-group label {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  font-size: 18px;
+  text-shadow: 1px 1px 3px #1c1100;
+  color: #fff;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.input-group input {
+  border: 0;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  background: transparent;
+  width: 100%;
+  padding: 0px 0 0px 0;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.input-group input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #e74c3c;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+  top: 25px;
+  font-size: 10px;
+}
+
+.js-toDoList {
+  font-size: 13px;
+  text-shadow: 1px 1px 3px #1c1100;
+  margin-bottom: 2px;
 }

@@ -3,10 +3,23 @@
 
 const express = require('express'); // require 를 통해 설치한 모듈(express)을 가져온다.
 const nodemon = require('nodemon');
+const mysql = require('mysql');
+const bodyParser = require('body-parser');
+const path = require('path');
+const fs = require('fs');
 const app = express();
 
 app.use(express.static('public')); // css를 적용시키기 위해 정적 폴더)를 지정해준다.
 // app.use(express.static(__dirname + "public"));
+app.use(bodyParser.urlencoded({extended : true}));
+const db = mysql.createConnection({ // mysql 연결 주소
+  host     : '127.0.0.1',
+  user     : 'root',
+  password : '1234',
+  database : 'mart_db',
+  multipleStatements: true
+});
+db.connect(); 
 
 //server 를 띄울꺼니까 server 라는 변수를 만들고
 const server = app.listen(3000, () => {
@@ -165,19 +178,46 @@ app.get('/shoppinglist1-2', function (req, res) {
   res.render('shoppingList1-2.html', {}); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
 });
 
-app.get('/shoppinglist2', function (req, res) {
-  // 라우터 코드
-  var martTitle = req.query;
-  var martTitle2 = Object.keys(martTitle);
-  console.log(martTitle2);
-  res.render('shoppingList2', { list: martTitle2 }); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList2.html 가 웹 브라우저에 표시된다.
-});
-
-app.get('/shoppinglist3', function (req, res) {
-  // 라우터 코드
-  res.render('shoppingList3.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
-});
 
 // 다빈 작성-----------------------------------------------------------------------------------------------------
+app.get('/shoppingList2', function (req, res) {//지도에서 마트이름 값을 넘겨주면 받는 
+  // 라우터 코드
+    var martitle1 = (req.originalUrl).split("?");
+    data= martitle1[1];
+    var de = decodeURI(data);
+
+    const searchProduct_sql = 'select product_name from mart_product where mart_name = ?';
+    db.query(searchProduct_sql,[de] ,function(error, product_list, fields) {
+      if (error) throw error;
+      else{
+        res.render('shoppingList2', {product :product_list} ); // 쇼핑리스트3 페이지에 DB 쿼리문의 요청 받은 값을 보내준다\
+      }
+      }); 
+  });
 
 // 형규 작성-----------------------------------------------------------------------------------------------------
+app.post("/shoppinglist3", function(req,res){
+  let product_name = req.body.product_name;
+  let product_count = req.body.product_count;
+  const listAdd_sql = ' insert into shopping_list(product_name, product_count) values( ? )'
+  name_count = [[product_name,product_count]];
+  listAdd = mysql.format(listAdd_sql, name_count);
+  console.log(name_count);
+  console.log(listAdd);
+  db.query(listAdd,function(err,result){
+  console.log(result);
+})
+
+  
+  //console.log(product_name);
+  //console.log(product_count);
+  const sql = 'select S.product_name, S.product_count, P.price from shopping_list S inner join mart_product P  on S.product_name=P.product_name where mart_name = "이마트 광교점"'; 
+  db.query(sql, function(error, rows, fields) {
+    if (error) throw error;
+    else{
+      console.log(rows);
+      res.render('ShoppingList3.ejs',{list: rows}) // 쇼핑리스트3 페이지에 DB 쿼리문의 요청 받은 값을 보내준다
+    }
+    
+  }); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
+});

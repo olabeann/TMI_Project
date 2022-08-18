@@ -52,10 +52,12 @@
 
         <div class="result-container">
             <div class="tit_box">
-                <div class="title">홈플러스 지점</div>
+                <div class="title"></div>
                 <div class="tit_desc">
-                    에서 쇼핑하실 때 예상 금액은
-                    <div class="tit_price"> 52,200</div>원 입니다.
+                    쇼핑하실 때 예상 금액은
+                    <div class="tit_price"> <% let sum = 0; for (i = 0; i < list.length; i++) { %>
+                        <% sum = sum + (list[i].price * list[i].product_count)}%>
+                        <%= sum%></div>원 입니다.
                     <i class="material-icons">sentiment_very_satisfied</i>
                 </div>
             </div>
@@ -79,86 +81,24 @@
                     </li>
                 </ul>
                 <ul class="priceList_list">
+                    <%   for (i = 0; i < list.length; i++) { %>
                     <li class="pricelist_box">
                         <div class="list_content mar1">
-                            <span class="list_subject">사과</span>
-                            <span class="list_kind">홍로</span>
-                            <span class="list_class">중품(10개 기준)</span>
+                            <span class="list_subject"><%= list[i].product_name%></span>
+
                         </div>
                         <div class="list_content mar2">
-                            <span class="list_martprice">2900</span>원
+                            <span class="list_martprice"><%= list[i].price %></span>원
                         </div>
                         <div class="list_content mar3">
-                            <span class="list_quantity">3</span>
+                            <span class="list_quantity"><%= list[i].product_count%></span>
                         </div>
                         <div class="list_content mar4">
-                            <span class="list_martprice">8700</span>원
+                            <span class="list_martprice"><%= list[i].price * list[i].product_count%></span>원
                         </div>
                     </li>
-                    <li class="pricelist_box">
-                        <div class="list_content mar1">
-                            <span class="list_subject">양파</span>
-                            <span class="list_kind">햇양파</span>
-                            <span class="list_class">상품(100g 기준)</span>
-                        </div>
-                        <div class="list_content mar2">
-                            <span class="list_martprice"></span>원
-                        </div>
-                        <div class="list_content mar3">
-                            <span class="list_quantity">1</span>
-                        </div>
-                        <div class="list_content mar4">
-                            <span class="list_martprice">8700</span>원
-                        </div>
-                    </li>
-                    <li class="pricelist_box">
-                        <div class="list_content mar1">
-                            <span class="list_subject">감자</span>
-                            <span class="list_kind"></span>
-                            <span class="list_class">상품(100g 기준)</span>
-                        </div>
-                        <div class="list_content mar2">
-                            <span class="list_martprice"></span>원
-                        </div>
-                        <div class="list_content mar3">
-                            <span class="list_quantity">6</span>
-                        </div>
-                        <div class="list_content mar4">
-                            <span class="list_martprice">3000</span>원
-                        </div>
-                    </li>
-                    <li class="pricelist_box">
-                        <div class="list_content mar1">
-                            <span class="list_subject">고구마</span>
-                            <span class="list_kind"></span>
-                            <span class="list_class">상품(1k 기준)</span>
-                        </div>
-                        <div class="list_content mar2">
-                            <span class="list_martprice"></span>원
-                        </div>
-                        <div class="list_content mar3">
-                            <span class="list_quantity">3</span>
-                        </div>
-                        <div class="list_content mar4">
-                            <span class="list_martprice">17000</span>원
-                        </div>
-                    </li>
-                    <li class="pricelist_box">
-                        <div class="list_content mar1">
-                            <span class="list_subject">페브리지</span>
-                            <span class="list_kind"></span>
-                            <span class="list_class">상쾌한 향(371ml)</span>
-                        </div>
-                        <div class="list_content mar2">
-                            <span class="list_martprice"></span>원
-                        </div>
-                        <div class="list_content mar3">
-                            <span class="list_quantity">1</span>
-                        </div>
-                        <div class="list_content mar4">
-                            <span class="list_martprice">4900</span>원
-                        </div>
-                    </li>
+                    <%   } %>
+
                 </ul>
             </div>
 

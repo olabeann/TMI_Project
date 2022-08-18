@@ -9,7 +9,7 @@
   <meta name="description" content="A project that provides price data services." />
   <meta name="author" content="TMI" />
   <link rel="stylesheet" href="/styles/reset.css">
-  <link rel="stylesheet" href="/styles/shoppingList2.css">
+  <link rel="stylesheet" href="/styles/shoppingList1-1.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
@@ -129,6 +129,17 @@
       itemCheck.appendChild(checkBox);
       itemCheck.appendChild(checkLabel);
 
+      // // 체크 표시
+      // itemCheck.onclick = () => {
+      //   if (itemCheck.style.display == 'none') {
+      //     console.log("켜주세요");
+      //     itemCheck.style.display == 'inline-block';
+      //   } else {
+      //     console.log("꺼줘라");
+      //     itemCheck.style.display == 'none';
+      //   }
+      // };
+
       // 아이템 상품명
       const itemName = document.createElement("div");
       itemName.setAttribute('id', 'item__name');
@@ -140,16 +151,31 @@
 
       const countDecrease = document.createElement("button");
       countDecrease.setAttribute('id', 'decrease');
+      countDecrease.innerHTML = `-`;
 
       const countNumber = document.createElement("div");
       countNumber.setAttribute('id', 'number');
+      countNumber.innerHTML = `1`;
 
       const countIncrease = document.createElement("button");
       countIncrease.setAttribute('id', 'increase');
+      countIncrease.innerHTML = `+`;
 
       itemCount.appendChild(countDecrease);
       itemCount.appendChild(countNumber);
       itemCount.appendChild(countIncrease);
+
+      // 수량 갯수
+      countIncrease.onclick = () => {
+        console.log("ffff");
+        const current = parseInt(countNumber.innerText, 10);
+        countNumber.innerText = current + 1;
+      };
+
+      countDecrease.onclick = () => {
+        const current = parseInt(countNumber.innerText, 10);
+        countNumber.innerText = current - 1;
+      };
 
       // 아이템 삭제
       const itemDelete = document.createElement("button");
@@ -178,45 +204,13 @@
     // // 에드 추가버튼 기능
     addBtn.addEventListener('click', () => {
       onAdd();
-    })
+    });
 
     input.addEventListener('keypress', event => {
       if (event.key === 'Enter') {
         onAdd();
       }
-    })
-
-    // // 수량
-    // /* id가 있는 경우 */
-    const number = document.getElementById('number');
-    const increase = document.getElementById('increase');
-    const decrease = document.getElementById('decrease');
-
-    increase.onclick = () => {
-      const current = parseInt(number.innerText, 10);
-      number.innerText = current + 1;
-    };
-
-    decrease.onclick = () => {
-      const current = parseInt(number.innerText, 10);
-      number.innerText = current - 1;
-    };
-
-        //id가 없는 경우
-    /* const number = document.getElementById('number');
-    const buttons =document.querySelectorAll("buttons");
-    const [increase, decrease] = buttons;
-    
-    increase.onclick = () => {
-        const current = parseInt(number.innerText, 10);
-        number.innerText = current + 1;
-    };
-    
-    decrease.onclick = () => {
-        const current = parseInt(number.innerText, 10);
-        number.innerText = current - 1;
-    }; */
-
+    });
   </script>
 </body>
 

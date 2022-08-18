@@ -39,21 +39,6 @@ app.engine('html', require('ejs').renderFile); // html 파일을 쓸 건데, 'ej
 // 'ejs' 모듈도 설치를 해줘야하니까 npm install ejs --save 명령어를 터미널에 입력한다.
 
 // 뷰페이지 호출하기(api 호출이나 수정해야 할 부분은 자기 영역만 뒤로 가져가서 수정해주세요.)
-app.get('/shoppinglist', function (req, res) {
-  // 라우터 코드
-  res.render('ShoppingList.html'); // localhost:3000 뒤에 /shoppinglist 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
-});
-
-app.get('/shoppinglistmap', function (req, res) {
-  // 라우터 코드
-  res.render('ShoppingList2.html'); // localhost:3000 뒤에 /shoppinglistmap 를 붙여주면 정의(res)한  ShoppingList2.html 가 웹 브라우저에 표시된다.
-});
-
-app.get('/shoppinglistmart', function (req, res) {
-  // 라우터 코드
-  res.render('ShoppingList3.html'); // localhost:3000 뒤에 /shoppinglistmart 를 붙여주면 정의(res)한  ShoppingList3.html 가 웹 브라우저에 표시된다.
-});
-
 app.get('/accountbook', function (req, res) {
   // 라우터 코드
   res.render('accountbook.html'); // localhost:3000 뒤에 /accountbook 를 붙여주면 정의(res)한  accountbook.html 가 웹 브라우저에 표시된다.
@@ -163,205 +148,36 @@ app.get('/pricedatadetail', function (req, res) {
   });
 });
 
-
 // 나현 작성------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 쇼핑리스트 페이지
+app.get('/shoppinglist', function (req, res) {
+  // 라우터 코드
+  res.render('shoppingList.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
+});
+
+app.get('/shoppinglist1-1', function (req, res) {
+  // 라우터 코드
+  res.render('shoppingList1-1.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
+});
+
+app.get('/shoppinglist1-2', function (req, res) {
+  // 라우터 코드
+  res.render('shoppingList1-2.html', {}); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
+});
+
+app.get('/shoppinglist2', function (req, res) {
+  // 라우터 코드
+  var martTitle = req.query;
+  var martTitle2 = Object.keys(martTitle);
+  console.log(martTitle2);
+  res.render('shoppingList2', { list: martTitle2 }); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList2.html 가 웹 브라우저에 표시된다.
+});
+
+app.get('/shoppinglist3', function (req, res) {
+  // 라우터 코드
+  res.render('shoppingList3.html'); // localhost:3000 뒤에 /about 를 붙여주면 정의(res)한  ShoppingList.html 가 웹 브라우저에 표시된다.
+});
 
 // 다빈 작성-----------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // 형규 작성-----------------------------------------------------------------------------------------------------

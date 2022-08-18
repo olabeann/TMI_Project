@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장비서</title>
+    <meta name="description" content="A project that provides price data services." />
+    <meta name="author" content="TMI" />
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/shoppingList2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
+</head>
+
+<body>
+    <header class="header" display="none">
+        <!-- Navbar -->
+        <nav id="navbar__vers-green">
+            <div class="navbar__logo">
+                <a href="/">
+                    <img src="/assets/icons/jang_logo_green.png" alt="장비서 로고" class="logo__green">
+                </a>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="/shoppinglist" class="navbar__menu__item active">쇼핑 리스트</a></li>
+                <li><a href="/pricedata" class="navbar__menu__item">오늘의 물가</a></li>
+                <li><a href="/accountbook" class="navbar__menu__item">가계부 정리</a></li>
+                <li><a href="/signin" class="navbar__menu__item">회원가입</a></li>
+                <li><button type="button" id="open" class="navbar__menu__login-btn">로그인</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Title bar -->
+    <section id="titlebar">
+        <span class="tit__sub__txt">장보기 전, &nbsp</span>
+        <h1>쇼핑리스트 노트 📝</h1>
+    </section>
+    <!-- Shopping List Page -->
+    <section id="shopping-list" class="section">
+        <div class="select-item">
+            <div class="title-wrap">
+                <!-- Select Mart title -->
+                <div class="title">
+                    <h1>
+                        <%=list%>
+                    </h1>
+                    <p>에서 장보기 리스트</p>
+                </div>
+                <!-- Search Form -->
+                <div class="inputWithIcon">
+                    <div>
+                        <input class="search__input" type="text" placeholder="원하는 물품을 선택하세요!" />
+                        <datalist id="list">
+                            <option>
+                                아이스크림
+                            </option>
+                            <option>
+                                사탕
+                            </option>
+                        </datalist>
+                    </div>
+                    <i class="material-icons">search</i>
+                </div>
+            </div>
+            <!--list-->
+            <div class="container">
+                <ul class="list-index">
+                    <li>상품명</li>
+                    <li>수량</li>
+                </ul>
+                <div class="item__divider"></div>
+                <div class="list-container">
+                    <ul class="items">
+                        <li class="item__list">
+                            <div class="item">
+                                <button class="item__check">
+                                    <input type="checkbox" id="check">
+                                    <label for="check"></label>
+                                </button>
+                                <form action="/shoppinglist3" method="post">
+                                    <input type="text" name="product_name" value="홍시 빙수" id="item__name">
+                                    <div class="item__Quantity">
+                                        <input type="number" name="product_count" value="0" id="number">
+                                    </div>
+                                </form>
+                                <button class="item__delete">
+                                    <i class="material-icons">delete</i>
+                                </button>
+                            </div>
+                            <div class="item__divider"></div>
+                        </li>
+                        <li class="item__list">
+                            <div class="item">
+                                <button class="item__check">
+                                    <input type="checkbox" id="check">
+                                    <label for="check"></label>
+                                </button>
+                                <form action="/shoppinglist3" method="post">
+                                    <input type="text" name="product_name" value="행복한 콩두부" id="item__name">
+                                    <div class="item__Quantity">
+                                        <input type="number" name="product_count" value="0" id="number">
+                                    </div>
+                                </form>
+                                <button class="item__delete">
+                                    <i class="material-icons">delete</i>
+                                </button>
+                            </div>
+                            <div class="item__divider"></div>
+                        </li>
+                        <li class="item__list">
+                            <div class="item">
+                                <button class="item__check">
+                                    <input type="checkbox" id="check">
+                                    <label for="check"></label>
+                                </button>
+                                <form action="/shoppinglist3" method="post">
+                                    <input type="text" name="product_name" value="미네랄 워터" id="item__name">
+                                    <div class="item__Quantity">
+                                        <input type="number" name="product_count" value="0" id="number">
+                                    </div>
+                                </form>
+                                <button class="item__delete">
+                                    <i class="material-icons">delete</i>
+                                </button>
+                            </div>
+                            <div class="item__divider"></div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Move next page btn -->
+                <a href="/shoppinglist3">
+                    <form action="" onsubmit="return false;" method="post">
+                        <button type="submit" id="movebtn-nextpage">어디서 얼마에 구입할 수 있는지 확인!</button>
+                    </form>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

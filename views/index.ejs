@@ -280,7 +280,6 @@
         getClock();
         setInterval(getClock, 1000);
 
-
         // Greeting
         const modalOpen = document.querySelector("#open");
         const loginForm = document.querySelector("#login-form");
@@ -309,8 +308,14 @@
             modalOpen.classList.add(HIDDEN_CLASSNAME);
             modalClose.style.display = "none";
             const username = loginInput.value;
+            // setCookie('myHobby', 'game', '3');
             localStorage.setItem(USERNAME_KEY, username);
+            setCookie(USERNAME_KEY, username);
             paintGreetings(username);
+        }
+
+        function setCookie(USERNAME_KEY, username) {
+            document.cookie = USERNAME_KEY + '=' + username;
         }
 
         function paintGreetings(username) {
@@ -398,7 +403,7 @@
         function copy() {
             copyToClipboard('localhost:3000');
             alert('Copied!');
-            console.log('Copied!');
+            // console.log('Copied!');
         }
     </script>
 </body>

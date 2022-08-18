@@ -49,25 +49,11 @@
                 <!-- Select Mart title -->
                 <div class="title">
                     <h1>
-                        <%=list%>
+                        <div id="martname"></div>
                     </h1>
                     <p>에서 장보기 리스트</p>
                 </div>
-                <!-- Search Form -->
-                <div class="inputWithIcon">
-                    <div>
-                        <input class="search__input" type="text" placeholder="원하는 물품을 선택하세요!" />
-                        <datalist id="list">
-                            <option>
-                                아이스크림
-                            </option>
-                            <option>
-                                사탕
-                            </option>
-                        </datalist>
-                    </div>
-                    <i class="material-icons">search</i>
-                </div>
+             
             </div>
             <!--list-->
             <div class="container">
@@ -78,71 +64,184 @@
                 <div class="item__divider"></div>
                 <div class="list-container">
                     <ul class="items">
+                        
+                <!--list content-->
                         <li class="item__list">
                             <div class="item">
                                 <button class="item__check">
-                                    <input type="checkbox" id="check">
+                                    <input type="checkbox" id="check" onclick="check(this)" />
                                     <label for="check"></label>
                                 </button>
                                 <form action="/shoppinglist3" method="post">
-                                    <input type="text" name="product_name" value="홍시 빙수" id="item__name">
+                <!-- Search Form -->
+                                    <div class="inputWithIcon">
+                                        <div>
+                                        <input class="search__input" name="product_name"  id="item__name" type="text" placeholder="원하는 물품을 선택하세요!" list="list" />
+                                            <datalist id="list">
+                                                <%   for (i = 0; i < product.length; i++) { %>
+                                                    <option> <%= product[i].product_name %></option>
+                                                <%   } %>
+                                            </datalist>
+                                        </div>
+                                        <!-- <i class="material-icons">search</i> -->
+                                    </div>
                                     <div class="item__Quantity">
                                         <input type="number" name="product_count" value="0" id="number">
                                     </div>
-                                </form>
+                                
                                 <button class="item__delete">
                                     <i class="material-icons">delete</i>
                                 </button>
                             </div>
                             <div class="item__divider"></div>
                         </li>
-                        <li class="item__list">
-                            <div class="item">
-                                <button class="item__check">
-                                    <input type="checkbox" id="check">
-                                    <label for="check"></label>
-                                </button>
-                                <form action="/shoppinglist3" method="post">
-                                    <input type="text" name="product_name" value="행복한 콩두부" id="item__name">
-                                    <div class="item__Quantity">
-                                        <input type="number" name="product_count" value="0" id="number">
-                                    </div>
-                                </form>
-                                <button class="item__delete">
-                                    <i class="material-icons">delete</i>
-                                </button>
+                <!--list content end-->
+
+                 <!--list content-->
+                 <li class="item__list">
+                    <div class="item">
+                        <button class="item__check">
+                            <input type="checkbox" id="check" onclick="check(this)" />
+                            <label for="check"></label>
+                        </button>
+                        <form action="/shoppinglist3" method="post">
+                 <!-- Search Form -->
+                            <div class="inputWithIcon">
+                                <div>
+                                <input class="search__input" name="product_name"  id="item__name" type="text" placeholder="원하는 물품을 선택하세요!" list="list" />
+                                    <datalist id="list">
+                                        <%   for (i = 0; i < product.length; i++) { %>
+                                            <option> <%= product[i].product_name %></option>
+                                        <%   } %>
+                                    </datalist>
+                                </div>
+                                <!-- <i class="material-icons">search</i> -->
                             </div>
-                            <div class="item__divider"></div>
-                        </li>
-                        <li class="item__list">
-                            <div class="item">
-                                <button class="item__check">
-                                    <input type="checkbox" id="check">
-                                    <label for="check"></label>
-                                </button>
-                                <form action="/shoppinglist3" method="post">
-                                    <input type="text" name="product_name" value="미네랄 워터" id="item__name">
-                                    <div class="item__Quantity">
-                                        <input type="number" name="product_count" value="0" id="number">
-                                    </div>
-                                </form>
-                                <button class="item__delete">
-                                    <i class="material-icons">delete</i>
-                                </button>
+                            <div class="item__Quantity">
+                                <input type="number" name="product_count" value="0" id="number">
                             </div>
-                            <div class="item__divider"></div>
-                        </li>
+                        
+                        <button class="item__delete">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </div>
+                    <div class="item__divider"></div>
+                </li>
+        <!--list content end-->
+
+         <!--list content-->
+         <li class="item__list">
+            <div class="item">
+                <button class="item__check">
+                    <input type="checkbox" id="check" onclick="check(this)" />
+                    <label for="check"></label>
+                </button>
+                <form action="/shoppinglist3" method="post">
+<!-- Search Form -->
+                    <div class="inputWithIcon">
+                        <div>
+                        <input class="search__input" name="product_name"  id="item__name" type="text" placeholder="원하는 물품을 선택하세요!" list="list" />
+                            <datalist id="list">
+                                <%   for (i = 0; i < product.length; i++) { %>
+                                    <option> <%= product[i].product_name %></option>
+                                <%   } %>
+                            </datalist>
+                        </div>
+                        <!-- <i class="material-icons">search</i> -->
+                    </div>
+                    <div class="item__Quantity">
+                        <input type="number" name="product_count" value="0" id="number">
+                    </div>
+                
+                <button class="item__delete">
+                    <i class="material-icons">delete</i>
+                </button>
+            </div>
+            <div class="item__divider"></div>
+        </li>
+<!--list content end-->
+
+ <!--list content-->
+ <li class="item__list">
+    <div class="item">
+        <button class="item__check">
+            <input type="checkbox" id="check" onclick="check(this)" />
+            <label for="check"></label>
+        </button>
+        <form action="/shoppinglist3" method="post">
+<!-- Search Form -->
+            <div class="inputWithIcon">
+                <div>
+                <input class="search__input" name="product_name"  id="item__name" type="text" placeholder="원하는 물품을 선택하세요!" list="list" />
+                    <datalist id="list">
+                        <%   for (i = 0; i < product.length; i++) { %>
+                            <option> <%= product[i].product_name %></option>
+                        <%   } %>
+                    </datalist>
+                </div>
+                <!-- <i class="material-icons">search</i> -->
+            </div>
+            <div class="item__Quantity">
+                <input type="number" name="product_count" value="0" id="number">
+            </div>
+        
+        <button class="item__delete">
+            <i class="material-icons">delete</i>
+        </button>
+    </div>
+    <div class="item__divider"></div>
+</li>
+<!--list content end-->
+
+ <!--list content-->
+ <li class="item__list">
+    <div class="item">
+        <button class="item__check">
+            <input type="checkbox" id="check" onclick="check(this)" />
+            <label for="check"></label>
+        </button>
+        <form action="/shoppinglist3" method="post">
+<!-- Search Form -->
+            <div class="inputWithIcon">
+                <div>
+                <input class="search__input" name="product_name"  id="item__name" type="text" placeholder="원하는 물품을 선택하세요!" list="list" />
+                    <datalist id="list">
+                        <%   for (i = 0; i < product.length; i++) { %>
+                            <option> <%= product[i].product_name %></option>
+                        <%   } %>
+                    </datalist>
+                </div>
+                <!-- <i class="material-icons">search</i> -->
+            </div>
+            <div class="item__Quantity">
+                <input type="number" name="product_count" value="0" id="number">
+            </div>
+        
+        <button class="item__delete">
+            <i class="material-icons">delete</i>
+        </button>
+    </div>
+    <div class="item__divider"></div>
+</li>
+<!--list content end-->
                     </ul>
+                    <button type="submit" id="movebtn-nextpage">어디서 얼마에 구입할 수 있는지 확인!</button>
+                </form>
                 </div>
                 <!-- Move next page btn -->
-                <a href="/shoppinglist3">
-                    <form action="" onsubmit="return false;" method="post">
-                        <button type="submit" id="movebtn-nextpage">어디서 얼마에 구입할 수 있는지 확인!</button>
-                    </form>
-                </a>
             </div>
         </div>
     </section>
+
+    <script>
+           //마트 이름 현재 url에서 받아오는 함수
+        var martitle1 = (window.location.href).split("?");
+        data= martitle1[1];
+        var de = decodeURI(data);
+        console.log(de);
+        document.getElementById("martname").innerHTML=de;
+
+    </script>
 </body>
 
 </html>

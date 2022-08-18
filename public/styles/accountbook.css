@@ -297,131 +297,6 @@ input[type="text"]:focus {
 
 /* 달력 CSS */
 
-.my-calendar {
-  width: 700px;
-  margin: 30px;
-  padding: 20px 20px 10px;
-  text-align: center;
-  font-weight: 800;
-  border: 1px solid #4cd492;
-  cursor: default;
-}
-.my-calendar .clicked-date {
-  border-radius: 25px;
-  margin-top: 50px;
-  float: left;
-  width: 40%;
-  height: 270px;
-  padding: 46px 0 26px;
-  background: #4cd492;
-}
-.my-calendar .calendar-box {
-  float: right;
-  width: 60%;
-  padding-left: 30px;
-}
-
-.clicked-date .cal-day {
-  font-size: 24px;
-  color: white;
-}
-
-.clicked-date .cal-date {
-  font-size: 130px;
-}
-
-.cal-date {
-  color: white;
-}
-
-.ctr-box {
-  padding: 0 16px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  font-size: 20px;
-}
-
-.ctr-box .btn-cal {
-  position: relative;
-  float: left;
-  width: 25px;
-  height: 25px;
-  margin-top: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-.ctr-box .btn-cal:after {
-  content: "<";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  line-height: 25px;
-  font-weight: bold;
-  font-size: 20px;
-}
-.ctr-box .btn-cal.next {
-  float: right;
-}
-.ctr-box .btn-cal.next:after {
-  content: ">";
-}
-
-.cal-table {
-  width: 100%;
-}
-.cal-table th {
-  width: 14.2857%;
-  padding-bottom: 5px;
-  font-size: 16px;
-  font-weight: 900;
-}
-.cal-table td {
-  padding: 3px 0;
-  height: 50px;
-  font-size: 15px;
-  vertical-align: middle;
-}
-.cal-table td.day {
-  position: relative;
-  cursor: pointer;
-}
-.cal-table td.today {
-  background: #ffd255;
-  border-radius: 50%; /* 원으로 보여주려면 radius를 50%로 지정하면 됨 */
-  color: #fff;
-}
-.cal-table td.day-active {
-  /* background-image: url("/assets/images/jang face logo.png"); */
-  background: #4cd492; /*버튼 클릭했을 때 색깔 변하게 하는 부분 */
-  border-radius: 50%;
-  color: #fff;
-}
-.cal-table td.has-event:after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 4px;
-  background: #ffc107;
-}
-
-/* *, *:before, *:after {
-  box-sizing: inherit;
-} */
-
-.clearfix:after {
-  content: "";
-  display: block;
-  clear: both;
-  float: none;
-}
-
 .right_price {
   width: 760px;
   margin-top: 30px;
@@ -546,8 +421,8 @@ input[type="text"]:focus {
 
 .right_list_text {
   width: 760px;
-  height: 250px;
-  overflow: auto;
+  height: 400px;
+  overflow: scroll;
 }
 
 .right_list_text_table {
@@ -555,26 +430,16 @@ input[type="text"]:focus {
 }
 
 .ocr_title {
-  width : 760px;
-  height : 30px;
-}
-
-.product_no {
-  text-align: center;
-  float: left;
-  width: 20%;
-  height : 30px;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 25px;
-  color: #000000;
+  width: 730px;
+  height: 30px;
+  border-bottom: 2px solid #585858;
 }
 
 .product_name {
   text-align: center;
   float: left;
-  width: 20%;
-  height : 30px;
+  width: 35%;
+  height: 30px;
   font-weight: 500;
   font-size: 20px;
   line-height: 25px;
@@ -585,18 +450,18 @@ input[type="text"]:focus {
   text-align: center;
   float: left;
   width: 20%;
-  height : 30px;
+  height: 30px;
   font-weight: 500;
   font-size: 20px;
   line-height: 25px;
-  color: #000000; 
+  color: #000000;
 }
 
 .product_count {
   text-align: center;
   float: left;
   width: 20%;
-  height : 30px;
+  height: 30px;
   font-weight: 500;
   font-size: 20px;
   line-height: 25px;
@@ -607,7 +472,7 @@ input[type="text"]:focus {
   text-align: center;
   float: left;
   width: 20%;
-  height : 30px;
+  height: 30px;
   font-weight: 500;
   font-size: 20px;
   line-height: 25px;
@@ -616,19 +481,278 @@ input[type="text"]:focus {
 
 .uploader {
   display: none;
-  
-} 
+}
 
 .input-file-button {
   font-size: 20px;
-  height : 30px;
-  float : right;
-  margin-right : 10px;
-  margin-top : 5px;
+  height: 30px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 5px;
   /* margin-right : 10px; */
   padding: 5px 25px 25px;
-  background-color:#eb7767;
+  background-color: #eb7767;
   border-radius: 30px;
   color: white;
   cursor: pointer;
+}
+
+.choice_date {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 38px;
+  margin-top: 20px;
+  color: #000000;
+}
+
+.product_contents {
+  width: 730px;
+  height: 30px;
+}
+
+.product_name_1 {
+  text-align: left;
+  float: left;
+  width: 35%;
+  height: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.product_unit_price_2 {
+  text-align: center;
+  float: left;
+  width: 20%;
+  height: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.product_count_3 {
+  text-align: center;
+  float: left;
+  width: 20%;
+  height: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.product_price_4 {
+  text-align: center;
+  float: left;
+  width: 20%;
+  height: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.comment {
+  width: 760px;
+  height: 25px;
+}
+
+.comment_left {
+  width: 380px;
+  height: 25px;
+  float: left;
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #585858;
+}
+
+.comment_right {
+  width: 380px;
+  height: 25px;
+  float: right;
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #585858;
+}
+
+.left_logo {
+  width: 70px;
+  height: 50px;
+  float: left;
+}
+
+.left_text {
+  width: 310px;
+  height: 50px;
+  float: right;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #585858;
+  margin-top : 5px;
+  text-align : left;
+}
+
+.right_logo {
+  width: 70px;
+  height: 50px;
+  float: left;
+}
+
+.right_text {
+  width: 310px;
+  height: 50px;
+  float: right;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #585858;
+  margin-top : 5px;
+  text-align : left;
+}
+
+.calendar {
+  width: 600px;
+  height: 500px;
+  margin-top: 10px;
+  margin-left: 60px;
+}
+
+.calendar_header {
+  display: flex;
+  width: 620px;
+  justify-content: space-between;
+  background-color: #4cd492;
+  align-items: center;
+  border-radius: 10px 10px 1px 1px;
+  box-shadow: 5px 5px 5px 5px rgb(177, 177, 177);
+  margin-top: 20px;
+}
+
+.year-month {
+  margin-left: 30px;
+  height: 60px;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 44px;
+  color: #ffffff;
+}
+
+.nav {
+  display: flex;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.nav-btn {
+  width: 28px;
+  height: 30px;
+  border: none;
+  font-size: 16px;
+  line-height: 34px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.go-today {
+  width: 75px;
+  border-left: none;
+  border-right: none;
+}
+
+.days {
+  display: flex;
+  background-color: #4cd492;
+  border-radius: 5px solid #4cd492;
+}
+
+.day {
+  height: 50px;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 31px;
+  color: #ffffff;
+  width: calc(100% / 7);
+  text-align: center;
+  border-radius: 5px solid #4cd492;
+}
+
+.dates {
+  display: flex;
+  flex-flow: row wrap;
+  width: 600px;
+  height: 500px;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  border-radius: 20px;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 44px;
+  color: #585858;
+  text-align: center;
+}
+
+.date {
+  width: calc(100% / 7);
+  padding: 15px;
+  text-align: right;
+  border-bottom: none;
+  border-left: none;
+}
+
+.day:nth-child(7n + 1),
+.date:nth-child(7n + 1) {
+  color: #d13e3e;
+}
+
+.day:nth-child(7n),
+.date:nth-child(7n) {
+  color: #396ee2;
+}
+
+.other {
+  opacity: 0.3;
+}
+
+.today {
+  position: relative;
+  color: #ffffff;
+}
+
+.today::before {
+  position: absolute;
+  top: 46%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  width: 50px;
+  height: 50px;
+  display: block;
+  background-color: #4cd492;
+  border-radius: 50%;
+  content: "";
+}
+
+.nav-btn go-next {
+  border: 1px solid white;
+}
+
+.calendar_main {
+  border: none;
+  border-radius: 20px;
+  width: 620px;
+  box-shadow: 5px 10px 5px 5px rgb(177, 177, 177);
+}
+
+.nav-btn go-prev {
+  font-size: 20px;
 }

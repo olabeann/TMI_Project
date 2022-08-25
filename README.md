@@ -26,8 +26,9 @@
 
 # 🔎 Result
 
-<iframe id="video" width="가로" height="세로" src="/public/video/Team_TMI 시연 영상.mp4" frameborder="0">
-</iframe>
+<video width="100%" height="100%" controls="controls">
+  <source src="/public/video/Jang_Secretary.mp4" type="video/mp4">
+</video>
 
 <br/><br/>
 

@@ -5,7 +5,7 @@
 - 프로젝트명
   : 장비서(Jang Secretary)
 - 프로젝트 목적
-  : 소비자들의 현명한 소비를 돕기 위한 물가 정보 제공 사이트
+  : 소비자의 현명한 소비를 돕기 위한 마트별 가격 비교 및 물가 정보 제공 플랫폼
 - 프로젝트 기간
   : 2022.06.30 ~ 2022.08.18
   <br/><br/>
@@ -19,16 +19,14 @@
 
 | <img src="https://user-images.githubusercontent.com/109474391/182086295-125e0da0-9687-4e8d-95b0-37acc31252f6.jpg"  width="150" height="150"/> | <img src="https://user-images.githubusercontent.com/103403634/180957419-98acf90c-d964-4ac4-826c-7be77084b2f4.jpg"  width="150" height="150"/> | <img src="https://user-images.githubusercontent.com/109474391/182086390-42b3aa17-4879-42f7-b72d-a093e951788c.jpg"  width="150" height="150"/> | <img src="https://user-images.githubusercontent.com/109474391/182086473-e66c8be6-3cfd-4466-ad0c-575de1fa4e76.jpg"  width="150" height="150"/> | <img src="https://user-images.githubusercontent.com/109474391/182086431-3356c6d9-a9c8-4dea-8e93-c3f519f353da.jpg"  width="150" height="150"/> |
 | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                   [박형준](https://github.com/HyeongJun030)                                                   |                                                     [임다빈](https://github.com/olabeann)                                                     |                                                     [김나현](https://github.com/evelynKr)                                                     |                                                  [허승현](https://github.com/seunghyeonheo)                                                   |                                                   [우형규](https://github.com/WooHyounggyu)                                                   |
-|                                                                   물가 정보 상세 페이지, 가계부 페이지 , Node.js 구축                                                                   |                                                     쇼핑 리스트 페이지 3 구축, 디자인 설계                                                     |                                                          메인 페이지, 쇼핑 리스트 2 페이지 구축                                                          |                                                    물가 정보 페이지, 물가 API 호출 구축                                                    |                                                          쇼핑 리스트 페이지 1, 소개 페이지 구축                                                          |
+|                                                   [박형준(팀장)](https://github.com/HyeongJun030)                                                   |                                                     [임다빈(수석)](https://github.com/olabeann)                                                     |                                                     [김나현(팀원)](https://github.com/evelynKr)                                                     |                                                  [허승현(팀원)](https://github.com/seunghyeonheo)                                                   |                                                   [우형규(팀원)](https://github.com/WooHyounggyu)                                                   |
+|                                                                   (형준)Node.js Server 구축 <br> 오늘의 물가 상세정보 페이지 구현 <br> 가계부 페이지 구현                                                                 |                                                     (다빈)쇼핑 리스트 체크 페이지 구현 <br> 디자인 설계 총괄 <br> 마트별 가격 정보 API DB화                                                     |                                                          (나현)메인 페이지 구현 <br> 쇼핑리스트 레이아웃 총괄 <br> 쇼핑 리스트 페이지 카카오맵 API 호출                                                         |                                                    (승현)오늘의 물가 페이지 구현 <br> 물가 정보 API 호출 <br> ejs를 사용하여 API 데이터 출력                                                         |                                                          (형규)사이트 소개 페이지 구현 <br> 쇼핑 리스트 가격 예산안 페이지 구현 <br> 마트별 가격 정보 API DB화                                                          |
 
   <br/>
 
 # 🔎 Result
 
-<video width="100%" height="100%" controls="controls">
-  <source src="/public/video/Jang_Secretary.mp4" type="video/mp4">
-</video>
+- 시연 영상 : 위의 파일 목록 중 'Jang_Secretary.mp4' 참고
 
 <br/><br/>
 

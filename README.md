@@ -26,7 +26,7 @@
 
 # 🔎 Result
 
-<iframe id="video" width="가로" height="세로" src="/video/Team_TMI 시연 영상.mp4" frameborder="0">
+<iframe id="video" width="가로" height="세로" src="/public/video/Team_TMI 시연 영상.mp4" frameborder="0">
 </iframe>
 
 <br/><br/>

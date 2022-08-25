@@ -26,10 +26,8 @@
 
 # 🔎 Result
 
-<video width="100%" height="100%" controls="controls">
-  <source src="https://user-images.githubusercontent.com/109474391/186585415-f5a2d20d-264f-476e-9714-79099fc92cb5.mp4" type="video/mp4">
-</video>
-ppt
+<iframe id="video" width="가로" height="세로" src="/video/Team_TMI 시연 영상.mp4" frameborder="0">
+</iframe>
 
 <br/><br/>
 
